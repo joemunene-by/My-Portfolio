@@ -1,0 +1,11 @@
+.app-wrapper {
+  overflow-x: hidden;
+}
+
+.main-footer {
+  padding: 4rem 2rem;
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}

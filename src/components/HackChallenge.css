@@ -1,0 +1,111 @@
+.challenge-section {
+    padding: var(--section-padding);
+}
+
+.challenge-card {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 4rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.challenge-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--accent-primary);
+}
+
+.challenge-icon {
+    margin-bottom: 2rem;
+    color: var(--accent-primary);
+    display: flex;
+    justify-content: center;
+}
+
+.unlocked {
+    color: #fbbf24;
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.4));
+}
+
+.challenge-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.challenge-desc {
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.challenge-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.challenge-input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: 'JetBrains Mono', monospace;
+    transition: all 0.2s ease;
+}
+
+.challenge-input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.challenge-hint {
+    font-size: 0.85rem;
+    color: var(--accent-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.success-message h3 {
+    color: var(--accent-primary);
+    font-size: 2rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+}
+
+.token-display {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px dashed var(--accent-primary);
+    color: var(--accent-primary);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    border-radius: 4px;
+}
