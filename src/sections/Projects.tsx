@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ShieldCheck, FileText, AlertTriangle, CheckCircle, X } from 'lucide-react';
+import { Github, ShieldCheck, FileText, AlertTriangle, CheckCircle, X, ExternalLink } from 'lucide-react';
 import { projects, type Project } from '../data/projects';
 import './Projects.css';
 
@@ -65,6 +65,12 @@ const Projects: React.FC = () => {
                                         <Github size={18} />
                                         <span>Code</span>
                                     </a>
+                                    {project.demo && (
+                                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link">
+                                            <ExternalLink size={18} />
+                                            <span>Live Site</span>
+                                        </a>
+                                    )}
                                     {project.featured && (
                                         <button onClick={() => setSelectedReport(project)} className="project-link btn-report">
                                             <FileText size={18} />

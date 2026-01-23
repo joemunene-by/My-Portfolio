@@ -8,8 +8,8 @@ import './Skills.css';
 
 const data = [
     { subject: 'Defensive Security', A: 95, fullMark: 100 },
-    { subject: 'Offensive Techniques', A: 85, fullMark: 100 },
-    { subject: 'Full-Stack Dev', A: 90, fullMark: 100 },
+    { subject: 'Offensive Techniques', A: 87, fullMark: 100 },
+    { subject: 'Full-Stack Dev', A: 95, fullMark: 100 },
     { subject: 'Systems Thinking', A: 95, fullMark: 100 },
     { subject: 'AI Integration', A: 80, fullMark: 100 },
     { subject: 'Cloud Security', A: 75, fullMark: 100 },

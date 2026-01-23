@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Github, Linkedin, MapPin, Send } from 'lucide-react';
+import { Mail, Github, MessageCircle, MapPin, Send } from 'lucide-react';
 import './Contact.css';
 
 const Contact: React.FC = () => {
@@ -15,7 +15,7 @@ const Contact: React.FC = () => {
                             <div className="info-icon"><Mail size={20} /></div>
                             <div className="info-text">
                                 <h4>Email</h4>
-                                <a href="mailto:joemunene@example.com">joemunene@example.com</a>
+                                <a href="mailto:joemunene984@gmail.com">joemunene984@gmail.com</a>
                             </div>
                         </div>
 
@@ -31,8 +31,8 @@ const Contact: React.FC = () => {
                             <a href="https://github.com/joemunene-by" target="_blank" rel="noopener noreferrer" className="social-footer-item">
                                 <Github size={24} />
                             </a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="social-footer-item">
-                                <Linkedin size={24} />
+                            <a href="https://discord.com/users/ghost_64320" target="_blank" rel="noopener noreferrer" className="social-footer-item">
+                                <MessageCircle size={24} />
                             </a>
                         </div>
                     </div>

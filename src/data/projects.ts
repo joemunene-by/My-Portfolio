@@ -35,6 +35,7 @@ export const projects: Project[] = [
     tech: ['JavaScript', 'Web', 'Dashboard'],
     category: 'Full-Stack',
     github: 'https://github.com/joemunene-by/sentinelpulse',
+    demo: 'https://sentinelpulse.vercel.app/',
     featured: true
   },
   {
@@ -44,6 +45,7 @@ export const projects: Project[] = [
     tech: ['JavaScript', 'Networking', 'UI'],
     category: 'Security',
     github: 'https://github.com/joemunene-by/Port-scanner',
+    demo: 'https://port-scanner-omega.vercel.app/',
     featured: true
   },
   {
@@ -60,7 +62,8 @@ export const projects: Project[] = [
     description: 'Full-spectrum security services site showcasing professional security offerings.',
     tech: ['JavaScript', 'Web', 'UX'],
     category: 'Full-Stack',
-    github: 'https://github.com/joemunene-by/Cyber-sec-agency'
+    github: 'https://github.com/joemunene-by/Cyber-sec-agency',
+    demo: 'https://joemunene-by.github.io/Cyber-sec-agency/'
   },
   {
     id: 'ghosthacking',
@@ -78,15 +81,7 @@ export const projects: Project[] = [
     category: 'Full-Stack',
     github: 'https://github.com/joemunene-by/Complex-Dev'
   },
-  {
-    id: 'gigidy',
-    title: 'Gigidy',
-    description: 'Static site architecture and development project.',
-    tech: ['HTML', 'Static Site', 'Design'],
-    category: 'Full-Stack',
-    github: 'https://github.com/joemunene-by/gigidy'
-  },
-  {
+    {
     id: 'systems-thinking-notes',
     title: 'Systems-Thinking Notes',
     description: 'Personal notes on computation, security, and systems engineering.',
@@ -108,22 +103,7 @@ export const projects: Project[] = [
     description: 'Encryption utility showcasing fundamental cryptographic concepts.',
     tech: ['CSS', 'Cryptography', 'UI'],
     category: 'Creative',
-    github: 'https://github.com/joemunene-by/Caesa-Cipher-Tool'
+    github: 'https://github.com/joemunene-by/Caesa-Cipher-Tool',
+    demo: 'https://joemunene-by.github.io/Caesa-Cipher-Tool/'
   },
-  {
-    id: 'car-mods-3d',
-    title: 'Car-Mods 3D',
-    description: '3D car customization experience built with TypeScript.',
-    tech: ['TypeScript', '3D', 'Three.js'],
-    category: 'Creative',
-    github: 'https://github.com/joemunene-by/car-mods-3d'
-  },
-  {
-    id: '3d-car-studio',
-    title: '3D Car Customization Studio',
-    description: 'Another advanced 3D project focusing on interactive customization.',
-    tech: ['TypeScript', '3D', 'Interactive'],
-    category: 'Creative',
-    github: 'https://github.com/joemunene-by/3d-car-customization-studio'
-  }
 ];
