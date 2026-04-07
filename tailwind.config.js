@@ -18,7 +18,7 @@ module.exports = {
       },
       fontFamily: {
         mono: ['"Fira Code"', 'monospace'],
-        sans: ['"Inter"', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',
