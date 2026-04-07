@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from "react"
 import { ChevronDown, Terminal, Shield, Code2, Cpu } from "lucide-react"
+import { useGitHubStats } from "@/hooks/useGitHubStats"
 
 export default function Hero() {
+  const { stats } = useGitHubStats()
   const [textIndex, setTextIndex] = useState(0)
   const roles = [
     "Full-Stack Developer",
@@ -78,15 +80,15 @@ export default function Hero() {
           <div className="mt-16 flex items-center gap-6 text-text-muted animate-fade-in" style={{ animationDelay: "0.7s" }}>
             <div className="flex items-center gap-2">
               <Cpu className="w-4 h-4 text-primary" />
-              <span className="font-mono text-xs">26 Repos</span>
+              <span className="font-mono text-xs">{stats.totalRepos} Repos</span>
             </div>
             <div className="flex items-center gap-2">
               <Terminal className="w-4 h-4 text-primary" />
-              <span className="font-mono text-xs">217 Commits</span>
+              <span className="font-mono text-xs">{stats.totalCommits} Commits</span>
             </div>
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4 text-primary" />
-              <span className="font-mono text-xs">90K+ LOC</span>
+              <span className="font-mono text-xs">{stats.linesOfCode} LOC</span>
             </div>
           </div>
         </div>

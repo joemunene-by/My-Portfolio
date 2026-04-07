@@ -1,4 +1,4 @@
-import { Github, Mail, Linkedin, Terminal, ExternalLink } from "lucide-react"
+import { Github, Mail, Terminal } from "lucide-react"
 
 export default function Contact() {
   return (
@@ -15,7 +15,7 @@ export default function Contact() {
         </p>
 
         <a
-          href="mailto:joemunene@example.com"
+          href="mailto:joemunene984@gmail.com"
           className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-bg-dark font-mono font-semibold rounded hover:bg-primary-dark transition-all duration-200 glow-box"
         >
           <Mail className="w-5 h-5" />
@@ -34,16 +34,7 @@ export default function Contact() {
               <Github className="w-6 h-6" />
             </a>
             <a
-              href="https://linkedin.com/in/joemunene"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 text-text-muted hover:text-primary hover:-translate-y-1 transition-all duration-200"
-              title="LinkedIn"
-            >
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <a
-              href="mailto:joemunene@example.com"
+              href="mailto:joemunene984@gmail.com"
               className="p-3 text-text-muted hover:text-primary hover:-translate-y-1 transition-all duration-200"
               title="Email"
             >

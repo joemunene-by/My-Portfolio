@@ -1,7 +1,12 @@
-import { stats, skills } from "@/data"
+"use client"
+
+import { skills } from "@/data"
+import { useGitHubStats } from "@/hooks/useGitHubStats"
 import { Github, Code, CheckCircle, FileCode, BookOpen, Shield } from "lucide-react"
 
 export default function About() {
+  const { stats, loading } = useGitHubStats()
+
   const statCards = [
     { icon: <Github className="w-6 h-6" />, value: stats.totalRepos, label: "Total Repos" },
     { icon: <Code className="w-6 h-6" />, value: stats.totalCommits, label: "Total Commits" },
@@ -47,7 +52,9 @@ export default function About() {
               <div className="text-primary mb-3 group-hover:scale-110 transition-transform duration-300">
                 {stat.icon}
               </div>
-              <div className="text-2xl sm:text-3xl font-bold text-white font-mono">{stat.value}</div>
+              <div className={`text-2xl sm:text-3xl font-bold text-white font-mono ${loading ? "animate-pulse" : ""}`}>
+                {stat.value}
+              </div>
               <div className="text-text-muted text-sm mt-1">{stat.label}</div>
             </div>
           ))}
