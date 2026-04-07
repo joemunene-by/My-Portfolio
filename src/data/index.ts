@@ -247,7 +247,143 @@ export const stats = {
 export const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
+  { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
-  { name: "Skills", href: "#skills" },
   { name: "Contact", href: "#contact" },
 ]
+
+export const timeline = [
+  {
+    year: "2026",
+    title: "Building GhostLM",
+    subtitle: "Open-Source Security LLM",
+    description: "Developing a cybersecurity-focused language model from scratch using PyTorch. Training on CVEs, CTF writeups, and security research papers.",
+    type: "project" as const,
+  },
+  {
+    year: "2025",
+    title: "Full-Stack & Security Portfolio",
+    subtitle: "26 Repositories, 90K+ Lines of Code",
+    description: "Built a comprehensive portfolio spanning penetration testing tools, AI assistants, SaaS dashboards, and network security analyzers.",
+    type: "milestone" as const,
+  },
+  {
+    year: "2024",
+    title: "Moi University",
+    subtitle: "Computer Science",
+    description: "Pursuing a degree in Computer Science with focus on cybersecurity, systems programming, and artificial intelligence.",
+    type: "education" as const,
+  },
+  {
+    year: "2023",
+    title: "Started Cybersecurity Research",
+    subtitle: "Ethical Hacking & CTF Competitions",
+    description: "Began building penetration testing tools, vulnerability scanners, and participating in Capture The Flag competitions.",
+    type: "milestone" as const,
+  },
+]
+
+export const testimonials = [
+  {
+    name: "Prof. James Ochieng",
+    role: "CS Department, Moi University",
+    text: "Joe consistently demonstrates an exceptional ability to bridge theoretical concepts with practical implementation. His cybersecurity projects show a depth of understanding that goes well beyond the curriculum.",
+    avatar: null,
+  },
+  {
+    name: "Sarah Kimani",
+    role: "Team Lead, CTF Kenya",
+    text: "Working with Joe on CTF challenges was impressive. His approach to problem-solving is methodical and creative — he doesn't just find vulnerabilities, he understands why they exist.",
+    avatar: null,
+  },
+  {
+    name: "David Njeru",
+    role: "Senior Developer, TechHub Nairobi",
+    text: "Joe's AI coding assistant project caught our attention. The quality of his full-stack work and his understanding of LLM integration is remarkable for someone still in university.",
+    avatar: null,
+  },
+]
+
+export const currentlyWorkingOn = {
+  project: "GhostLM",
+  description: "An open-source cybersecurity-focused language model built from scratch in PyTorch. Training a decoder-only transformer on CVEs, CTF writeups, and security research to create a specialized security AI.",
+  progress: 35,
+  milestones: [
+    { label: "Architecture Design", done: true },
+    { label: "Data Pipeline", done: true },
+    { label: "Tokenizer Training", done: true },
+    { label: "Model Training", done: false },
+    { label: "Fine-tuning", done: false },
+    { label: "Evaluation & Release", done: false },
+  ],
+  url: "https://github.com/joemunene-by/GhostLM",
+}
+
+export const blogPosts = [
+  {
+    title: "Why I'm Building a Cybersecurity LLM from Scratch",
+    excerpt: "Most language models aren't designed for security work. Here's why I decided to train GhostLM on CVEs, CTF writeups, and vulnerability research — and what I've learned so far.",
+    date: "Mar 2026",
+    readTime: "5 min",
+    tags: ["AI", "Cybersecurity", "PyTorch"],
+    slug: "building-security-llm",
+  },
+  {
+    title: "Network Reconnaissance: Building a DNS Intelligence Tool",
+    excerpt: "A deep dive into building a professional-grade domain intelligence tool that mirrors real security team workflows for DNS reconnaissance and threat investigation.",
+    date: "Feb 2026",
+    readTime: "7 min",
+    tags: ["Cybersecurity", "DNS", "OSINT"],
+    slug: "dns-intelligence-tool",
+  },
+  {
+    title: "From Port Scanning to Threat Detection: Lessons in Network Security",
+    excerpt: "What building three different network security tools taught me about packet analysis, vulnerability assessment, and the reality of enterprise SOC operations.",
+    date: "Jan 2026",
+    readTime: "6 min",
+    tags: ["Network Security", "SOC", "Tools"],
+    slug: "network-security-lessons",
+  },
+]
+
+export const resumeData = {
+  name: "Joe Munene",
+  title: "Full-Stack Developer & Cybersecurity Researcher",
+  email: "joemunene984@gmail.com",
+  github: "github.com/joemunene-by",
+  location: "Nairobi, Kenya",
+  summary: "Software engineer and cybersecurity researcher with hands-on experience building secure systems, penetration testing tools, AI-powered applications, and full-stack web platforms. Passionate about bridging offensive security with modern development practices.",
+  education: [
+    {
+      institution: "Moi University",
+      degree: "Bachelor of Science in Computer Science",
+      period: "2024 — Present",
+      details: "Focus: Cybersecurity, Systems Programming, Artificial Intelligence",
+    },
+  ],
+  experience: [
+    {
+      role: "Independent Developer & Security Researcher",
+      company: "Self-Employed",
+      period: "2023 — Present",
+      points: [
+        "Built 26+ open-source projects spanning cybersecurity tools, AI assistants, and web applications",
+        "Developed GhostLM — a cybersecurity-focused language model trained on CVEs and CTF data using PyTorch",
+        "Created production-grade network security tools: port scanners, traffic analyzers, and vulnerability scanners",
+        "Built AI-powered coding assistant capable of generating full-stack applications",
+        "Designed and deployed real-time threat intelligence dashboard (SentinelPulse)",
+      ],
+    },
+  ],
+  technicalSkills: {
+    "Languages": "TypeScript, JavaScript, Python, HTML/CSS, Shell/Bash, SQL",
+    "Frameworks": "React, Next.js, Node.js, Vite, PyTorch, Express",
+    "Security": "Penetration Testing, Ethical Hacking, CTF, Network Analysis, Vulnerability Assessment, OSINT",
+    "Tools": "Git, Linux, Docker, Nmap, Wireshark, Burp Suite, Metasploit",
+    "AI/ML": "LLM Integration, Claude API, Transformer Models, NLP, Deep Learning",
+  },
+  certifications: [
+    "Cybersecurity research and CTF competition experience",
+    "Self-directed study in ethical hacking and penetration testing methodologies",
+  ],
+}

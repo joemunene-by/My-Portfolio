@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { ChevronDown, Terminal, Shield, Code2, Cpu, Download } from "lucide-react"
+import Link from "next/link"
+import { ChevronDown, Terminal, Shield, Code2, Cpu, FileText } from "lucide-react"
 import { useGitHubStats } from "@/hooks/useGitHubStats"
 import Image from "next/image"
 
@@ -142,6 +143,13 @@ export default function Hero() {
                 <Shield className="w-4 h-4" />
                 Get In Touch
               </a>
+              <Link
+                href="/resume"
+                className="px-6 py-3 border border-accent/30 text-accent font-mono text-sm rounded-lg hover:bg-accent/10 hover:border-accent/60 transition-all duration-300 flex items-center gap-2"
+              >
+                <FileText className="w-4 h-4" />
+                Resume
+              </Link>
             </motion.div>
 
             <motion.div
