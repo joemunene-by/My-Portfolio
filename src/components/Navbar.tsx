@@ -53,7 +53,7 @@ export default function Navbar() {
               href="https://github.com/joemunene-by"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 border border-primary text-primary font-mono text-sm rounded-lg hover:bg-primary/10 hover:shadow-[0_0_15px_rgba(0,255,136,0.15)] transition-all duration-300"
+              className="px-4 py-2 border border-primary/40 text-primary font-mono text-sm rounded-lg hover:bg-primary/10 hover:border-primary/70 transition-all duration-300"
             >
               GitHub
             </motion.a>

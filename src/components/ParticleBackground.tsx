@@ -21,6 +21,13 @@ export default function ParticleBackground() {
     resize()
     window.addEventListener("resize", resize)
 
+    // Soft multi-color palette
+    const colors = [
+      { r: 108, g: 156, b: 255 }, // blue
+      { r: 196, g: 161, b: 255 }, // purple
+      { r: 255, g: 176, b: 136 }, // warm
+    ]
+
     class Particle {
       x: number
       y: number
@@ -28,14 +35,16 @@ export default function ParticleBackground() {
       vy: number
       size: number
       opacity: number
+      color: { r: number; g: number; b: number }
 
       constructor() {
         this.x = Math.random() * canvas!.width
         this.y = Math.random() * canvas!.height
-        this.vx = (Math.random() - 0.5) * 0.3
-        this.vy = (Math.random() - 0.5) * 0.3
-        this.size = Math.random() * 1.5 + 0.5
-        this.opacity = Math.random() * 0.4 + 0.1
+        this.vx = (Math.random() - 0.5) * 0.2
+        this.vy = (Math.random() - 0.5) * 0.2
+        this.size = Math.random() * 1.2 + 0.3
+        this.opacity = Math.random() * 0.25 + 0.05
+        this.color = colors[Math.floor(Math.random() * colors.length)]
       }
 
       update() {
@@ -48,29 +57,29 @@ export default function ParticleBackground() {
       draw() {
         ctx!.beginPath()
         ctx!.arc(this.x, this.y, this.size, 0, Math.PI * 2)
-        ctx!.fillStyle = `rgba(0, 255, 136, ${this.opacity})`
+        ctx!.fillStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.opacity})`
         ctx!.fill()
       }
     }
 
-    const count = Math.min(80, Math.floor((canvas.width * canvas.height) / 15000))
+    const count = Math.min(60, Math.floor((canvas.width * canvas.height) / 20000))
     particles = Array.from({ length: count }, () => new Particle())
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      // Draw connections
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x
           const dy = particles[i].y - particles[j].y
           const dist = Math.sqrt(dx * dx + dy * dy)
-          if (dist < 150) {
+          if (dist < 130) {
+            const alpha = 0.04 * (1 - dist / 130)
             ctx.beginPath()
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
-            ctx.strokeStyle = `rgba(0, 255, 136, ${0.06 * (1 - dist / 150)})`
-            ctx.lineWidth = 0.5
+            ctx.strokeStyle = `rgba(108, 156, 255, ${alpha})`
+            ctx.lineWidth = 0.4
             ctx.stroke()
           }
         }
@@ -96,7 +105,7 @@ export default function ParticleBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.6 }}
+      style={{ opacity: 0.5 }}
     />
   )
 }

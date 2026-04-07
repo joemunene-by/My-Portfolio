@@ -51,14 +51,19 @@ export default function Hero() {
 
       {/* Ambient glow orbs */}
       <motion.div
-        className="absolute top-1/4 left-1/6 w-72 h-72 bg-primary/8 rounded-full blur-[100px]"
+        className="absolute top-1/4 left-1/6 w-72 h-72 bg-primary/6 rounded-full blur-[120px]"
         animate={{ y: [-20, 20, -20], scale: [1, 1.1, 1] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-[120px]"
+        className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-accent/4 rounded-full blur-[140px]"
         animate={{ y: [20, -20, 20], scale: [1.1, 1, 1.1] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute top-2/3 left-1/2 w-64 h-64 bg-accent-warm/3 rounded-full blur-[100px]"
+        animate={{ x: [-15, 15, -15] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -125,14 +130,14 @@ export default function Hero() {
             >
               <a
                 href="#projects"
-                className="group px-6 py-3 bg-primary text-bg-dark font-mono text-sm font-semibold rounded-lg hover:bg-primary-dark hover:shadow-[0_0_30px_rgba(0,255,136,0.3)] transition-all duration-300 flex items-center gap-2"
+                className="group px-6 py-3 bg-primary text-white font-mono text-sm font-semibold rounded-lg hover:bg-primary-dark hover:shadow-[0_0_30px_rgba(108,156,255,0.25)] transition-all duration-300 flex items-center gap-2"
               >
                 <Code2 className="w-4 h-4" />
                 View My Work
               </a>
               <a
                 href="#contact"
-                className="px-6 py-3 border border-primary text-primary font-mono text-sm rounded-lg hover:bg-primary/10 hover:shadow-[0_0_20px_rgba(0,255,136,0.15)] transition-all duration-300 flex items-center gap-2"
+                className="px-6 py-3 border border-primary/40 text-primary font-mono text-sm rounded-lg hover:bg-primary/10 hover:border-primary/70 transition-all duration-300 flex items-center gap-2"
               >
                 <Shield className="w-4 h-4" />
                 Get In Touch
@@ -165,10 +170,10 @@ export default function Hero() {
           >
             <div className="relative group">
               {/* Glow ring */}
-              <div className="absolute -inset-1 bg-gradient-to-br from-primary/40 via-emerald-400/20 to-primary/40 rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute -inset-1 bg-gradient-to-br from-primary/30 via-accent/20 to-accent-warm/20 rounded-2xl blur-lg opacity-50 group-hover:opacity-90 transition-opacity duration-500" />
 
               {/* Border frame */}
-              <div className="relative rounded-2xl border-2 border-primary/30 overflow-hidden bg-bg-card">
+              <div className="relative rounded-2xl border border-border-color overflow-hidden bg-bg-card">
                 <Image
                   src="/joe-munene.jpg"
                   alt="Joe Munene"
@@ -182,17 +187,17 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/60 via-transparent to-transparent" />
 
                 {/* Status badge */}
-                <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-bg-dark/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-primary/30">
-                  <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                  <span className="font-mono text-xs text-primary">Available for work</span>
+                <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-bg-dark/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/10">
+                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                  <span className="font-mono text-xs text-white/70">Available for work</span>
                 </div>
               </div>
 
               {/* Decorative corner brackets */}
-              <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-primary/50 rounded-tl" />
-              <div className="absolute -top-2 -right-2 w-6 h-6 border-t-2 border-r-2 border-primary/50 rounded-tr" />
-              <div className="absolute -bottom-2 -left-2 w-6 h-6 border-b-2 border-l-2 border-primary/50 rounded-bl" />
-              <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-primary/50 rounded-br" />
+              <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-primary/30 rounded-tl" />
+              <div className="absolute -top-2 -right-2 w-6 h-6 border-t-2 border-r-2 border-accent/30 rounded-tr" />
+              <div className="absolute -bottom-2 -left-2 w-6 h-6 border-b-2 border-l-2 border-accent/30 rounded-bl" />
+              <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-primary/30 rounded-br" />
             </div>
           </motion.div>
         </div>
