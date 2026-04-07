@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect } from "react"
 import { Menu, X, Ghost } from "lucide-react"
 import { navLinks } from "@/data"
