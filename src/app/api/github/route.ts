@@ -43,41 +43,23 @@ export async function GET() {
       .slice(0, 5)
       .map(([lang]) => lang)
 
-    // Estimate total commits by summing contributor stats for each repo
-    // (GitHub doesn't have a single endpoint for total commits across repos)
-    // We'll sample the top repos to estimate
+    // Count total commits using the search API (accurate across all repos)
     let totalCommits = 0
-    const commitFetches = repos.slice(0, 30).map(async (repo: any) => {
-      try {
-        const res = await fetch(
-          `https://api.github.com/repos/${GITHUB_USERNAME}/${repo.name}/contributors`,
-          {
-            headers: {
-              Accept: "application/vnd.github.v3+json",
-              ...(process.env.GITHUB_TOKEN
-                ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` }
-                : {}),
-            },
-          }
-        )
-        if (res.ok) {
-          const contributors = await res.json()
-          if (Array.isArray(contributors)) {
-            const userContribs = contributors.find(
-              (c: any) =>
-                c.login?.toLowerCase() === GITHUB_USERNAME.toLowerCase()
-            )
-            return userContribs?.contributions || 0
-          }
-        }
-        return 0
-      } catch {
-        return 0
+    const commitSearchRes = await fetch(
+      `https://api.github.com/search/commits?q=author:${GITHUB_USERNAME}`,
+      {
+        headers: {
+          Accept: "application/vnd.github.cloak-preview+json",
+          ...(process.env.GITHUB_TOKEN
+            ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` }
+            : {}),
+        },
       }
-    })
-
-    const commitCounts = await Promise.all(commitFetches)
-    totalCommits = commitCounts.reduce((a, b) => a + b, 0)
+    )
+    if (commitSearchRes.ok) {
+      const commitData = await commitSearchRes.json()
+      totalCommits = commitData.total_count || 0
+    }
 
     // Count healthy repos (repos updated in the last year or not archived)
     const oneYearAgo = new Date()
@@ -100,7 +82,7 @@ export async function GET() {
 
     return NextResponse.json({
       totalRepos,
-      totalCommits: totalCommits || 217, // fallback if API limits hit
+      totalCommits,
       linesOfCode: formattedLOC,
       healthyRepos,
       totalStars,
