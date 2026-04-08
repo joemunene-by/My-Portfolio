@@ -283,36 +283,15 @@ export const timeline = [
   },
 ]
 
-export const testimonials = [
-  {
-    name: "Prof. James Ochieng",
-    role: "CS Department, Moi University",
-    text: "Joe consistently demonstrates an exceptional ability to bridge theoretical concepts with practical implementation. His cybersecurity projects show a depth of understanding that goes well beyond the curriculum.",
-    avatar: null,
-  },
-  {
-    name: "Sarah Kimani",
-    role: "Team Lead, CTF Kenya",
-    text: "Working with Joe on CTF challenges was impressive. His approach to problem-solving is methodical and creative — he doesn't just find vulnerabilities, he understands why they exist.",
-    avatar: null,
-  },
-  {
-    name: "David Njeru",
-    role: "Senior Developer, TechHub Nairobi",
-    text: "Joe's AI coding assistant project caught our attention. The quality of his full-stack work and his understanding of LLM integration is remarkable for someone still in university.",
-    avatar: null,
-  },
-]
-
 export const currentlyWorkingOn = {
   project: "GhostLM",
   description: "An open-source cybersecurity-focused language model built from scratch in PyTorch. Training a decoder-only transformer on CVEs, CTF writeups, and security research to create a specialized security AI.",
-  progress: 35,
+  progress: 80,
   milestones: [
     { label: "Architecture Design", done: true },
     { label: "Data Pipeline", done: true },
     { label: "Tokenizer Training", done: true },
-    { label: "Model Training", done: false },
+    { label: "Model Training (Phase 1)", done: false },
     { label: "Fine-tuning", done: false },
     { label: "Evaluation & Release", done: false },
   ],

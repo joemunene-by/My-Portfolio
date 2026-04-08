@@ -2,7 +2,7 @@
 
 import { blogPosts } from "@/data"
 import AnimatedSection from "./AnimatedSection"
-import { Clock, ArrowRight } from "lucide-react"
+import { Clock } from "lucide-react"
 
 export default function Blog() {
   return (
@@ -48,8 +48,8 @@ export default function Blog() {
                   ))}
                 </div>
 
-                <div className="flex items-center gap-1 text-primary text-sm font-mono group-hover:gap-2 transition-all mt-auto">
-                  Read more <ArrowRight className="w-4 h-4" />
+                <div className="flex items-center gap-1 text-text-muted/50 text-sm font-mono mt-auto">
+                  Coming soon
                 </div>
               </div>
             </AnimatedSection>

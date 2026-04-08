@@ -6,7 +6,6 @@ import CurrentlyWorkingOn from "@/components/CurrentlyWorkingOn"
 import Projects from "@/components/Projects"
 import GitHubGraph from "@/components/GitHubGraph"
 import Blog from "@/components/Blog"
-import Testimonials from "@/components/Testimonials"
 import Contact from "@/components/Contact"
 import ParticleBackground from "@/components/ParticleBackground"
 import Loader from "@/components/Loader"
@@ -26,7 +25,6 @@ export default function Home() {
         <Projects />
         <GitHubGraph />
         <Blog />
-        <Testimonials />
         <Contact />
       </div>
       <TerminalEasterEgg />
