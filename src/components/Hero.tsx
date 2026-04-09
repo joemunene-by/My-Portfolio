@@ -46,23 +46,9 @@ export default function Hero() {
       id="home"
       className="min-h-screen flex items-center relative overflow-hidden"
     >
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <Image
-          src="/joe-munene.jpg"
-          alt="Joe Munene"
-          fill
-          className="object-cover object-top"
-          priority
-        />
-        {/* Heavy cinematic overlay */}
-        <div className="absolute inset-0 bg-bg-dark/75" />
-        <div className="absolute inset-0 bg-gradient-to-r from-bg-dark via-bg-dark/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-transparent to-bg-dark/60" />
-      </div>
-
       {/* Grid overlay */}
-      <div className="absolute inset-0 grid-bg opacity-40" />
+      <div className="absolute inset-0 grid-bg" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg-dark/50 to-bg-dark pointer-events-none" />
 
       {/* Ambient glow orbs */}
       <motion.div
@@ -77,117 +63,154 @@ export default function Hero() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <motion.div
-          className="max-w-3xl"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {/* Status badge */}
-          <motion.div variants={itemVariants} className="mb-8">
-            <span className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              <span className="font-mono text-xs text-white/70">Available for work</span>
-            </span>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left content */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {/* Status badge */}
+            <motion.div variants={itemVariants} className="mb-8">
+              <span className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                <span className="font-mono text-xs text-white/70">Available for work</span>
+              </span>
+            </motion.div>
+
+            <motion.p
+              variants={itemVariants}
+              className="font-mono text-primary text-sm sm:text-base mb-4"
+            >
+              Hi, my name is
+            </motion.p>
+
+            <motion.h1
+              variants={itemVariants}
+              className="text-5xl sm:text-6xl md:text-7xl font-bold mb-4 tracking-tight"
+            >
+              <span className="text-white">Joe Munene.</span>
+            </motion.h1>
+
+            <motion.h2
+              variants={itemVariants}
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-muted mb-6"
+            >
+              I build things that{" "}
+              <span className="text-gradient">hack, think, and automate</span>.
+            </motion.h2>
+
+            <motion.div
+              variants={itemVariants}
+              className="h-8 mb-8"
+            >
+              <div className="flex items-center gap-3 font-mono text-base sm:text-lg text-primary">
+                <Terminal className="w-5 h-5 flex-shrink-0" />
+                <motion.span
+                  key={textIndex}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.4 }}
+                  className="border-r-2 border-primary pr-1"
+                >
+                  {roles[textIndex]}
+                </motion.span>
+              </div>
+            </motion.div>
+
+            <motion.p
+              variants={itemVariants}
+              className="text-text-muted text-base sm:text-lg max-w-xl mb-10 leading-relaxed"
+            >
+              Software engineer focused on secure systems, full-stack development, and applied cybersecurity.
+              Building tools that bridge the gap between offensive security and modern web development.
+            </motion.p>
+
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-wrap gap-4"
+            >
+              <a
+                href="#projects"
+                className="group relative px-8 py-4 font-mono text-base font-semibold rounded-xl flex items-center gap-2.5 transition-all duration-300 bg-gradient-to-b from-primary/90 to-primary border border-primary/50 text-white shadow-[0_4px_15px_rgba(108,156,255,0.3),inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_25px_rgba(108,156,255,0.45),inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-2px_4px_rgba(0,0,0,0.2)] hover:translate-y-[-2px] active:translate-y-[1px] active:shadow-[0_2px_8px_rgba(108,156,255,0.2),inset_0_2px_4px_rgba(0,0,0,0.2)]"
+              >
+                <Code2 className="w-5 h-5" />
+                View My Work
+              </a>
+              <a
+                href="#contact"
+                className="group relative px-8 py-4 font-mono text-base rounded-xl flex items-center gap-2.5 transition-all duration-300 bg-white/5 backdrop-blur-md border border-white/15 text-white shadow-[0_4px_15px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-1px_0_rgba(255,255,255,0.05)] hover:bg-white/10 hover:border-white/25 hover:shadow-[0_6px_25px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.15),inset_0_-1px_0_rgba(255,255,255,0.08)] hover:translate-y-[-2px] active:translate-y-[1px] active:shadow-[0_2px_8px_rgba(0,0,0,0.15),inset_0_2px_4px_rgba(0,0,0,0.1)]"
+              >
+                <Shield className="w-5 h-5" />
+                Get In Touch
+              </a>
+              <Link
+                href="/resume"
+                className="group relative px-8 py-4 font-mono text-base rounded-xl flex items-center gap-2.5 transition-all duration-300 bg-accent/5 backdrop-blur-md border border-accent/20 text-accent shadow-[0_4px_15px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(168,148,255,0.1),inset_0_-1px_0_rgba(168,148,255,0.05)] hover:bg-accent/10 hover:border-accent/35 hover:shadow-[0_6px_25px_rgba(168,148,255,0.15),inset_0_1px_0_rgba(168,148,255,0.15),inset_0_-1px_0_rgba(168,148,255,0.08)] hover:translate-y-[-2px] active:translate-y-[1px] active:shadow-[0_2px_8px_rgba(0,0,0,0.15),inset_0_2px_4px_rgba(0,0,0,0.1)]"
+              >
+                <FileText className="w-5 h-5" />
+                Resume
+              </Link>
+            </motion.div>
+
+            <motion.div
+              variants={itemVariants}
+              className="mt-12 flex items-center gap-6 text-text-muted"
+            >
+              {[
+                { icon: <Cpu className="w-4 h-4 text-primary" />, text: `${stats.totalRepos} Repos` },
+                { icon: <Terminal className="w-4 h-4 text-primary" />, text: `${stats.totalCommits} Commits` },
+                { icon: <Shield className="w-4 h-4 text-primary" />, text: `${stats.linesOfCode} LOC` },
+              ].map((stat, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  {stat.icon}
+                  <span className="font-mono text-xs">{stat.text}</span>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
 
-          <motion.p
-            variants={itemVariants}
-            className="font-mono text-primary text-sm sm:text-base mb-4"
-          >
-            Hi, my name is
-          </motion.p>
-
-          <motion.h1
-            variants={itemVariants}
-            className="text-5xl sm:text-6xl md:text-8xl font-bold mb-4 tracking-tight"
-          >
-            <span className="text-white">Joe Munene.</span>
-          </motion.h1>
-
-          <motion.h2
-            variants={itemVariants}
-            className="text-2xl sm:text-3xl md:text-5xl font-bold text-white/50 mb-6"
-          >
-            I build things that{" "}
-            <span className="text-gradient">hack, think, and automate</span>.
-          </motion.h2>
-
+          {/* Right - Photo */}
           <motion.div
-            variants={itemVariants}
-            className="h-8 mb-8"
+            className="flex justify-center lg:justify-end"
+            initial={{ opacity: 0, scale: 0.85, x: 50 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
           >
-            <div className="flex items-center gap-3 font-mono text-base sm:text-lg text-primary">
-              <Terminal className="w-5 h-5 flex-shrink-0" />
-              <motion.span
-                key={textIndex}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.4 }}
-                className="border-r-2 border-primary pr-1"
-              >
-                {roles[textIndex]}
-              </motion.span>
+            <div className="relative group">
+              {/* Glow behind image */}
+              <div className="absolute -inset-3 bg-gradient-to-br from-primary/25 via-accent/15 to-primary/10 rounded-3xl blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-700" />
+
+              {/* Image container */}
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
+                <Image
+                  src="/joe-munene.jpg"
+                  alt="Joe Munene"
+                  width={420}
+                  height={520}
+                  className="object-cover w-[300px] h-[380px] sm:w-[360px] sm:h-[450px] lg:w-[420px] lg:h-[520px] grayscale-[15%] hover:grayscale-0 transition-all duration-700 scale-100 hover:scale-[1.03]"
+                  priority
+                />
+
+                {/* Subtle overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/50 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-primary/5 mix-blend-overlay" />
+              </div>
+
+              {/* Decorative corner brackets */}
+              <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-primary/40 rounded-tl-lg" />
+              <div className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-accent/30 rounded-tr-lg" />
+              <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-2 border-l-2 border-accent/30 rounded-bl-lg" />
+              <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-primary/40 rounded-br-lg" />
             </div>
           </motion.div>
-
-          <motion.p
-            variants={itemVariants}
-            className="text-white/60 text-base sm:text-lg max-w-xl mb-10 leading-relaxed"
-          >
-            Software engineer focused on secure systems, full-stack development, and applied cybersecurity.
-            Building tools that bridge the gap between offensive security and modern web development.
-          </motion.p>
-
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap gap-4"
-          >
-            <a
-              href="#projects"
-              className="group relative px-7 py-3.5 font-mono text-sm font-semibold rounded-xl flex items-center gap-2 transition-all duration-300 bg-gradient-to-b from-primary/90 to-primary border border-primary/50 text-white shadow-[0_4px_15px_rgba(108,156,255,0.3),inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_25px_rgba(108,156,255,0.45),inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-2px_4px_rgba(0,0,0,0.2)] hover:translate-y-[-1px] active:translate-y-[1px] active:shadow-[0_2px_8px_rgba(108,156,255,0.2),inset_0_2px_4px_rgba(0,0,0,0.2)]"
-            >
-              <Code2 className="w-4 h-4" />
-              View My Work
-            </a>
-            <a
-              href="#contact"
-              className="group relative px-7 py-3.5 font-mono text-sm rounded-xl flex items-center gap-2 transition-all duration-300 bg-white/5 backdrop-blur-md border border-white/15 text-white shadow-[0_4px_15px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-1px_0_rgba(255,255,255,0.05)] hover:bg-white/10 hover:border-white/25 hover:shadow-[0_6px_25px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.15),inset_0_-1px_0_rgba(255,255,255,0.08)] hover:translate-y-[-1px] active:translate-y-[1px] active:shadow-[0_2px_8px_rgba(0,0,0,0.15),inset_0_2px_4px_rgba(0,0,0,0.1)]"
-            >
-              <Shield className="w-4 h-4" />
-              Get In Touch
-            </a>
-            <Link
-              href="/resume"
-              className="group relative px-7 py-3.5 font-mono text-sm rounded-xl flex items-center gap-2 transition-all duration-300 bg-accent/5 backdrop-blur-md border border-accent/20 text-accent shadow-[0_4px_15px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(168,148,255,0.1),inset_0_-1px_0_rgba(168,148,255,0.05)] hover:bg-accent/10 hover:border-accent/35 hover:shadow-[0_6px_25px_rgba(168,148,255,0.15),inset_0_1px_0_rgba(168,148,255,0.15),inset_0_-1px_0_rgba(168,148,255,0.08)] hover:translate-y-[-1px] active:translate-y-[1px] active:shadow-[0_2px_8px_rgba(0,0,0,0.15),inset_0_2px_4px_rgba(0,0,0,0.1)]"
-            >
-              <FileText className="w-4 h-4" />
-              Resume
-            </Link>
-          </motion.div>
-
-          <motion.div
-            variants={itemVariants}
-            className="mt-12 flex items-center gap-6 text-white/50"
-          >
-            {[
-              { icon: <Cpu className="w-4 h-4 text-primary" />, text: `${stats.totalRepos} Repos` },
-              { icon: <Terminal className="w-4 h-4 text-primary" />, text: `${stats.totalCommits} Commits` },
-              { icon: <Shield className="w-4 h-4 text-primary" />, text: `${stats.linesOfCode} LOC` },
-            ].map((stat, i) => (
-              <div key={i} className="flex items-center gap-2">
-                {stat.icon}
-                <span className="font-mono text-xs">{stat.text}</span>
-              </div>
-            ))}
-          </motion.div>
-        </motion.div>
+        </div>
       </div>
 
       <motion.a
         href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 hover:text-primary transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-text-muted hover:text-primary transition-colors"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
