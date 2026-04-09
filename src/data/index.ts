@@ -306,6 +306,7 @@ export const blogPosts = [
     readTime: "5 min",
     tags: ["AI", "Cybersecurity", "PyTorch"],
     slug: "building-security-llm",
+    published: true,
   },
   {
     title: "Network Reconnaissance: Building a DNS Intelligence Tool",
@@ -314,6 +315,7 @@ export const blogPosts = [
     readTime: "7 min",
     tags: ["Cybersecurity", "DNS", "OSINT"],
     slug: "dns-intelligence-tool",
+    published: false,
   },
   {
     title: "From Port Scanning to Threat Detection: Lessons in Network Security",
@@ -322,6 +324,7 @@ export const blogPosts = [
     readTime: "6 min",
     tags: ["Network Security", "SOC", "Tools"],
     slug: "network-security-lessons",
+    published: false,
   },
 ]
 

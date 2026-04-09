@@ -1,12 +1,13 @@
 "use client"
 
+import Link from "next/link"
 import { blogPosts } from "@/data"
 import AnimatedSection from "./AnimatedSection"
-import { Clock } from "lucide-react"
+import { Clock, ArrowRight } from "lucide-react"
 
 export default function Blog() {
   return (
-    <section className="py-20 sm:py-28 relative">
+    <section id="blog" className="py-20 sm:py-28 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <p className="font-mono text-primary text-sm mb-2">Thoughts & Writing</p>
@@ -17,8 +18,8 @@ export default function Blog() {
         </AnimatedSection>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {blogPosts.map((post, i) => (
-            <AnimatedSection key={post.slug} delay={i * 0.1} direction="up">
+          {blogPosts.map((post, i) => {
+            const card = (
               <div className="group bg-bg-card border border-border-color rounded-xl p-6 hover:border-primary/40 transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-3 text-xs text-text-muted mb-4">
                   <span className="font-mono">{post.date}</span>
@@ -48,12 +49,30 @@ export default function Blog() {
                   ))}
                 </div>
 
-                <div className="flex items-center gap-1 text-text-muted/50 text-sm font-mono mt-auto">
-                  Coming soon
-                </div>
+                {post.published ? (
+                  <div className="flex items-center gap-1 text-primary text-sm font-mono group-hover:gap-2 transition-all mt-auto">
+                    Read more <ArrowRight className="w-4 h-4" />
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-1 text-text-muted/50 text-sm font-mono mt-auto">
+                    Coming soon
+                  </div>
+                )}
               </div>
-            </AnimatedSection>
-          ))}
+            )
+
+            return (
+              <AnimatedSection key={post.slug} delay={i * 0.1} direction="up">
+                {post.published ? (
+                  <Link href={`/blog/${post.slug}`} className="block h-full">
+                    {card}
+                  </Link>
+                ) : (
+                  card
+                )}
+              </AnimatedSection>
+            )
+          })}
         </div>
       </div>
     </section>
