@@ -146,21 +146,21 @@ export default function Hero() {
           >
             <a
               href="#projects"
-              className="group px-6 py-3 bg-primary text-white font-mono text-sm font-semibold rounded-lg hover:bg-primary-dark hover:shadow-[0_0_30px_rgba(108,156,255,0.25)] transition-all duration-300 flex items-center gap-2"
+              className="group relative px-7 py-3.5 font-mono text-sm font-semibold rounded-xl flex items-center gap-2 transition-all duration-300 bg-gradient-to-b from-primary/90 to-primary border border-primary/50 text-white shadow-[0_4px_15px_rgba(108,156,255,0.3),inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_25px_rgba(108,156,255,0.45),inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-2px_4px_rgba(0,0,0,0.2)] hover:translate-y-[-1px] active:translate-y-[1px] active:shadow-[0_2px_8px_rgba(108,156,255,0.2),inset_0_2px_4px_rgba(0,0,0,0.2)]"
             >
               <Code2 className="w-4 h-4" />
               View My Work
             </a>
             <a
               href="#contact"
-              className="px-6 py-3 border border-white/20 text-white font-mono text-sm rounded-lg hover:bg-white/10 hover:border-white/40 transition-all duration-300 flex items-center gap-2 backdrop-blur-sm"
+              className="group relative px-7 py-3.5 font-mono text-sm rounded-xl flex items-center gap-2 transition-all duration-300 bg-white/5 backdrop-blur-md border border-white/15 text-white shadow-[0_4px_15px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-1px_0_rgba(255,255,255,0.05)] hover:bg-white/10 hover:border-white/25 hover:shadow-[0_6px_25px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.15),inset_0_-1px_0_rgba(255,255,255,0.08)] hover:translate-y-[-1px] active:translate-y-[1px] active:shadow-[0_2px_8px_rgba(0,0,0,0.15),inset_0_2px_4px_rgba(0,0,0,0.1)]"
             >
               <Shield className="w-4 h-4" />
               Get In Touch
             </a>
             <Link
               href="/resume"
-              className="px-6 py-3 border border-accent/30 text-accent font-mono text-sm rounded-lg hover:bg-accent/10 hover:border-accent/60 transition-all duration-300 flex items-center gap-2 backdrop-blur-sm"
+              className="group relative px-7 py-3.5 font-mono text-sm rounded-xl flex items-center gap-2 transition-all duration-300 bg-accent/5 backdrop-blur-md border border-accent/20 text-accent shadow-[0_4px_15px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(168,148,255,0.1),inset_0_-1px_0_rgba(168,148,255,0.05)] hover:bg-accent/10 hover:border-accent/35 hover:shadow-[0_6px_25px_rgba(168,148,255,0.15),inset_0_1px_0_rgba(168,148,255,0.15),inset_0_-1px_0_rgba(168,148,255,0.08)] hover:translate-y-[-1px] active:translate-y-[1px] active:shadow-[0_2px_8px_rgba(0,0,0,0.15),inset_0_2px_4px_rgba(0,0,0,0.1)]"
             >
               <FileText className="w-4 h-4" />
               Resume
