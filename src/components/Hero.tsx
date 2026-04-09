@@ -46,174 +46,148 @@ export default function Hero() {
       id="home"
       className="min-h-screen flex items-center relative overflow-hidden"
     >
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/joe-munene.jpg"
+          alt="Joe Munene"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+        {/* Heavy cinematic overlay */}
+        <div className="absolute inset-0 bg-bg-dark/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg-dark via-bg-dark/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-transparent to-bg-dark/60" />
+      </div>
+
       {/* Grid overlay */}
-      <div className="absolute inset-0 grid-bg" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg-dark/50 to-bg-dark pointer-events-none" />
+      <div className="absolute inset-0 grid-bg opacity-40" />
 
       {/* Ambient glow orbs */}
       <motion.div
-        className="absolute top-1/4 left-1/6 w-72 h-72 bg-primary/6 rounded-full blur-[120px]"
+        className="absolute top-1/4 left-1/6 w-72 h-72 bg-primary/8 rounded-full blur-[120px]"
         animate={{ y: [-20, 20, -20], scale: [1, 1.1, 1] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-accent/4 rounded-full blur-[140px]"
+        className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[140px]"
         animate={{ y: [20, -20, 20], scale: [1.1, 1, 1.1] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
-      <motion.div
-        className="absolute top-2/3 left-1/2 w-64 h-64 bg-accent-warm/3 rounded-full blur-[100px]"
-        animate={{ x: [-15, 15, -15] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid lg:grid-cols-5 gap-12 items-center">
-          {/* Left content */}
-          <motion.div
-            className="lg:col-span-3"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.p
-              variants={itemVariants}
-              className="font-mono text-primary text-sm sm:text-base mb-4"
-            >
-              Hi, my name is
-            </motion.p>
-
-            <motion.h1
-              variants={itemVariants}
-              className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4"
-            >
-              <span className="text-white">Joe Munene.</span>
-            </motion.h1>
-
-            <motion.h2
-              variants={itemVariants}
-              className="text-2xl sm:text-3xl md:text-5xl font-bold text-text-muted mb-6"
-            >
-              I build things that{" "}
-              <span className="text-gradient">hack, think, and automate</span>.
-            </motion.h2>
-
-            <motion.div
-              variants={itemVariants}
-              className="h-8 mb-8"
-            >
-              <div className="flex items-center gap-3 font-mono text-base sm:text-lg text-primary">
-                <Terminal className="w-5 h-5 flex-shrink-0" />
-                <motion.span
-                  key={textIndex}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.4 }}
-                  className="border-r-2 border-primary pr-1"
-                >
-                  {roles[textIndex]}
-                </motion.span>
-              </div>
-            </motion.div>
-
-            <motion.p
-              variants={itemVariants}
-              className="text-text-muted text-base sm:text-lg max-w-xl mb-10 leading-relaxed"
-            >
-              Software engineer focused on secure systems, full-stack development, and applied cybersecurity.
-              Building tools that bridge the gap between offensive security and modern web development.
-            </motion.p>
-
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-wrap gap-4"
-            >
-              <a
-                href="#projects"
-                className="group px-6 py-3 bg-primary text-white font-mono text-sm font-semibold rounded-lg hover:bg-primary-dark hover:shadow-[0_0_30px_rgba(108,156,255,0.25)] transition-all duration-300 flex items-center gap-2"
-              >
-                <Code2 className="w-4 h-4" />
-                View My Work
-              </a>
-              <a
-                href="#contact"
-                className="px-6 py-3 border border-primary/40 text-primary font-mono text-sm rounded-lg hover:bg-primary/10 hover:border-primary/70 transition-all duration-300 flex items-center gap-2"
-              >
-                <Shield className="w-4 h-4" />
-                Get In Touch
-              </a>
-              <Link
-                href="/resume"
-                className="px-6 py-3 border border-accent/30 text-accent font-mono text-sm rounded-lg hover:bg-accent/10 hover:border-accent/60 transition-all duration-300 flex items-center gap-2"
-              >
-                <FileText className="w-4 h-4" />
-                Resume
-              </Link>
-            </motion.div>
-
-            <motion.div
-              variants={itemVariants}
-              className="mt-12 flex items-center gap-6 text-text-muted"
-            >
-              {[
-                { icon: <Cpu className="w-4 h-4 text-primary" />, text: `${stats.totalRepos} Repos` },
-                { icon: <Terminal className="w-4 h-4 text-primary" />, text: `${stats.totalCommits} Commits` },
-                { icon: <Shield className="w-4 h-4 text-primary" />, text: `${stats.linesOfCode} LOC` },
-              ].map((stat, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  {stat.icon}
-                  <span className="font-mono text-xs">{stat.text}</span>
-                </div>
-              ))}
-            </motion.div>
+        <motion.div
+          className="max-w-3xl"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Status badge */}
+          <motion.div variants={itemVariants} className="mb-8">
+            <span className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
+              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+              <span className="font-mono text-xs text-white/70">Available for work</span>
+            </span>
           </motion.div>
 
-          {/* Right - Photo */}
-          <motion.div
-            className="lg:col-span-2 flex justify-center lg:justify-end"
-            initial={{ opacity: 0, scale: 0.8, x: 40 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
+          <motion.p
+            variants={itemVariants}
+            className="font-mono text-primary text-sm sm:text-base mb-4"
           >
-            <div className="relative group">
-              {/* Glow ring */}
-              <div className="absolute -inset-1 bg-gradient-to-br from-primary/30 via-accent/20 to-accent-warm/20 rounded-2xl blur-lg opacity-50 group-hover:opacity-90 transition-opacity duration-500" />
+            Hi, my name is
+          </motion.p>
 
-              {/* Border frame */}
-              <div className="relative rounded-2xl border border-border-color overflow-hidden bg-bg-card">
-                <Image
-                  src="/joe-munene.jpg"
-                  alt="Joe Munene"
-                  width={360}
-                  height={450}
-                  className="object-cover w-[280px] h-[350px] sm:w-[320px] sm:h-[400px] lg:w-[360px] lg:h-[450px] grayscale-[20%] hover:grayscale-0 transition-all duration-500"
-                  priority
-                />
+          <motion.h1
+            variants={itemVariants}
+            className="text-5xl sm:text-6xl md:text-8xl font-bold mb-4 tracking-tight"
+          >
+            <span className="text-white">Joe Munene.</span>
+          </motion.h1>
 
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/60 via-transparent to-transparent" />
+          <motion.h2
+            variants={itemVariants}
+            className="text-2xl sm:text-3xl md:text-5xl font-bold text-white/50 mb-6"
+          >
+            I build things that{" "}
+            <span className="text-gradient">hack, think, and automate</span>.
+          </motion.h2>
 
-                {/* Status badge */}
-                <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-bg-dark/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/10">
-                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                  <span className="font-mono text-xs text-white/70">Available for work</span>
-                </div>
-              </div>
-
-              {/* Decorative corner brackets */}
-              <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-primary/30 rounded-tl" />
-              <div className="absolute -top-2 -right-2 w-6 h-6 border-t-2 border-r-2 border-accent/30 rounded-tr" />
-              <div className="absolute -bottom-2 -left-2 w-6 h-6 border-b-2 border-l-2 border-accent/30 rounded-bl" />
-              <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-primary/30 rounded-br" />
+          <motion.div
+            variants={itemVariants}
+            className="h-8 mb-8"
+          >
+            <div className="flex items-center gap-3 font-mono text-base sm:text-lg text-primary">
+              <Terminal className="w-5 h-5 flex-shrink-0" />
+              <motion.span
+                key={textIndex}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.4 }}
+                className="border-r-2 border-primary pr-1"
+              >
+                {roles[textIndex]}
+              </motion.span>
             </div>
           </motion.div>
-        </div>
+
+          <motion.p
+            variants={itemVariants}
+            className="text-white/60 text-base sm:text-lg max-w-xl mb-10 leading-relaxed"
+          >
+            Software engineer focused on secure systems, full-stack development, and applied cybersecurity.
+            Building tools that bridge the gap between offensive security and modern web development.
+          </motion.p>
+
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-wrap gap-4"
+          >
+            <a
+              href="#projects"
+              className="group px-6 py-3 bg-primary text-white font-mono text-sm font-semibold rounded-lg hover:bg-primary-dark hover:shadow-[0_0_30px_rgba(108,156,255,0.25)] transition-all duration-300 flex items-center gap-2"
+            >
+              <Code2 className="w-4 h-4" />
+              View My Work
+            </a>
+            <a
+              href="#contact"
+              className="px-6 py-3 border border-white/20 text-white font-mono text-sm rounded-lg hover:bg-white/10 hover:border-white/40 transition-all duration-300 flex items-center gap-2 backdrop-blur-sm"
+            >
+              <Shield className="w-4 h-4" />
+              Get In Touch
+            </a>
+            <Link
+              href="/resume"
+              className="px-6 py-3 border border-accent/30 text-accent font-mono text-sm rounded-lg hover:bg-accent/10 hover:border-accent/60 transition-all duration-300 flex items-center gap-2 backdrop-blur-sm"
+            >
+              <FileText className="w-4 h-4" />
+              Resume
+            </Link>
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="mt-12 flex items-center gap-6 text-white/50"
+          >
+            {[
+              { icon: <Cpu className="w-4 h-4 text-primary" />, text: `${stats.totalRepos} Repos` },
+              { icon: <Terminal className="w-4 h-4 text-primary" />, text: `${stats.totalCommits} Commits` },
+              { icon: <Shield className="w-4 h-4 text-primary" />, text: `${stats.linesOfCode} LOC` },
+            ].map((stat, i) => (
+              <div key={i} className="flex items-center gap-2">
+                {stat.icon}
+                <span className="font-mono text-xs">{stat.text}</span>
+              </div>
+            ))}
+          </motion.div>
+        </motion.div>
       </div>
 
       <motion.a
         href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-text-muted hover:text-primary transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 hover:text-primary transition-colors"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
