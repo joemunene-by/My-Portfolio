@@ -1,7 +1,7 @@
 export const projects = [
   {
     name: "GhostLM",
-    description: "An open-source cybersecurity-focused language model built from scratch in PyTorch. Decoder-only transformer trained on CVEs, CTF writeups, and security research.",
+    description: "An open-source cybersecurity-focused language model built from scratch in PyTorch. Decoder-only transformer trained 10K steps on CVEs, CTF writeups, and security research.",
     language: "Python",
     stars: 0,
     topics: ["cybersecurity", "deep-learning", "gpt", "llm", "pytorch", "transformers"],
@@ -257,7 +257,7 @@ export const timeline = [
     year: "2026",
     title: "Building GhostLM",
     subtitle: "Open-Source Security LLM",
-    description: "Developing a cybersecurity-focused language model from scratch using PyTorch. Training on CVEs, CTF writeups, and security research papers.",
+    description: "Completed Phase 1 training (10K steps) of a cybersecurity-focused language model built from scratch in PyTorch. Trained on CVEs, CTF writeups, and security research papers.",
     type: "project" as const,
   },
   {
@@ -285,13 +285,13 @@ export const timeline = [
 
 export const currentlyWorkingOn = {
   project: "GhostLM",
-  description: "An open-source cybersecurity-focused language model built from scratch in PyTorch. Training a decoder-only transformer on CVEs, CTF writeups, and security research to create a specialized security AI.",
-  progress: 80,
+  description: "An open-source cybersecurity-focused language model built from scratch in PyTorch. Completed Phase 1 training (10K steps) on CVEs, CTF writeups, and security research. Preparing for Phase 2 (100K steps).",
+  progress: 85,
   milestones: [
     { label: "Architecture Design", done: true },
     { label: "Data Pipeline", done: true },
     { label: "Tokenizer Training", done: true },
-    { label: "Model Training (Phase 1)", done: false },
+    { label: "Model Training (Phase 1)", done: true },
     { label: "Fine-tuning", done: false },
     { label: "Evaluation & Release", done: false },
   ],

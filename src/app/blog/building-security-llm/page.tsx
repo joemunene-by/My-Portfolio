@@ -141,7 +141,7 @@ export default function BuildingSecurityLLM() {
           <h2 className="text-2xl font-bold text-white mt-12 mb-4">Where Things Stand</h2>
 
           <p>
-            As I write this, GhostLM is at step 8,000 out of a 10,000-step first phase, training on CPU. The loss curves are healthy — training loss has dropped from ~4.5 to ~2.25, and validation loss is trending down at ~2.75.
+            GhostLM has completed its 10,000-step Phase 1 training on CPU. The loss curves looked healthy throughout — training loss dropped from ~4.5 to ~2.25, and validation loss trended down to ~2.75. Phase 2 (100K steps on Mac Mini M4) is up next.
           </p>
 
           <p>
