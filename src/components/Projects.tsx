@@ -4,6 +4,9 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { projects } from "@/data"
 import AnimatedSection from "./AnimatedSection"
+import TiltCard from "./TiltCard"
+import RevealText from "./RevealText"
+import GiantLabel from "./GiantLabel"
 import { ExternalLink, Github, Star, Folder, ArrowUpRight } from "lucide-react"
 
 const categories = [
@@ -34,15 +37,17 @@ export default function Projects() {
   const others = filtered.filter((p) => !p.featured)
 
   return (
-    <section id="projects" className="py-20 sm:py-32 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-20 sm:py-32 relative overflow-hidden">
+      <GiantLabel text="WORK" align="right" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <AnimatedSection>
           <div className="mb-12">
-            <p className="font-mono text-primary text-sm mb-2">03. My Work</p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              <span className="text-white">Featured Projects</span>
-              <span className="text-border-color ml-2">/</span>
-            </h2>
+            <p className="font-mono text-primary text-sm mb-2">04. My Work</p>
+            <RevealText
+              as="h2"
+              text="Featured Projects"
+              className="text-3xl sm:text-4xl font-bold mb-6 text-white"
+            />
             <p className="text-text-muted max-w-2xl">
               A curated selection of projects spanning cybersecurity, AI, web
               development, and automation tools. Each project reflects real-world
@@ -82,8 +87,12 @@ export default function Projects() {
               <div className="space-y-6 mb-12">
                 {featured.map((project, i) => (
                   <AnimatedSection key={project.name} delay={i * 0.08}>
-                    <div className="group bg-bg-card border border-border-color rounded-xl p-6 sm:p-8 hover:border-primary/50 transition-all duration-300 glow-box-hover">
-                      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                    <TiltCard max={4} className="group bg-bg-card border border-border-color rounded-xl p-6 sm:p-8 hover:border-primary/50 transition-all duration-300 glow-box-hover">
+                      <div
+                        data-project-preview={project.name}
+                        data-project-lang={project.language ?? ""}
+                        className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6"
+                      >
                         <div className="flex-1">
                           <div className="flex items-center gap-3 mb-3">
                             <Folder className="w-5 h-5 text-primary" />
@@ -152,11 +161,12 @@ export default function Projects() {
                           </a>
                         </div>
                       </div>
-                    </div>
+                    </TiltCard>
                   </AnimatedSection>
                 ))}
               </div>
             )}
+
 
             {/* Other projects grid */}
             {others.length > 0 && (
@@ -174,8 +184,12 @@ export default function Projects() {
                       delay={i * 0.06}
                       direction="up"
                     >
-                      <div className="group bg-bg-card border border-border-color rounded-xl p-6 hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                        <div className="flex items-start justify-between mb-4">
+                      <TiltCard max={6} className="group bg-bg-card border border-border-color rounded-xl p-6 hover:border-primary/50 transition-all duration-300 h-full flex flex-col">
+                        <div
+                          data-project-preview={project.name}
+                          data-project-lang={project.language ?? ""}
+                          className="flex items-start justify-between mb-4"
+                        >
                           <Folder className="w-8 h-8 text-primary" />
                           <div className="flex items-center gap-2">
                             {project.homepage && (
@@ -225,7 +239,7 @@ export default function Projects() {
                             </div>
                           )}
                         </div>
-                      </div>
+                      </TiltCard>
                     </AnimatedSection>
                   ))}
                 </div>

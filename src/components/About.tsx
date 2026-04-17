@@ -4,6 +4,9 @@ import { skills } from "@/data"
 import { useGitHubStats } from "@/hooks/useGitHubStats"
 import AnimatedSection from "./AnimatedSection"
 import CountUp from "./CountUp"
+import RevealText from "./RevealText"
+import TiltCard from "./TiltCard"
+import GiantLabel from "./GiantLabel"
 import { Github, Code, CheckCircle, FileCode, BookOpen, Shield, Star } from "lucide-react"
 
 export default function About() {
@@ -45,15 +48,17 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="py-20 sm:py-32 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 sm:py-32 relative overflow-hidden">
+      <GiantLabel text="ABOUT" align="right" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section header */}
         <AnimatedSection>
           <p className="font-mono text-primary text-sm mb-2">01. About Me</p>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            <span className="text-white">Who am I?</span>
-            <span className="text-border-color ml-2">/</span>
-          </h2>
+          <RevealText
+            as="h2"
+            text="Who am I?"
+            className="text-3xl sm:text-4xl font-bold mb-6 text-white"
+          />
         </AnimatedSection>
 
         {/* Bio */}
@@ -83,7 +88,7 @@ export default function About() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
           {statCards.map((stat, i) => (
             <AnimatedSection key={i} delay={i * 0.1} direction="up">
-              <div className="bg-bg-card border border-border-color rounded-xl p-6 hover:border-primary/50 transition-all duration-300 group glow-box-hover h-full">
+              <TiltCard max={8} className="bg-bg-card border border-border-color rounded-xl p-6 hover:border-primary/50 transition-all duration-300 group glow-box-hover h-full">
                 <div className="text-primary mb-3 group-hover:scale-110 transition-transform duration-300">
                   {stat.icon}
                 </div>
@@ -95,7 +100,7 @@ export default function About() {
                   )}
                 </div>
                 <div className="text-text-muted text-sm mt-1">{stat.label}</div>
-              </div>
+              </TiltCard>
             </AnimatedSection>
           ))}
         </div>
@@ -103,16 +108,18 @@ export default function About() {
         {/* Skills */}
         <AnimatedSection>
           <div id="skills">
-            <p className="font-mono text-primary text-sm mb-2">02. Skills & Expertise</p>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-10">
-              Technical Arsenal
-              <span className="text-border-color ml-2">/</span>
-            </h3>
+            <p className="font-mono text-primary text-sm mb-2">/ Skills & Expertise</p>
+            <RevealText
+              as="h3"
+              text="Technical Arsenal"
+              className="text-2xl sm:text-3xl font-bold text-white mb-10"
+            />
+
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {skillCategories.map((cat, i) => (
                 <AnimatedSection key={cat.title} delay={i * 0.08} direction="up">
-                  <div className="bg-bg-card border border-border-color rounded-xl p-6 hover:border-primary/50 transition-all duration-300 h-full group">
+                  <TiltCard max={6} className="bg-bg-card border border-border-color rounded-xl p-6 hover:border-primary/50 transition-all duration-300 h-full group">
                     <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
                       {cat.icon} {cat.title}
                     </h4>
@@ -126,7 +133,7 @@ export default function About() {
                         </span>
                       ))}
                     </div>
-                  </div>
+                  </TiltCard>
                 </AnimatedSection>
               ))}
             </div>

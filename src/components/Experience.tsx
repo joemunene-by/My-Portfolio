@@ -2,6 +2,9 @@
 
 import { timeline } from "@/data"
 import AnimatedSection from "./AnimatedSection"
+import RevealText from "./RevealText"
+import TiltCard from "./TiltCard"
+import GiantLabel from "./GiantLabel"
 import { Briefcase, GraduationCap, Rocket } from "lucide-react"
 
 const typeConfig = {
@@ -12,14 +15,16 @@ const typeConfig = {
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 sm:py-32 relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-20 sm:py-32 relative overflow-hidden">
+      <GiantLabel text="JOURNEY" align="left" />
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <AnimatedSection>
-          <p className="font-mono text-primary text-sm mb-2">03. Experience</p>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-16">
-            <span className="text-white">My Journey</span>
-            <span className="text-border-color ml-2">/</span>
-          </h2>
+          <p className="font-mono text-primary text-sm mb-2">02. Experience</p>
+          <RevealText
+            as="h2"
+            text="My Journey"
+            className="text-3xl sm:text-4xl font-bold mb-16 text-white"
+          />
         </AnimatedSection>
 
         <div className="relative">
@@ -42,12 +47,12 @@ export default function Experience() {
                     </div>
 
                     {/* Content */}
-                    <div className="flex-1 pb-2">
+                    <TiltCard max={3} glare={false} className="flex-1 pb-2 rounded-xl">
                       <span className={`font-mono text-xs ${config.color} mb-1 block`}>{item.year}</span>
                       <h3 className="text-lg sm:text-xl font-bold text-white mb-1">{item.title}</h3>
                       <p className="text-sm text-text-muted/70 font-medium mb-3">{item.subtitle}</p>
                       <p className="text-text-muted text-sm leading-relaxed">{item.description}</p>
-                    </div>
+                    </TiltCard>
                   </div>
                 </AnimatedSection>
               )

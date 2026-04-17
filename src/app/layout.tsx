@@ -1,6 +1,12 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import CustomCursor from "@/components/CustomCursor"
+import ScrollProgress from "@/components/ScrollProgress"
+import CommandPalette from "@/components/CommandPalette"
+import CommandHint from "@/components/CommandHint"
+import SectionIndicator from "@/components/SectionIndicator"
+import ProjectPreviewCursor from "@/components/ProjectPreviewCursor"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,7 +34,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        <ScrollProgress />
+        <CustomCursor />
+        <CommandPalette />
+        <CommandHint />
+        <SectionIndicator />
+        <ProjectPreviewCursor />
+        <div aria-hidden className="noise-overlay" />
+        {children}
+      </body>
     </html>
   )
 }

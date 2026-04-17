@@ -6,6 +6,10 @@ import Link from "next/link"
 import { ChevronDown, Terminal, Shield, Code2, Cpu, FileText } from "lucide-react"
 import { useGitHubStats } from "@/hooks/useGitHubStats"
 import Image from "next/image"
+import MagneticLink from "./MagneticLink"
+import RevealText from "./RevealText"
+import HeroSpotlight from "./HeroSpotlight"
+import ScrambleText from "./ScrambleText"
 
 export default function Hero() {
   const { stats } = useGitHubStats()
@@ -48,6 +52,7 @@ export default function Hero() {
     >
       {/* Grid overlay */}
       <div className="absolute inset-0 grid-bg" />
+      <HeroSpotlight />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg-dark/50 to-bg-dark pointer-events-none" />
 
       {/* Ambient glow orbs */}
@@ -85,12 +90,13 @@ export default function Hero() {
               Hi, my name is
             </motion.p>
 
-            <motion.h1
-              variants={itemVariants}
-              className="text-5xl sm:text-6xl md:text-7xl font-bold mb-4 tracking-tight"
-            >
-              <span className="text-white">Joe Munene.</span>
-            </motion.h1>
+            <motion.div variants={itemVariants}>
+              <ScrambleText
+                as="h1"
+                text="Joe Munene."
+                className="block text-5xl sm:text-6xl md:text-7xl font-bold mb-4 tracking-tight text-white cursor-pointer"
+              />
+            </motion.div>
 
             <motion.h2
               variants={itemVariants}
@@ -131,27 +137,33 @@ export default function Hero() {
               variants={itemVariants}
               className="flex flex-wrap gap-4"
             >
-              <a
-                href="#projects"
-                className="group relative px-8 py-4 font-mono text-base font-semibold rounded-xl flex items-center gap-2.5 transition-all duration-300 bg-gradient-to-b from-primary/90 to-primary border border-primary/50 text-white shadow-[0_4px_15px_rgba(108,156,255,0.3),inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_25px_rgba(108,156,255,0.45),inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-2px_4px_rgba(0,0,0,0.2)] hover:translate-y-[-2px] active:translate-y-[1px] active:shadow-[0_2px_8px_rgba(108,156,255,0.2),inset_0_2px_4px_rgba(0,0,0,0.2)]"
-              >
-                <Code2 className="w-5 h-5" />
-                View My Work
-              </a>
-              <a
-                href="#contact"
-                className="group relative px-8 py-4 font-mono text-base rounded-xl flex items-center gap-2.5 transition-all duration-300 bg-white/5 backdrop-blur-md border border-white/15 text-white shadow-[0_4px_15px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-1px_0_rgba(255,255,255,0.05)] hover:bg-white/10 hover:border-white/25 hover:shadow-[0_6px_25px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.15),inset_0_-1px_0_rgba(255,255,255,0.08)] hover:translate-y-[-2px] active:translate-y-[1px] active:shadow-[0_2px_8px_rgba(0,0,0,0.15),inset_0_2px_4px_rgba(0,0,0,0.1)]"
-              >
-                <Shield className="w-5 h-5" />
-                Get In Touch
-              </a>
-              <Link
-                href="/resume"
-                className="group relative px-8 py-4 font-mono text-base rounded-xl flex items-center gap-2.5 transition-all duration-300 bg-accent/5 backdrop-blur-md border border-accent/20 text-accent shadow-[0_4px_15px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(168,148,255,0.1),inset_0_-1px_0_rgba(168,148,255,0.05)] hover:bg-accent/10 hover:border-accent/35 hover:shadow-[0_6px_25px_rgba(168,148,255,0.15),inset_0_1px_0_rgba(168,148,255,0.15),inset_0_-1px_0_rgba(168,148,255,0.08)] hover:translate-y-[-2px] active:translate-y-[1px] active:shadow-[0_2px_8px_rgba(0,0,0,0.15),inset_0_2px_4px_rgba(0,0,0,0.1)]"
-              >
-                <FileText className="w-5 h-5" />
-                Resume
-              </Link>
+              <MagneticLink>
+                <a
+                  href="#projects"
+                  className="group relative px-8 py-4 font-mono text-base font-semibold rounded-xl flex items-center gap-2.5 transition-all duration-300 bg-gradient-to-b from-primary/90 to-primary border border-primary/50 text-white shadow-[0_4px_15px_rgba(108,156,255,0.3),inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_25px_rgba(108,156,255,0.45),inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-2px_4px_rgba(0,0,0,0.2)] active:translate-y-[1px]"
+                >
+                  <Code2 className="w-5 h-5" />
+                  View My Work
+                </a>
+              </MagneticLink>
+              <MagneticLink>
+                <a
+                  href="#contact"
+                  className="group relative px-8 py-4 font-mono text-base rounded-xl flex items-center gap-2.5 transition-all duration-300 bg-white/5 backdrop-blur-md border border-white/15 text-white shadow-[0_4px_15px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-1px_0_rgba(255,255,255,0.05)] hover:bg-white/10 hover:border-white/25 hover:shadow-[0_6px_25px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.15),inset_0_-1px_0_rgba(255,255,255,0.08)]"
+                >
+                  <Shield className="w-5 h-5" />
+                  Get In Touch
+                </a>
+              </MagneticLink>
+              <MagneticLink>
+                <Link
+                  href="/resume"
+                  className="group relative px-8 py-4 font-mono text-base rounded-xl flex items-center gap-2.5 transition-all duration-300 bg-accent/5 backdrop-blur-md border border-accent/20 text-accent shadow-[0_4px_15px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(168,148,255,0.1),inset_0_-1px_0_rgba(168,148,255,0.05)] hover:bg-accent/10 hover:border-accent/35 hover:shadow-[0_6px_25px_rgba(168,148,255,0.15),inset_0_1px_0_rgba(168,148,255,0.15),inset_0_-1px_0_rgba(168,148,255,0.08)]"
+                >
+                  <FileText className="w-5 h-5" />
+                  Resume
+                </Link>
+              </MagneticLink>
             </motion.div>
 
             <motion.div

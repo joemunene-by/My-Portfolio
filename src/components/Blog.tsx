@@ -3,6 +3,8 @@
 import Link from "next/link"
 import { blogPosts } from "@/data"
 import AnimatedSection from "./AnimatedSection"
+import RevealText from "./RevealText"
+import TiltCard from "./TiltCard"
 import { Clock, ArrowRight } from "lucide-react"
 
 export default function Blog() {
@@ -10,17 +12,18 @@ export default function Blog() {
     <section id="blog" className="py-20 sm:py-28 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
-          <p className="font-mono text-primary text-sm mb-2">Thoughts & Writing</p>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-12">
-            <span className="text-white">Recent Posts</span>
-            <span className="text-border-color ml-2">/</span>
-          </h2>
+          <p className="font-mono text-primary text-sm mb-2">05. Thoughts & Writing</p>
+          <RevealText
+            as="h2"
+            text="Recent Posts"
+            className="text-3xl sm:text-4xl font-bold mb-12 text-white"
+          />
         </AnimatedSection>
 
         <div className="grid md:grid-cols-3 gap-6">
           {blogPosts.map((post, i) => {
             const card = (
-              <div className="group bg-bg-card border border-border-color rounded-xl p-6 hover:border-primary/40 transition-all duration-300 h-full flex flex-col">
+              <TiltCard max={6} className="group bg-bg-card border border-border-color rounded-xl p-6 hover:border-primary/40 transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-3 text-xs text-text-muted mb-4">
                   <span className="font-mono">{post.date}</span>
                   <span className="text-border-color">|</span>
@@ -58,7 +61,7 @@ export default function Blog() {
                     Coming soon
                   </div>
                 )}
-              </div>
+              </TiltCard>
             )
 
             return (

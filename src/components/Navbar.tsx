@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Ghost } from "lucide-react"
 import { navLinks } from "@/data"
+import NavLink from "./NavLink"
+import MagneticLink from "./MagneticLink"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -35,28 +37,33 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link, i) => (
-              <motion.a
+              <motion.div
                 key={link.name}
-                href={link.href}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * i + 0.3 }}
-                className="font-mono text-sm text-text-muted hover:text-primary transition-colors duration-200"
               >
-                <span className="text-primary">0{i + 1}.</span> {link.name}
-              </motion.a>
+                <NavLink href={link.href} index={i}>
+                  {link.name}
+                </NavLink>
+              </motion.div>
             ))}
-            <motion.a
+            <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              href="https://github.com/joemunene-by"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 border border-primary/40 text-primary font-mono text-sm rounded-lg hover:bg-primary/10 hover:border-primary/70 transition-all duration-300"
             >
-              GitHub
-            </motion.a>
+              <MagneticLink>
+                <a
+                  href="https://github.com/joemunene-by"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 border border-primary/40 text-primary font-mono text-sm rounded-lg hover:bg-primary/10 hover:border-primary/70 transition-all duration-300"
+                >
+                  GitHub
+                </a>
+              </MagneticLink>
+            </motion.div>
           </div>
 
           <button
