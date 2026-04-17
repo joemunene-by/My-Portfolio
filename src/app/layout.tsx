@@ -13,6 +13,9 @@ import PageTransition from "@/components/PageTransition"
 import ShaderBackground from "@/components/ShaderBackground"
 import ShortcutCheatsheet from "@/components/ShortcutCheatsheet"
 import HackerMode from "@/components/HackerMode"
+import CursorTrail from "@/components/CursorTrail"
+import AskGhost from "@/components/AskGhost"
+import Achievements from "@/components/Achievements"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -42,6 +45,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body className="font-sans">
         <ShaderBackground />
+        <CursorTrail />
         <ScrollProgress />
         <CustomCursor />
         <CommandPalette />
@@ -52,6 +56,8 @@ export default function RootLayout({
         <ProjectPreviewCursor />
         <ProjectModal />
         <AccentPicker />
+        <AskGhost />
+        <Achievements />
         <div aria-hidden className="noise-overlay" />
         <PageTransition>{children}</PageTransition>
       </body>

@@ -143,6 +143,23 @@ export default function ProjectConstellation() {
     return () => window.removeEventListener("keydown", onKey)
   }, [])
 
+  useEffect(() => {
+    if (!svgRef.current) return
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          window.dispatchEvent(
+            new CustomEvent("achievement", { detail: "constellation" }),
+          )
+          io.disconnect()
+        }
+      },
+      { threshold: 0.4 },
+    )
+    io.observe(svgRef.current)
+    return () => io.disconnect()
+  }, [])
+
   return (
     <section id="constellation" className="py-20 sm:py-28 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

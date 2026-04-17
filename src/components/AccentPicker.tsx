@@ -91,6 +91,7 @@ export default function AccentPicker() {
     applyTheme(t)
     setActive(t.id)
     localStorage.setItem(STORAGE_KEY, t.id)
+    window.dispatchEvent(new CustomEvent("achievement", { detail: "palette" }))
   }
 
   return (

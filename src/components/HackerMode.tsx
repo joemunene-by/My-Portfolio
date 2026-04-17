@@ -54,6 +54,7 @@ export default function HackerMode() {
     root.style.setProperty("--accent", "0 255 210")
     root.style.setProperty("--accent-warm", "120 255 210")
     setActive(true)
+    window.dispatchEvent(new CustomEvent("achievement", { detail: "konami" }))
     setTimeout(restore, DURATION_MS)
   }
 

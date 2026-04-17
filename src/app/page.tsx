@@ -14,6 +14,7 @@ import Marquee from "@/components/Marquee"
 import HorizontalShowcase from "@/components/HorizontalShowcase"
 import StatsStrip from "@/components/StatsStrip"
 import ProjectConstellation from "@/components/ProjectConstellation"
+import CodeShowcase from "@/components/CodeShowcase"
 import { projects } from "@/data"
 
 const accents = [
@@ -60,6 +61,7 @@ export default function Home() {
         <Experience />
         <CurrentlyWorkingOn />
         <HorizontalShowcase items={highlightItems} />
+        <CodeShowcase />
         <Projects />
         <ProjectConstellation />
         <GitHubGraph />
