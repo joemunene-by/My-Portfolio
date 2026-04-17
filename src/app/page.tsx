@@ -12,7 +12,8 @@ import Loader from "@/components/Loader"
 import TerminalEasterEgg from "@/components/TerminalEasterEgg"
 import Marquee from "@/components/Marquee"
 import HorizontalShowcase from "@/components/HorizontalShowcase"
-import { projects } from "@/data"
+import StatsStrip from "@/components/StatsStrip"
+import { projects, stats as siteStats } from "@/data"
 
 const accents = [
   "bg-gradient-to-br from-primary/40 via-accent/30 to-accent-warm/20",
@@ -54,6 +55,14 @@ export default function Home() {
           ]}
         />
         <About />
+        <StatsStrip
+          stats={[
+            { value: String(siteStats.totalRepos), label: "Public Repos" },
+            { value: `${siteStats.totalCommits}+`, label: "Total Commits" },
+            { value: siteStats.linesOfCode, label: "Lines of Code" },
+            { value: `${siteStats.languages.length}`, label: "Languages" },
+          ]}
+        />
         <Experience />
         <CurrentlyWorkingOn />
         <HorizontalShowcase items={highlightItems} />

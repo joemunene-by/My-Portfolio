@@ -7,6 +7,7 @@ import CountUp from "./CountUp"
 import RevealText from "./RevealText"
 import TiltCard from "./TiltCard"
 import GiantLabel from "./GiantLabel"
+import SkillsRadar from "./SkillsRadar"
 import { Github, Code, CheckCircle, FileCode, BookOpen, Shield, Star } from "lucide-react"
 
 export default function About() {
@@ -114,6 +115,19 @@ export default function About() {
               text="Technical Arsenal"
               className="text-2xl sm:text-3xl font-bold text-white mb-10"
             />
+
+            <div className="mb-12">
+              <SkillsRadar
+                axes={[
+                  { label: "Frontend", value: 0.9 },
+                  { label: "Backend", value: 0.82 },
+                  { label: "Cybersec", value: 0.88 },
+                  { label: "AI / ML", value: 0.78 },
+                  { label: "DevOps", value: 0.7 },
+                  { label: "Systems", value: 0.75 },
+                ]}
+              />
+            </div>
 
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

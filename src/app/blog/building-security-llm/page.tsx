@@ -2,10 +2,12 @@
 
 import Link from "next/link"
 import { ArrowLeft, Clock, Calendar } from "lucide-react"
+import ReadingProgress from "@/components/ReadingProgress"
 
 export default function BuildingSecurityLLM() {
   return (
     <div className="min-h-screen bg-bg-dark">
+      <ReadingProgress />
       {/* Nav bar */}
       <div className="sticky top-0 z-50 bg-bg-dark/90 backdrop-blur-xl border-b border-border-color">
         <div className="max-w-3xl mx-auto px-6 py-4">

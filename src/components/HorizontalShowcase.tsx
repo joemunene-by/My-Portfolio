@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion"
 import { ArrowUpRight, ExternalLink, Github, Sparkles } from "lucide-react"
 import RevealText from "./RevealText"
@@ -41,21 +41,50 @@ const langColors: Record<string, string> = {
 }
 
 export default function HorizontalShowcase({ items }: Props) {
-  const ref = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
+  const trackRef = useRef<HTMLDivElement>(null)
+
+  // Measure the horizontal track + viewport so the section height can
+  // match exactly the pan distance. This keeps the sticky period aligned
+  // with the amount of horizontal travel, so no empty scroll tail.
+  const [pan, setPan] = useState(0)
+  const [viewportH, setViewportH] = useState(0)
+
+  useEffect(() => {
+    const measure = () => {
+      if (!trackRef.current) return
+      const contentW = trackRef.current.scrollWidth
+      const viewW = window.innerWidth
+      setPan(Math.max(0, contentW - viewW))
+      setViewportH(window.innerHeight)
+    }
+    measure()
+    window.addEventListener("resize", measure)
+    const ro = new ResizeObserver(measure)
+    if (trackRef.current) ro.observe(trackRef.current)
+    return () => {
+      window.removeEventListener("resize", measure)
+      ro.disconnect()
+    }
+  }, [items.length])
+
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: sectionRef,
     offset: ["start start", "end end"],
   })
 
-  const width = items.length * 100
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${width - 100}%`])
+  const x = useTransform(scrollYProgress, [0, 1], [0, -pan])
+
+  // Section height = one viewport (for the sticky pin) + the pan distance
+  // so scrolling that tall section maps 1:1 to horizontal travel.
+  const sectionHeight = viewportH ? viewportH + pan : undefined
 
   return (
     <section
       id="highlights"
-      ref={ref}
+      ref={sectionRef}
       className="relative"
-      style={{ height: `${items.length * 100}vh` }}
+      style={{ height: sectionHeight }}
     >
       <div className="sticky top-0 h-screen flex flex-col overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20 sm:pt-28 pb-6 shrink-0">
@@ -85,15 +114,21 @@ export default function HorizontalShowcase({ items }: Props) {
 
         <div className="relative flex-1 flex items-center overflow-hidden">
           <motion.div
+            ref={trackRef}
             style={{ x }}
-            className="flex gap-6 sm:gap-8 pl-4 sm:pl-6 lg:pl-8 will-change-transform"
+            className="flex gap-6 sm:gap-8 pl-4 sm:pl-6 lg:pl-8 pr-[10vw] will-change-transform"
           >
-            {items.map((item, i) => (
+            {items.map((item) => (
               <article
                 key={item.name}
-                className="relative h-[60vh] sm:h-[65vh] w-[85vw] sm:w-[70vw] lg:w-[60vw] shrink-0 rounded-3xl overflow-hidden border border-border-color bg-bg-card group"
+                className="relative h-[60vh] sm:h-[65vh] w-[85vw] sm:w-[70vw] lg:w-[60vw] shrink-0 rounded-3xl overflow-hidden border border-border-color bg-bg-card group cursor-pointer"
                 data-project-preview={item.name}
                 data-project-lang={item.language ?? ""}
+                onClick={() =>
+                  window.dispatchEvent(
+                    new CustomEvent("project:open", { detail: item.name }),
+                  )
+                }
               >
                 <div
                   className={`absolute inset-0 opacity-40 transition-opacity duration-500 group-hover:opacity-60 ${item.accent}`}
@@ -106,7 +141,10 @@ export default function HorizontalShowcase({ items }: Props) {
                     <span className="font-mono text-xs text-white/60 uppercase tracking-widest">
                       {item.index} / {String(items.length).padStart(2, "0")}
                     </span>
-                    <div className="flex items-center gap-2">
+                    <div
+                      className="flex items-center gap-2"
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       {item.homepage && (
                         <a
                           href={item.homepage}
@@ -159,22 +197,15 @@ export default function HorizontalShowcase({ items }: Props) {
                           {item.language}
                         </span>
                       )}
-                      <a
-                        href={item.homepage || item.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 font-mono text-xs text-white hover:text-primary transition-colors"
-                      >
-                        Explore
+                      <span className="inline-flex items-center gap-1 font-mono text-xs text-white/80">
+                        View details
                         <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                      </a>
+                      </span>
                     </div>
                   </div>
                 </div>
               </article>
             ))}
-
-            <div className="w-[10vw] shrink-0" aria-hidden />
           </motion.div>
         </div>
 

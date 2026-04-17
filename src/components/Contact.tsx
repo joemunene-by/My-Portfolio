@@ -5,6 +5,7 @@ import AnimatedSection from "./AnimatedSection"
 import RevealText from "./RevealText"
 import MagneticLink from "./MagneticLink"
 import LiveClock from "./LiveClock"
+import ContactForm from "./ContactForm"
 import { Github, Mail, Terminal } from "lucide-react"
 
 export default function Contact() {
@@ -26,17 +27,7 @@ export default function Contact() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <MagneticLink>
-            <motion.a
-              href="mailto:joemunene984@gmail.com"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-bg-dark font-mono font-semibold rounded-lg transition-all duration-300 glow-box"
-              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(108,156,255,0.35)" }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Mail className="w-5 h-5" />
-              Say Hello
-            </motion.a>
-          </MagneticLink>
+          <ContactForm />
         </AnimatedSection>
 
         <AnimatedSection delay={0.3}>
