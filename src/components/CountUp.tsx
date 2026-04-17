@@ -5,10 +5,16 @@ import { useInView } from "framer-motion"
 
 interface Props {
   end: number | string
+  /**
+   * Duration in seconds (legacy) or milliseconds — values >= 50 are
+   * treated as milliseconds.
+   */
   duration?: number
   suffix?: string
   prefix?: string
   className?: string
+  /** Optional custom formatter for the animated value. */
+  display?: (value: number) => string
 }
 
 export default function CountUp({
@@ -17,6 +23,7 @@ export default function CountUp({
   suffix = "",
   prefix = "",
   className = "",
+  display,
 }: Props) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
@@ -28,8 +35,9 @@ export default function CountUp({
   useEffect(() => {
     if (!isInView || !numericEnd) return
 
+    const durationSec = duration >= 50 ? duration / 1000 : duration
     let start = 0
-    const step = Math.ceil(numericEnd / (duration * 60))
+    const step = Math.max(1, Math.ceil(numericEnd / (durationSec * 60)))
     const timer = setInterval(() => {
       start += step
       if (start >= numericEnd) {
@@ -43,15 +51,16 @@ export default function CountUp({
     return () => clearInterval(timer)
   }, [isInView, numericEnd, duration])
 
-  const display =
-    typeof end === "string" && end.includes("K")
+  const formatted = display
+    ? display(count)
+    : typeof end === "string" && end.includes("K")
       ? `${Math.round(count / 1000)}K+`
       : count.toLocaleString()
 
   return (
     <span ref={ref} className={className}>
       {prefix}
-      {display}
+      {formatted}
       {suffix}
     </span>
   )

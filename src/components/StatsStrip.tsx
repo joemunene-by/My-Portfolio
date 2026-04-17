@@ -2,18 +2,13 @@
 
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
+import { useGitHubStats } from "@/hooks/useGitHubStats"
+import CountUp from "./CountUp"
 
-interface Stat {
-  value: string
-  label: string
-}
-
-interface Props {
-  stats: Stat[]
-}
-
-export default function StatsStrip({ stats }: Props) {
+export default function StatsStrip() {
   const ref = useRef<HTMLDivElement>(null)
+  const { stats } = useGitHubStats()
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
@@ -21,6 +16,18 @@ export default function StatsStrip({ stats }: Props) {
 
   const xLeft = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"])
   const xRight = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"])
+
+  const items: { value: number; display?: (n: number) => string; label: string }[] = [
+    { value: stats.totalRepos, label: "Public Repos" },
+    { value: stats.totalCommits, display: (n) => `${n}+`, label: "Total Commits" },
+    {
+      value: Number(String(stats.linesOfCode).replace(/[^\d]/g, "")) || 0,
+      display: (n) =>
+        n >= 1000 ? `${(n / 1000).toFixed(n >= 10000 ? 0 : 1)}K+` : `${n}`,
+      label: "Lines of Code",
+    },
+    { value: stats.languages.length, label: "Languages" },
+  ]
 
   return (
     <section
@@ -45,7 +52,7 @@ export default function StatsStrip({ stats }: Props) {
           style={{ x: xRight }}
           className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10"
         >
-          {stats.map((s, i) => (
+          {items.map((s, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
@@ -59,7 +66,9 @@ export default function StatsStrip({ stats }: Props) {
               className="text-center sm:text-left"
             >
               <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tabular-nums tracking-tighter">
-                <span className="text-gradient">{s.value}</span>
+                <span className="text-gradient">
+                  <CountUp end={s.value} duration={1800} display={s.display} />
+                </span>
               </div>
               <div className="font-mono text-[11px] sm:text-xs uppercase tracking-widest text-text-muted mt-2">
                 {s.label}

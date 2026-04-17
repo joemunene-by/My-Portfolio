@@ -10,6 +10,9 @@ import ProjectPreviewCursor from "@/components/ProjectPreviewCursor"
 import AccentPicker from "@/components/AccentPicker"
 import ProjectModal from "@/components/ProjectModal"
 import PageTransition from "@/components/PageTransition"
+import ShaderBackground from "@/components/ShaderBackground"
+import ShortcutCheatsheet from "@/components/ShortcutCheatsheet"
+import HackerMode from "@/components/HackerMode"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -38,10 +41,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="font-sans">
+        <ShaderBackground />
         <ScrollProgress />
         <CustomCursor />
         <CommandPalette />
         <CommandHint />
+        <ShortcutCheatsheet />
+        <HackerMode />
         <SectionIndicator />
         <ProjectPreviewCursor />
         <ProjectModal />
