@@ -35,6 +35,13 @@ const groups: Group[] = [
     ],
   },
   {
+    title: "Power Tools",
+    rows: [
+      { keys: ["⌘", "Shift", "T"], label: "Trophy room" },
+      { keys: ["⌘", "Shift", "P"], label: "Perf monitor" },
+    ],
+  },
+  {
     title: "Secrets",
     rows: [
       { keys: ["↑↑↓↓←→←→", "B", "A"], label: "Something fun" },

@@ -2,16 +2,17 @@
 
 import { useEffect, useMemo, useRef, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
-import { Search, Command, CornerDownLeft, Github, Mail, FileText, ArrowRight } from "lucide-react"
+import { Search, Command, CornerDownLeft, Github, Mail, FileText, ArrowRight, Trophy, Activity } from "lucide-react"
 
 type Item = {
   id: string
   label: string
   hint?: string
-  href: string
+  href?: string
   external?: boolean
-  group: "Navigate" | "External" | "Actions"
+  group: "Navigate" | "External" | "Actions" | "Dev"
   icon?: React.ReactNode
+  run?: () => void
 }
 
 const items: Item[] = [
@@ -24,6 +25,30 @@ const items: Item[] = [
   { id: "resume", label: "View Resume", href: "/resume", group: "Actions", icon: <FileText className="w-4 h-4" /> },
   { id: "email", label: "Send Email", hint: "joemunene984@gmail.com", href: "mailto:joemunene984@gmail.com", external: true, group: "Actions", icon: <Mail className="w-4 h-4" /> },
   { id: "github", label: "GitHub Profile", hint: "joemunene-by", href: "https://github.com/joemunene-by", external: true, group: "External", icon: <Github className="w-4 h-4" /> },
+  {
+    id: "trophies",
+    label: "Trophy Room",
+    hint: "achievements",
+    group: "Dev",
+    icon: <Trophy className="w-4 h-4" />,
+    run: () => window.dispatchEvent(new CustomEvent("trophy:toggle")),
+  },
+  {
+    id: "perf",
+    label: "Performance Monitor",
+    hint: "⌘⇧P",
+    group: "Dev",
+    icon: <Activity className="w-4 h-4" />,
+    run: () => {
+      const ev = new KeyboardEvent("keydown", {
+        key: "p",
+        ctrlKey: true,
+        shiftKey: true,
+        bubbles: true,
+      })
+      window.dispatchEvent(ev)
+    },
+  },
 ]
 
 export default function CommandPalette() {
@@ -78,6 +103,11 @@ export default function CommandPalette() {
 
   const run = (it: Item) => {
     setOpen(false)
+    if (it.run) {
+      it.run()
+      return
+    }
+    if (!it.href) return
     if (it.external) {
       window.open(it.href, "_blank", "noopener,noreferrer")
     } else if (it.href.startsWith("#")) {

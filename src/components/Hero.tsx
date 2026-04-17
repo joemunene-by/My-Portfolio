@@ -5,11 +5,11 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { ChevronDown, Terminal, Shield, Code2, Cpu, FileText } from "lucide-react"
 import { useGitHubStats } from "@/hooks/useGitHubStats"
-import Image from "next/image"
 import MagneticLink from "./MagneticLink"
 import RevealText from "./RevealText"
 import HeroSpotlight from "./HeroSpotlight"
 import ScrambleText from "./ScrambleText"
+import HeroAvatar from "./HeroAvatar"
 
 export default function Hero() {
   const { stats } = useGitHubStats()
@@ -183,39 +183,14 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right - Photo */}
+          {/* Right - 3D parallax avatar */}
           <motion.div
             className="flex justify-center lg:justify-end"
             initial={{ opacity: 0, scale: 0.85, x: 50 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
           >
-            <div className="relative group">
-              {/* Glow behind image */}
-              <div className="absolute -inset-3 bg-gradient-to-br from-primary/25 via-accent/15 to-primary/10 rounded-3xl blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-700" />
-
-              {/* Image container */}
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
-                <Image
-                  src="/joe-munene.jpg"
-                  alt="Joe Munene"
-                  width={420}
-                  height={520}
-                  className="object-cover w-[300px] h-[380px] sm:w-[360px] sm:h-[450px] lg:w-[420px] lg:h-[520px] grayscale-[15%] hover:grayscale-0 transition-all duration-700 scale-100 hover:scale-[1.03]"
-                  priority
-                />
-
-                {/* Subtle overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/50 via-transparent to-transparent" />
-                <div className="absolute inset-0 bg-primary/5 mix-blend-overlay" />
-              </div>
-
-              {/* Decorative corner brackets */}
-              <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-primary/40 rounded-tl-lg" />
-              <div className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-accent/30 rounded-tr-lg" />
-              <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-2 border-l-2 border-accent/30 rounded-bl-lg" />
-              <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-primary/40 rounded-br-lg" />
-            </div>
+            <HeroAvatar />
           </motion.div>
         </div>
       </div>

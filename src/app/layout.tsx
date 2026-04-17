@@ -16,6 +16,8 @@ import HackerMode from "@/components/HackerMode"
 import CursorTrail from "@/components/CursorTrail"
 import AskGhost from "@/components/AskGhost"
 import Achievements from "@/components/Achievements"
+import TrophyRoom from "@/components/TrophyRoom"
+import PerfMonitor from "@/components/PerfMonitor"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -58,6 +60,8 @@ export default function RootLayout({
         <AccentPicker />
         <AskGhost />
         <Achievements />
+        <TrophyRoom />
+        <PerfMonitor />
         <div aria-hidden className="noise-overlay" />
         <PageTransition>{children}</PageTransition>
       </body>
