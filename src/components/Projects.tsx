@@ -87,10 +87,15 @@ export default function Projects() {
               <div className="space-y-6 mb-12">
                 {featured.map((project, i) => (
                   <AnimatedSection key={project.name} delay={i * 0.08}>
-                    <TiltCard max={4} className="group bg-bg-card border border-border-color rounded-xl p-6 sm:p-8 hover:border-primary/50 transition-all duration-300 glow-box-hover">
+                    <TiltCard max={4} className="group bg-bg-card border border-border-color rounded-xl p-6 sm:p-8 hover:border-primary/50 transition-all duration-300 glow-box-hover cursor-pointer">
                       <div
                         data-project-preview={project.name}
                         data-project-lang={project.language ?? ""}
+                        onClick={() =>
+                          window.dispatchEvent(
+                            new CustomEvent("project:open", { detail: project.name }),
+                          )
+                        }
                         className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6"
                       >
                         <div className="flex-1">
@@ -138,7 +143,7 @@ export default function Projects() {
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-3" onClick={(e) => e.stopPropagation()}>
                           {project.homepage && (
                             <a
                               href={project.homepage}
@@ -184,14 +189,19 @@ export default function Projects() {
                       delay={i * 0.06}
                       direction="up"
                     >
-                      <TiltCard max={6} className="group bg-bg-card border border-border-color rounded-xl p-6 hover:border-primary/50 transition-all duration-300 h-full flex flex-col">
+                      <TiltCard max={6} className="group bg-bg-card border border-border-color rounded-xl p-6 hover:border-primary/50 transition-all duration-300 h-full flex flex-col cursor-pointer">
                         <div
                           data-project-preview={project.name}
                           data-project-lang={project.language ?? ""}
+                          onClick={() =>
+                            window.dispatchEvent(
+                              new CustomEvent("project:open", { detail: project.name }),
+                            )
+                          }
                           className="flex items-start justify-between mb-4"
                         >
                           <Folder className="w-8 h-8 text-primary" />
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
                             {project.homepage && (
                               <a
                                 href={project.homepage}

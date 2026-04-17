@@ -7,6 +7,9 @@ import CommandPalette from "@/components/CommandPalette"
 import CommandHint from "@/components/CommandHint"
 import SectionIndicator from "@/components/SectionIndicator"
 import ProjectPreviewCursor from "@/components/ProjectPreviewCursor"
+import AccentPicker from "@/components/AccentPicker"
+import ProjectModal from "@/components/ProjectModal"
+import PageTransition from "@/components/PageTransition"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -41,8 +44,10 @@ export default function RootLayout({
         <CommandHint />
         <SectionIndicator />
         <ProjectPreviewCursor />
+        <ProjectModal />
+        <AccentPicker />
         <div aria-hidden className="noise-overlay" />
-        {children}
+        <PageTransition>{children}</PageTransition>
       </body>
     </html>
   )

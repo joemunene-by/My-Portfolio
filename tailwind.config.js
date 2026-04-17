@@ -8,11 +8,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#6C9CFF',
-        'primary-dark': '#5A85E0',
-        'primary-light': '#8BB4FF',
-        accent: '#C4A1FF',
-        'accent-warm': '#FFB088',
+        primary: 'rgb(var(--primary) / <alpha-value>)',
+        'primary-dark': 'rgb(var(--primary-dark) / <alpha-value>)',
+        'primary-light': 'rgb(var(--primary-light) / <alpha-value>)',
+        accent: 'rgb(var(--accent) / <alpha-value>)',
+        'accent-warm': 'rgb(var(--accent-warm) / <alpha-value>)',
         'bg-dark': '#0C0E14',
         'bg-card': '#13151D',
         'bg-card-hover': '#1A1D28',
