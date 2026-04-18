@@ -30,7 +30,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a href="#home" className="flex items-center gap-2 group">
+          <a href="#home" data-tour="command" className="flex items-center gap-2 group">
             <Ghost className="w-6 h-6 text-primary group-hover:animate-pulse-glow" />
             <span className="font-mono text-lg font-bold text-gradient">Ghost</span>
           </a>

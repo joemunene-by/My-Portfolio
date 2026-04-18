@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
-import { Search, Command, CornerDownLeft, Github, Mail, FileText, ArrowRight, Trophy, Activity } from "lucide-react"
+import { Search, Command, CornerDownLeft, Github, Mail, FileText, ArrowRight, Trophy, Activity, Sparkles } from "lucide-react"
 
 type Item = {
   id: string
@@ -48,6 +48,14 @@ const items: Item[] = [
       })
       window.dispatchEvent(ev)
     },
+  },
+  {
+    id: "tour",
+    label: "Replay Onboarding Tour",
+    hint: "guided",
+    group: "Dev",
+    icon: <Sparkles className="w-4 h-4" />,
+    run: () => window.dispatchEvent(new CustomEvent("tour:start")),
   },
 ]
 

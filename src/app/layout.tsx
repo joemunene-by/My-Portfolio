@@ -19,6 +19,8 @@ import Achievements from "@/components/Achievements"
 import TrophyRoom from "@/components/TrophyRoom"
 import PerfMonitor from "@/components/PerfMonitor"
 import AudioVisualizer from "@/components/AudioVisualizer"
+import OnboardingTour from "@/components/OnboardingTour"
+import ThemeRipple from "@/components/ThemeRipple"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -64,6 +66,8 @@ export default function RootLayout({
         <TrophyRoom />
         <PerfMonitor />
         <AudioVisualizer />
+        <ThemeRipple />
+        <OnboardingTour />
         <div aria-hidden className="noise-overlay" />
         <PageTransition>{children}</PageTransition>
       </body>

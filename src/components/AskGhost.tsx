@@ -136,6 +136,7 @@ export default function AskGhost() {
     <>
       <motion.button
         onClick={() => setOpen((v) => !v)}
+        data-tour="chat"
         className="fixed bottom-24 left-5 z-40 p-3 bg-bg-card/80 backdrop-blur-xl border border-border-color rounded-full text-text-muted hover:text-primary hover:border-primary/40 transition-all shadow-lg hidden md:flex items-center gap-2"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}

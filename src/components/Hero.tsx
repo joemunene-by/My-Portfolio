@@ -50,6 +50,7 @@ export default function Hero() {
       id="home"
       className="min-h-screen flex items-center relative overflow-hidden"
     >
+      <div data-tour="cursor" className="absolute inset-0 pointer-events-none" />
       {/* Grid overlay */}
       <div className="absolute inset-0 grid-bg" />
       <HeroSpotlight />

@@ -87,11 +87,20 @@ export default function AccentPicker() {
     setActive(theme.id)
   }, [])
 
-  const select = (t: Theme) => {
+  const select = (t: Theme, ev?: React.MouseEvent) => {
     applyTheme(t)
     setActive(t.id)
     localStorage.setItem(STORAGE_KEY, t.id)
     window.dispatchEvent(new CustomEvent("achievement", { detail: "palette" }))
+    window.dispatchEvent(
+      new CustomEvent("theme:ripple", {
+        detail: {
+          x: ev?.clientX,
+          y: ev?.clientY,
+          color: t.primary,
+        },
+      }),
+    )
   }
 
   return (
@@ -114,7 +123,7 @@ export default function AccentPicker() {
                 return (
                   <button
                     key={t.id}
-                    onClick={() => select(t)}
+                    onClick={(ev) => select(t, ev)}
                     className={`w-full flex items-center gap-3 px-2 py-2 rounded-lg transition-colors text-left ${
                       selected ? "bg-white/5" : "hover:bg-white/5"
                     }`}
@@ -146,6 +155,7 @@ export default function AccentPicker() {
 
       <motion.button
         onClick={() => setOpen((v) => !v)}
+        data-tour="palette"
         className="p-3 bg-bg-card/90 backdrop-blur-xl border border-border-color rounded-full text-text-muted hover:text-primary hover:border-primary/40 transition-all shadow-lg"
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}

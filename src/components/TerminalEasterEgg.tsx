@@ -256,6 +256,7 @@ export default function TerminalEasterEgg() {
     <>
       <motion.button
         onClick={() => setIsOpen(true)}
+        data-tour="trophy"
         className="fixed bottom-24 right-6 z-40 p-3 bg-bg-card border border-border-color rounded-xl text-text-muted hover:text-primary hover:border-primary/40 transition-all shadow-lg"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}

@@ -1,12 +1,20 @@
 "use client"
 
+import { useState } from "react"
 import { resumeData } from "@/data"
-import { Download, ArrowLeft, Mail, Github, MapPin, Globe } from "lucide-react"
+import { Download, ArrowLeft, Mail, Github, MapPin, Globe, Terminal } from "lucide-react"
 import Link from "next/link"
+import ResumeTerminal from "@/components/ResumeTerminal"
 
 export default function ResumePage() {
+  const [terminal, setTerminal] = useState(false)
+
   const handlePrint = () => {
     window.print()
+  }
+
+  if (terminal) {
+    return <ResumeTerminal onExit={() => setTerminal(false)} />
   }
 
   return (
@@ -21,13 +29,23 @@ export default function ResumePage() {
             <ArrowLeft className="w-4 h-4" />
             Back to Portfolio
           </Link>
-          <button
-            onClick={handlePrint}
-            className="flex items-center gap-2 px-5 py-2.5 bg-primary text-white font-mono text-sm font-semibold rounded-lg hover:bg-primary-dark transition-all"
-          >
-            <Download className="w-4 h-4" />
-            Download PDF
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setTerminal(true)}
+              className="flex items-center gap-2 px-4 py-2.5 bg-bg-card border border-border-color text-white font-mono text-sm rounded-lg hover:border-primary/40 hover:text-primary transition-all"
+              title="View as terminal"
+            >
+              <Terminal className="w-4 h-4" />
+              Terminal Mode
+            </button>
+            <button
+              onClick={handlePrint}
+              className="flex items-center gap-2 px-5 py-2.5 bg-primary text-white font-mono text-sm font-semibold rounded-lg hover:bg-primary-dark transition-all"
+            >
+              <Download className="w-4 h-4" />
+              Download PDF
+            </button>
+          </div>
         </div>
       </div>
 
