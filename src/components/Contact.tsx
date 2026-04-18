@@ -5,6 +5,7 @@ import AnimatedSection from "./AnimatedSection"
 import RevealText from "./RevealText"
 import MagneticLink from "./MagneticLink"
 import LiveClock from "./LiveClock"
+import TimezoneWidget from "./TimezoneWidget"
 import ContactForm from "./ContactForm"
 import { Github, Mail, Terminal } from "lucide-react"
 
@@ -65,6 +66,7 @@ export default function Contact() {
               Powered by Next.js, Tailwind CSS & Framer Motion
             </div>
             <LiveClock />
+            <TimezoneWidget />
           </div>
         </AnimatedSection>
       </div>

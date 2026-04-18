@@ -268,7 +268,7 @@ export const timeline = [
     type: "milestone" as const,
   },
   {
-    year: "2024",
+    year: "2025",
     title: "Moi University",
     subtitle: "Computer Science",
     description: "Pursuing a degree in Computer Science with focus on cybersecurity, systems programming, and artificial intelligence.",
@@ -339,7 +339,7 @@ export const resumeData = {
     {
       institution: "Moi University",
       degree: "Bachelor of Science in Computer Science",
-      period: "2024 — Present",
+      period: "2025 — Present",
       details: "Focus: Cybersecurity, Systems Programming, Artificial Intelligence",
     },
   ],

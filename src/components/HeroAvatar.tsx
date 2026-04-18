@@ -75,6 +75,37 @@ export default function HeroAvatar() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/45 via-transparent to-transparent" />
           <div className="absolute inset-0 bg-primary/5 mix-blend-overlay" />
+          {/* Holographic iridescent overlay — rotates with cursor */}
+          <motion.div
+            aria-hidden
+            className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            style={{
+              background: useTransform(
+                [sx, sy] as never,
+                ([x, y]: number[]) =>
+                  `conic-gradient(from ${x * 360}deg at ${x * 100}% ${y * 100}%, ` +
+                  `rgb(var(--primary) / 0.35), ` +
+                  `rgb(var(--accent) / 0.35), ` +
+                  `rgb(var(--accent-warm) / 0.35), ` +
+                  `rgb(var(--primary) / 0.35))`,
+              ),
+              mixBlendMode: "color-dodge",
+            }}
+          />
+          {/* Scanline / sheen */}
+          <motion.div
+            aria-hidden
+            className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-40 transition-opacity duration-500"
+            style={{
+              background: useTransform(
+                [sx, sy] as never,
+                ([x, y]: number[]) =>
+                  `linear-gradient(${x * 180 + 45}deg, transparent 40%, ` +
+                  `rgb(255 255 255 / 0.22) ${45 + y * 10}%, transparent 60%)`,
+              ),
+              mixBlendMode: "overlay",
+            }}
+          />
         </motion.div>
 
         {/* Decorative corner brackets (front layer) */}

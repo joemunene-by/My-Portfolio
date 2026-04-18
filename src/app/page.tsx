@@ -16,6 +16,7 @@ import StatsStrip from "@/components/StatsStrip"
 import ProjectConstellation from "@/components/ProjectConstellation"
 import CodeShowcase from "@/components/CodeShowcase"
 import LiveFeed from "@/components/LiveFeed"
+import ScrollSignature from "@/components/ScrollSignature"
 import { projects } from "@/data"
 
 const accents = [
@@ -66,6 +67,7 @@ export default function Home() {
         <Projects />
         <ProjectConstellation />
         <LiveFeed />
+        <ScrollSignature />
         <GitHubGraph />
         <Marquee
           items={[
