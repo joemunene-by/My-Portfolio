@@ -10,10 +10,13 @@ const HELP = [
   "commands:",
   "  whoami      — short bio",
   "  summary     — narrative summary",
+  "  focus       — focus areas",
+  "  highlights  — top wins",
   "  education   — schools",
   "  experience  — roles",
   "  skills      — technical stack",
-  "  certs       — certifications / study",
+  "  langs       — spoken languages",
+  "  certs       — research / study",
   "  contact     — reach me",
   "  all         — run everything",
   "  clear       — wipe screen",
@@ -69,6 +72,26 @@ export default function ResumeTerminal({ onExit }: { onExit: () => void }) {
       case "summary":
         append(key, wrap(resumeData.summary, 72))
         break
+      case "focus":
+      case "focusareas":
+        append(
+          key,
+          resumeData.focusAreas.map((f) => `• ${f}`),
+        )
+        break
+      case "highlights":
+        append(
+          key,
+          resumeData.highlights.flatMap((h, i) => [
+            `${String(i + 1).padStart(2, "0")}. ${wrap(h, 66)[0]}`,
+            ...wrap(h, 66).slice(1).map((l) => `    ${l}`),
+          ]),
+        )
+        break
+      case "langs":
+      case "languages":
+        append(key, resumeData.spokenLanguages.map((l) => `• ${l}`))
+        break
       case "education":
         append(
           key,
@@ -114,9 +137,12 @@ export default function ResumeTerminal({ onExit }: { onExit: () => void }) {
         ;[
           "whoami",
           "summary",
+          "focus",
+          "highlights",
           "education",
           "experience",
           "skills",
+          "langs",
           "certs",
           "contact",
         ].forEach((c) => render(c))
@@ -169,9 +195,12 @@ export default function ResumeTerminal({ onExit }: { onExit: () => void }) {
         "help",
         "whoami",
         "summary",
+        "focus",
+        "highlights",
         "education",
         "experience",
         "skills",
+        "langs",
         "certs",
         "contact",
         "all",

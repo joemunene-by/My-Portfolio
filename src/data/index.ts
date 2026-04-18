@@ -334,38 +334,57 @@ export const resumeData = {
   email: "joemunene984@gmail.com",
   github: "github.com/joemunene-by",
   location: "Nairobi, Kenya",
-  summary: "Software engineer and cybersecurity researcher with hands-on experience building secure systems, penetration testing tools, AI-powered applications, and full-stack web platforms. Passionate about bridging offensive security with modern development practices.",
+  summary:
+    "Software engineer focused on the intersection of offensive security and applied AI. 26+ shipped open-source projects — including GhostLM, a 14.5M-parameter transformer trained from scratch on cybersecurity text, and SentinelPulse, a real-time threat intelligence dashboard. Computer Science student at Moi University, writing code for systems that hack, think, and automate.",
+  focusAreas: [
+    "Full-Stack Engineering",
+    "Offensive Security",
+    "Applied AI / ML",
+    "Systems & Networking",
+  ],
+  spokenLanguages: ["English — fluent", "Swahili — native"],
   education: [
     {
       institution: "Moi University",
       degree: "Bachelor of Science in Computer Science",
       period: "2025 — Present",
-      details: "Focus: Cybersecurity, Systems Programming, Artificial Intelligence",
+      details:
+        "Coursework: data structures & algorithms, operating systems, computer networks, discrete mathematics. Self-directed focus on offensive security, transformer architectures, and systems programming.",
     },
   ],
   experience: [
     {
       role: "Independent Developer & Security Researcher",
-      company: "Self-Employed",
+      company: "Self-Employed · Nairobi",
       period: "2023 — Present",
       points: [
-        "Built 26+ open-source projects spanning cybersecurity tools, AI assistants, and web applications",
-        "Developed GhostLM — a cybersecurity-focused language model trained on CVEs and CTF data using PyTorch",
-        "Created production-grade network security tools: port scanners, traffic analyzers, and vulnerability scanners",
-        "Built AI-powered coding assistant capable of generating full-stack applications",
-        "Designed and deployed real-time threat intelligence dashboard (SentinelPulse)",
+        "Shipped 26+ open-source projects spanning cybersecurity, AI/ML, and full-stack — 90,000+ lines of code and 200+ commits across active repositories.",
+        "Built GhostLM from scratch — a 14.5M-parameter decoder-only transformer in PyTorch. Hand-wrote multi-head causal self-attention, cosine LR schedule with linear warmup, weight-tied embeddings, and a GPT-2 BPE tokenizer extended with security-specific tokens. Phase 1 (10,000 steps, CPU) drove train loss from ~4.5 to ~2.25 and held validation loss around ~2.75.",
+        "Deployed SentinelPulse — a real-time threat intelligence dashboard with live feed ingestion and a reactive Next.js frontend on Vercel.",
+        "Developed a network security suite: concurrent TCP port scanner with banner-grab and timeout backoff, packet-level traffic analyzer aimed at SOC workflows, and a lightweight static scanner for secret/credential patterns in source trees.",
+        "Built an AI coding assistant that scaffolds full-stack React / Next.js applications end-to-end from a single prompt — deployed live at ai-coding-assistant-9ufv.vercel.app.",
+        "Engineered every project with a live deploy or reproducible training pipeline; all source is public on GitHub.",
       ],
     },
   ],
   technicalSkills: {
-    "Languages": "TypeScript, JavaScript, Python, HTML/CSS, Shell/Bash, SQL",
-    "Frameworks": "React, Next.js, Node.js, Vite, PyTorch, Express",
-    "Security": "Penetration Testing, Ethical Hacking, CTF, Network Analysis, Vulnerability Assessment, OSINT",
-    "Tools": "Git, Linux, Docker, Nmap, Wireshark, Burp Suite, Metasploit",
-    "AI/ML": "LLM Integration, Claude API, Transformer Models, NLP, Deep Learning",
+    Languages: "TypeScript, JavaScript, Python, SQL, Shell/Bash, HTML/CSS",
+    Frameworks: "Next.js 15, React 19, Node.js, PyTorch, FastAPI, Express, Vite",
+    Security:
+      "Penetration testing, vulnerability assessment, CTF, network analysis, OSINT, static analysis, steganography",
+    Tools: "Git, Linux, Docker, Nmap, Wireshark, Burp Suite, Metasploit, Vercel",
+    "AI / ML":
+      "Transformer architectures, attention mechanisms, from-scratch LLM training, tokenization (BPE), LLM integration, Claude API",
   },
+  highlights: [
+    "Built and trained a 14.5M-parameter transformer from scratch — no `transformers` library, every layer hand-written",
+    "Wrote a from-first-principles security LLM training corpus from CVEs, CTF writeups, and security research",
+    "Ship code weekly — portfolio site itself runs a live GitHub API integration and full animation system",
+  ],
   certifications: [
-    "Cybersecurity research and CTF competition experience",
-    "Self-directed study in ethical hacking and penetration testing methodologies",
+    "Independent cybersecurity research — CVE reasoning, exploit-chain analysis, and vulnerability triage assisted by LLMs",
+    "Active CTF competitor — pen-testing, reverse engineering, and steganography challenges",
+    "From-scratch LLM engineering — transformer internals, attention mechanics, LR scheduling, BPE tokenization",
+    "Self-directed coursework — deep learning foundations, systems programming, network security",
   ],
 }

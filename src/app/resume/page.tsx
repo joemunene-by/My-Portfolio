@@ -16,6 +16,8 @@ import {
   GraduationCap,
   Code2,
   Rocket,
+  Sparkles,
+  Languages as LanguagesIcon,
 } from "lucide-react"
 import Link from "next/link"
 import ResumeTerminal from "@/components/ResumeTerminal"
@@ -93,9 +95,20 @@ export default function ResumePage() {
                 text={resumeData.name}
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-3 print:text-black"
               />
-              <p className="text-lg sm:text-xl text-text-muted mb-6 print:text-gray-700">
+              <p className="text-lg sm:text-xl text-text-muted mb-5 print:text-gray-700">
                 <span className="text-gradient print:text-black">{resumeData.title}</span>
               </p>
+
+              <div className="flex flex-wrap gap-1.5 mb-6">
+                {resumeData.focusAreas.map((f) => (
+                  <span
+                    key={f}
+                    className="px-2.5 py-1 font-mono text-[11px] rounded-full bg-primary/10 text-primary border border-primary/20 print:bg-white print:text-gray-700 print:border-gray-300"
+                  >
+                    {f}
+                  </span>
+                ))}
+              </div>
 
               <div className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-[13px] text-text-muted print:text-gray-700">
                 <a
@@ -132,10 +145,33 @@ export default function ResumePage() {
           </Section>
         </AnimatedSection>
 
+        {/* Highlights */}
+        <AnimatedSection delay={0.12}>
+          <Section
+            number="02"
+            icon={<Sparkles className="w-4 h-4" />}
+            title="Highlights"
+          >
+            <ul className="grid sm:grid-cols-3 gap-3">
+              {resumeData.highlights.map((h, i) => (
+                <li
+                  key={i}
+                  className="bg-bg-card/40 border border-border-color rounded-xl p-4 text-[13px] leading-relaxed text-text-muted print:bg-white print:border print:border-gray-200 print:text-gray-700"
+                >
+                  <span className="block font-mono text-[10px] uppercase tracking-widest text-primary mb-1.5 print:text-black">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  {h}
+                </li>
+              ))}
+            </ul>
+          </Section>
+        </AnimatedSection>
+
         {/* Experience */}
         <AnimatedSection delay={0.15}>
           <Section
-            number="02"
+            number="03"
             icon={<Briefcase className="w-4 h-4" />}
             title="Experience"
           >
@@ -176,7 +212,7 @@ export default function ResumePage() {
         {/* Education */}
         <AnimatedSection delay={0.2}>
           <Section
-            number="03"
+            number="04"
             icon={<GraduationCap className="w-4 h-4" />}
             title="Education"
           >
@@ -207,7 +243,7 @@ export default function ResumePage() {
         {/* Technical Skills */}
         <AnimatedSection delay={0.25}>
           <Section
-            number="04"
+            number="05"
             icon={<Code2 className="w-4 h-4" />}
             title="Technical Skills"
           >
@@ -232,7 +268,7 @@ export default function ResumePage() {
         {/* Key Projects */}
         <AnimatedSection delay={0.3}>
           <Section
-            number="05"
+            number="06"
             icon={<Rocket className="w-4 h-4" />}
             title="Key Projects"
           >
@@ -254,10 +290,10 @@ export default function ResumePage() {
           </Section>
         </AnimatedSection>
 
-        {/* Certifications / Study */}
+        {/* Study & Research */}
         <AnimatedSection delay={0.35}>
           <Section
-            number="06"
+            number="07"
             icon={<Shield className="w-4 h-4" />}
             title="Study & Research"
           >
@@ -272,6 +308,26 @@ export default function ResumePage() {
                 </li>
               ))}
             </ul>
+          </Section>
+        </AnimatedSection>
+
+        {/* Languages */}
+        <AnimatedSection delay={0.4}>
+          <Section
+            number="08"
+            icon={<LanguagesIcon className="w-4 h-4" />}
+            title="Languages"
+          >
+            <div className="flex flex-wrap gap-2">
+              {resumeData.spokenLanguages.map((l) => (
+                <span
+                  key={l}
+                  className="px-3 py-1.5 bg-bg-card/40 border border-border-color rounded-lg font-mono text-[13px] text-text-muted print:bg-white print:text-gray-700 print:border-gray-200"
+                >
+                  {l}
+                </span>
+              ))}
+            </div>
           </Section>
         </AnimatedSection>
 
