@@ -119,42 +119,46 @@ export default function OnboardingTour() {
 
   const prev = () => setStep((s) => Math.max(0, s - 1))
 
-  // Calculate tooltip position near the highlighted element
+  // Calculate tooltip position near the highlighted element, always clamped
+  // so the whole 320×220 box stays inside the viewport no matter where the
+  // target sits (including bottom-right edge buttons like the accent picker).
   const current = STEPS[step]
+  const TOOLTIP_W = 320
+  const TOOLTIP_H = 220
+  const pad = 16
   const tooltipPos = (() => {
-    if (!rect) return { left: "50%", top: "20%", transform: "translate(-50%, 0)" }
-    const pad = 16
     const vw = typeof window !== "undefined" ? window.innerWidth : 1200
     const vh = typeof window !== "undefined" ? window.innerHeight : 800
+    if (!rect) {
+      return {
+        left: (vw - TOOLTIP_W) / 2 + "px",
+        top: vh * 0.2 + "px",
+      }
+    }
     const placement = current.placement || "bottom"
-    const cx = rect.left + rect.width / 2
-    const cy = rect.top + rect.height / 2
+    let x = 0
+    let y = 0
     switch (placement) {
       case "top":
-        return {
-          left: clamp(cx, 180, vw - 180) + "px",
-          top: Math.max(20, rect.top - pad) + "px",
-          transform: "translate(-50%, -100%)",
-        }
+        x = rect.left + rect.width / 2 - TOOLTIP_W / 2
+        y = rect.top - TOOLTIP_H - pad
+        break
       case "right":
-        return {
-          left: Math.min(vw - 340, rect.right + pad) + "px",
-          top: clamp(cy, 100, vh - 180) + "px",
-          transform: "translate(0, -50%)",
-        }
+        x = rect.right + pad
+        y = rect.top + rect.height / 2 - TOOLTIP_H / 2
+        break
       case "left":
-        return {
-          left: Math.max(20, rect.left - pad) + "px",
-          top: clamp(cy, 100, vh - 180) + "px",
-          transform: "translate(-100%, -50%)",
-        }
+        x = rect.left - TOOLTIP_W - pad
+        y = rect.top + rect.height / 2 - TOOLTIP_H / 2
+        break
       default:
-        return {
-          left: clamp(cx, 180, vw - 180) + "px",
-          top: Math.min(vh - 180, rect.bottom + pad) + "px",
-          transform: "translate(-50%, 0)",
-        }
+        x = rect.left + rect.width / 2 - TOOLTIP_W / 2
+        y = rect.bottom + pad
     }
+    // If preferred placement goes off-screen, flip/slide the box onto it
+    x = clamp(x, pad, vw - TOOLTIP_W - pad)
+    y = clamp(y, pad, vh - TOOLTIP_H - pad)
+    return { left: x + "px", top: y + "px" }
   })()
 
   const holeR = rect ? Math.max(rect.width, rect.height) * 0.7 + 16 : 0
@@ -220,7 +224,7 @@ export default function OnboardingTour() {
             initial={{ opacity: 0, scale: 0.96, y: 8 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.22, ease: [0.25, 0.4, 0.25, 1] }}
-            className="absolute max-w-sm w-[320px] bg-bg-card/95 backdrop-blur-2xl border border-primary/40 rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+            className="absolute w-[320px] bg-bg-card/95 backdrop-blur-2xl border border-primary/40 rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
             style={tooltipPos}
           >
             <div className="flex items-center justify-between px-4 py-2.5 border-b border-border-color bg-bg-dark/60">

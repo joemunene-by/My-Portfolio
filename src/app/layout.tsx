@@ -18,7 +18,6 @@ import AskGhost from "@/components/AskGhost"
 import Achievements from "@/components/Achievements"
 import TrophyRoom from "@/components/TrophyRoom"
 import PerfMonitor from "@/components/PerfMonitor"
-import AudioVisualizer from "@/components/AudioVisualizer"
 import OnboardingTour from "@/components/OnboardingTour"
 import ThemeRipple from "@/components/ThemeRipple"
 
@@ -65,7 +64,6 @@ export default function RootLayout({
         <Achievements />
         <TrophyRoom />
         <PerfMonitor />
-        <AudioVisualizer />
         <ThemeRipple />
         <OnboardingTour />
         <div aria-hidden className="noise-overlay" />

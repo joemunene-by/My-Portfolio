@@ -1,13 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { useMemo, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { projects } from "@/data"
 import AnimatedSection from "./AnimatedSection"
 import TiltCard from "./TiltCard"
 import RevealText from "./RevealText"
 import GiantLabel from "./GiantLabel"
-import { ExternalLink, Github, Star, Folder, ArrowUpRight } from "lucide-react"
+import { ExternalLink, Github, Star, Folder, ArrowUpRight, Search, X } from "lucide-react"
 
 const categories = [
   { key: "all", label: "All Projects" },
@@ -27,14 +27,33 @@ const langColors: Record<string, string> = {
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState("all")
+  const [query, setQuery] = useState("")
 
-  const filtered =
-    activeCategory === "all"
-      ? projects
-      : projects.filter((p) => p.category === activeCategory)
+  const filtered = useMemo(() => {
+    let list =
+      activeCategory === "all"
+        ? projects
+        : projects.filter((p) => p.category === activeCategory)
+    const q = query.trim().toLowerCase()
+    if (q) {
+      list = list.filter((p) => {
+        const hay = [
+          p.name,
+          p.description,
+          p.language ?? "",
+          ...(p.topics ?? []),
+        ]
+          .join(" ")
+          .toLowerCase()
+        return hay.includes(q)
+      })
+    }
+    return list
+  }, [activeCategory, query])
 
   const featured = filtered.filter((p) => p.featured)
   const others = filtered.filter((p) => !p.featured)
+  const totalMatches = filtered.length
 
   return (
     <section id="projects" className="py-20 sm:py-32 relative overflow-hidden">
@@ -57,31 +76,75 @@ export default function Projects() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
-          <div className="flex flex-wrap gap-2 mb-10">
-            {categories.map((cat) => (
-              <button
-                key={cat.key}
-                onClick={() => setActiveCategory(cat.key)}
-                className={`px-4 py-2 font-mono text-sm rounded-full transition-all duration-300 ${
-                  activeCategory === cat.key
-                    ? "bg-primary text-bg-dark font-semibold shadow-[0_0_20px_rgba(0,255,136,0.2)]"
-                    : "bg-bg-card text-text-muted border border-border-color hover:border-primary/50 hover:text-primary"
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 mb-10">
+            <div className="flex flex-wrap gap-2">
+              {categories.map((cat) => (
+                <button
+                  key={cat.key}
+                  onClick={() => setActiveCategory(cat.key)}
+                  className={`px-4 py-2 font-mono text-sm rounded-full transition-all duration-300 ${
+                    activeCategory === cat.key
+                      ? "bg-primary text-bg-dark font-semibold shadow-[0_0_20px_rgb(var(--primary)/0.2)]"
+                      : "bg-bg-card text-text-muted border border-border-color hover:border-primary/50 hover:text-primary"
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
+
+            <div className="relative flex items-center gap-3">
+              <div className="relative flex items-center bg-bg-card/60 backdrop-blur-sm border border-border-color rounded-full pl-4 pr-2 py-1.5 focus-within:border-primary/50 transition-colors">
+                <Search className="w-3.5 h-3.5 text-text-muted/70 mr-2" />
+                <input
+                  type="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search projects..."
+                  className="bg-transparent font-mono text-sm text-white placeholder:text-text-muted/40 outline-none w-44 lg:w-56"
+                />
+                {query && (
+                  <button
+                    onClick={() => setQuery("")}
+                    className="p-1 text-text-muted/70 hover:text-white transition-colors"
+                    aria-label="Clear search"
+                  >
+                    <X className="w-3 h-3" />
+                  </button>
+                )}
+              </div>
+              <span className="font-mono text-[11px] text-text-muted uppercase tracking-widest whitespace-nowrap">
+                {totalMatches} {totalMatches === 1 ? "match" : "matches"}
+              </span>
+            </div>
           </div>
         </AnimatedSection>
 
         <AnimatePresence mode="wait">
           <motion.div
-            key={activeCategory}
+            key={`${activeCategory}-${query}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
+            {totalMatches === 0 && (
+              <div className="bg-bg-card/40 border border-border-color rounded-xl p-10 text-center">
+                <div className="font-mono text-primary text-sm mb-2">no matches</div>
+                <div className="text-text-muted">
+                  Nothing found for{" "}
+                  <span className="text-white font-mono">&quot;{query}&quot;</span>
+                  {activeCategory !== "all" ? (
+                    <>
+                      {" "}
+                      in{" "}
+                      <span className="text-white font-mono">{activeCategory}</span>
+                    </>
+                  ) : null}
+                  . Try different keywords or reset the filter.
+                </div>
+              </div>
+            )}
             {/* Featured projects */}
             {featured.length > 0 && (
               <div className="space-y-6 mb-12">

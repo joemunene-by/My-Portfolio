@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Ghost } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { navLinks } from "@/data"
 import NavLink from "./NavLink"
 import MagneticLink from "./MagneticLink"
+import AnimatedLogo from "./AnimatedLogo"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -31,7 +32,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a href="#home" data-tour="command" className="flex items-center gap-2 group">
-            <Ghost className="w-6 h-6 text-primary group-hover:animate-pulse-glow" />
+            <AnimatedLogo size={26} />
             <span className="font-mono text-lg font-bold text-gradient">Ghost</span>
           </a>
 
