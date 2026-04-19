@@ -92,11 +92,11 @@ export async function GET() {
     console.error("GitHub API error:", error)
     // Return fallback data so the site never breaks
     return NextResponse.json({
-      totalRepos: 26,
-      totalCommits: 217,
-      linesOfCode: "90K+",
-      healthyRepos: 26,
-      totalStars: 2,
+      totalRepos: 34,
+      totalCommits: 280,
+      linesOfCode: "140K+",
+      healthyRepos: 34,
+      totalStars: 6,
       languages: ["Python", "TypeScript", "JavaScript", "Shell", "HTML"],
     })
   }
