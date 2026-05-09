@@ -163,7 +163,16 @@ export default function Projects() {
                       >
                         <div className="flex-1">
                           <div className="flex items-center gap-3 mb-3">
-                            <Folder className="w-5 h-5 text-primary" />
+                            {project.image ? (
+                              // eslint-disable-next-line @next/next/no-img-element
+                              <img
+                                src={project.image}
+                                alt={`${project.name} logo`}
+                                className="w-10 h-10 rounded-lg object-contain bg-white/5 p-1 border border-border-color"
+                              />
+                            ) : (
+                              <Folder className="w-5 h-5 text-primary" />
+                            )}
                             <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
                               {project.name}
                             </h3>

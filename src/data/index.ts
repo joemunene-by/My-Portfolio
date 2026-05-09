@@ -11,13 +11,14 @@ export const projects = [
   },
   {
     name: "GhostLM",
-    description: "An open-source cybersecurity-focused language model built from scratch in PyTorch. Decoder-only transformer trained 10K steps on CVEs, CTF writeups, and security research.",
+    description: "An open-source cybersecurity language model built from scratch in PyTorch. 81M-parameter decoder-only transformer (RoPE + SwiGLU + RMSNorm) trained on a 422M-token / 768K-record multi-domain corpus: cybersec writeups, NVD CVEs, MITRE/CWE/OWASP, NIST SP 800, the FineWeb-Edu educational subset, open-web-math reasoning, and a 105-repo / 15-language open-source code pull (cpython stdlib, the Go and Rust ecosystems, the JS / TS / C / C++ / Java / Ruby families, ~42M code tokens). Ships GhostAgent (a tool-using runtime with bet-1 tool-call + bet-9 cite-tag parsing), a multi-vendor HTTP server speaking OpenAI Chat Completions / Anthropic Messages / Google Gemini / Ollama wire formats, an MCP server, and GhostBench (a packaged eval suite with Wilson 95% CIs and McNemar paired comparisons across 14 differentiation bets). 312 tests green, every collector reproducible from one CLI line.",
     language: "Python",
     stars: 0,
-    topics: ["cybersecurity", "deep-learning", "gpt", "llm", "pytorch", "transformers"],
+    topics: ["cybersecurity", "language-model", "from-scratch", "pytorch", "transformer", "agent", "rope", "swiglu", "rmsnorm", "mcp"],
     url: "https://github.com/joemunene-by/GhostLM",
     category: "ai-ml",
     featured: true,
+    image: "/projects/ghostlm_mark.png",
   },
   {
     name: "ChartSentinel",
@@ -338,8 +339,8 @@ export const skills = {
 
 export const stats = {
   totalRepos: 34,
-  totalCommits: 280,
-  linesOfCode: "140,000+",
+  totalCommits: 320,
+  linesOfCode: "165,000+",
   healthyRepos: 34,
   languages: ["Python", "TypeScript", "JavaScript", "Rust", "C", "Shell", "HTML"],
 }
@@ -377,9 +378,30 @@ export const timeline = [
   },
   {
     year: "2026",
-    title: "Building GhostLM",
-    subtitle: "Open-Source Security LLM",
-    description: "Completed Phase 1 training (10K steps) of a cybersecurity-focused language model built from scratch in PyTorch. Trained on CVEs, CTF writeups, and security research papers.",
+    title: "GhostLM v0.9.33 — full SFT chat-tune",
+    subtitle: "22,819-record SFT, bets 23/24 wired in, parameter ceiling confirmed",
+    description: "Chat-tuned ghost-small (81M) on the v0.9.32 SFT corpus: 22,819 records spanning every differentiation bet plus the new code-explain + code-write banks (4,000 steps, val_loss 2.61). Then wired bets 23 + 24 into GhostBench's Suite.from_dir discovery and re-benched against v0.9 chat — both checkpoints hit 0/n on every measurable bench, confirming the 30% ceiling is parameter-bound not corpus-bound. The honest finding unlocks the GPU-spend decision.",
+    type: "project" as const,
+  },
+  {
+    year: "2026",
+    title: "GhostLM v0.9.32 — pretrain code share 2.4% → 11.6%",
+    subtitle: "768K train records, 422M tokens, 27 distinct sources",
+    description: "Rebuilt the v1.0 pretrain corpus on Mac after the v0.9.31 open-source code pull landed: 516K → 768K records (+48.8%), 363M → 422M tokens, code share 2.4% → 11.6%. Lands in the SmolLM2 / Phi training-mix band without sacrificing the cybersec edge (still ~65% of corpus text). 45,027 cross-source duplicates removed during merge, leakage check returned 0.",
+    type: "project" as const,
+  },
+  {
+    year: "2026",
+    title: "GhostLM v0.9.30/31 — open-source code corpus collector",
+    subtitle: "120 permissively-licensed repos across 15 languages",
+    description: "Built and ran a comprehensive open-source code collector: 120 repos covering cpython stdlib + numpy/scipy/pandas + the ML stack (Python), gin/cobra/k8s/terraform/docker (Go), tokio/serde/clap/ripgrep/uv (Rust), express/node/react/vue/typescript (JS+TS), redis/sqlite/curl/postgres (C/C++), spring/guava (Java), rails (Ruby) plus zig/swift/elixir. Permissive-license allowlist enforced at run time, sha256 dedup, sidecar manifest. 4h11m wall on M4 produced 105 successful pulls / 26K files / 168M chars / ~42M tokens.",
+    type: "project" as const,
+  },
+  {
+    year: "2026",
+    title: "GhostLM v0.9.5 → v0.9.29 — 12 differentiation bets shipped",
+    subtitle: "1,940 cybersec + 1,981 code SFT records, GhostBench eval suite",
+    description: "Shipped 12 differentiation bets across cybersec verticals (tool use, format-aware STIX/YARA/Sigma/MISP, code-security, binary literacy, provenance with cite tags, log analysis, cloud IaC security, protocol fields, code-explain, code-write) plus the GhostBench package — Wilson 95% CIs, McNemar paired comparisons, Cohen's h effect sizes, multi-tier scoring. GhostAgent runtime wraps the model in a tool-using loop; multi-vendor HTTP server speaks OpenAI / Anthropic / Gemini / Ollama wire formats; MCP server exposes the agent to Claude Desktop and Cursor.",
     type: "project" as const,
   },
   {
@@ -406,21 +428,40 @@ export const timeline = [
 ]
 
 export const currentlyWorkingOn = {
-  project: "GhostLM",
-  description: "An open-source cybersecurity-focused language model built from scratch in PyTorch. Completed Phase 1 training (10K steps) on CVEs, CTF writeups, and security research. Preparing for Phase 2 (100K steps).",
-  progress: 85,
+  project: "GhostLM v0.9.33 → ghost-base",
+  description: "Ghost-small (81M) is benched out at the 30% CTIBench / 0-2% fact-recall ceiling — confirmed empirically across 6 ghostbench bets after the v0.9.32 corpus rebuild and v0.9.33 SFT push. The honest finding: it's a parameter ceiling, not a corpus problem, so the next move is the rented-GPU ghost-base v1.0 run (~360M params, SmolLM2-360M shape) on the new 422M-token corpus. Pretrain code share moved 2.4% → 11.6% via a 105-repo / 15-language open-source code pull this release cycle. SFT corpus is now ghost-base ready: ~1,940 cybersec records across 12 differentiation bets + 1,981 code records (code SFT surpassed cybersec for the first time at v0.9.29).",
+  progress: 92,
   milestones: [
-    { label: "Architecture Design", done: true },
-    { label: "Data Pipeline", done: true },
-    { label: "Tokenizer Training", done: true },
-    { label: "Model Training (Phase 1)", done: true },
-    { label: "Fine-tuning", done: false },
-    { label: "Evaluation & Release", done: false },
+    { label: "From-scratch decoder transformer (RoPE + SwiGLU + RMSNorm)", done: true },
+    { label: "v1.0 corpus build (422M tokens, 27 sources, leakage-clean)", done: true },
+    { label: "12 differentiation bets + GhostBench eval suite", done: true },
+    { label: "GhostAgent runtime + multi-vendor HTTP / MCP server", done: true },
+    { label: "Open-source code corpus pull (105 repos, 168M chars)", done: true },
+    { label: "Ghost-base v1.0 GPU run (rented H100, ~360M params)", done: false },
+    { label: "Acceptance gate: ≥40% CTIBench OR ≥65% CTF eval", done: false },
   ],
   url: "https://github.com/joemunene-by/GhostLM",
 }
 
 export const blogPosts = [
+  {
+    title: "Hitting the Parameter Ceiling: What 81M Parameters Can and Can't Do",
+    excerpt: "I just spent a release cycle expanding GhostLM's pretrain corpus from 363M to 422M tokens, pushed code share from 2.4% to 11.6%, and re-tuned chat on the resulting 22.8K-record SFT bank. Then I benched it against the prior v0.9 chat across six bets — both score 0/n. The honest finding: at 81M parameters, more corpus and more SFT data don't break the 30% ceiling. The model knows what Python looks like; it can't recognise that recursive Fibonacci is exponential. Why that's actually useful information for the GPU-spend decision.",
+    date: "May 2026",
+    readTime: "6 min",
+    tags: ["AI", "Cybersecurity", "PyTorch", "Scaling Laws"],
+    slug: "ghostlm-parameter-ceiling",
+    published: true,
+  },
+  {
+    title: "Building a 422M-Token Corpus for a Cybersecurity LM",
+    excerpt: "The v1.0 GhostLM corpus is 27 sources spanning cybersec writeups, CVEs, MITRE / CWE / OWASP, NIST SP 800, the FineWeb-Edu educational subset, open-web-math, and a 105-repo open-source code pull across 15 languages. Here's how the collectors are structured, why permissive-license filtering matters, and the dedup + leakage-check pipeline that keeps the train/val split honest. Plus the moment code share crossed 11.6% and the corpus mix landed in the SmolLM2 / Phi training-distribution band.",
+    date: "May 2026",
+    readTime: "8 min",
+    tags: ["AI", "Datasets", "Open Source", "PyTorch"],
+    slug: "ghostlm-corpus-build",
+    published: true,
+  },
   {
     title: "Why I'm Building a Cybersecurity LLM from Scratch",
     excerpt: "Most language models aren't designed for security work. Here's why I decided to train GhostLM on CVEs, CTF writeups, and vulnerability research — and what I've learned so far.",
@@ -457,7 +498,7 @@ export const resumeData = {
   github: "github.com/joemunene-by",
   location: "Nairobi, Kenya",
   summary:
-    "Software engineer running Complex Developers — a studio that ships web platforms, custom tooling, and AI-adjacent products. 34+ open-source projects across cybersecurity, AI/ML, and full-stack, including GhostLM (a 14.5M-parameter transformer trained from scratch on security text), linkdrop (a cross-platform Tauri + Rust iPhone-to-Linux companion app), and an upstream contribution to pytorch/ignite fixing numerical stability in PearsonCorrelation. Computer Science student at Moi University.",
+    "Software engineer running Complex Developers — a studio that ships web platforms, custom tooling, and AI-adjacent products. 34+ open-source projects across cybersecurity, AI/ML, and full-stack, including GhostLM (an 81M-parameter from-scratch decoder transformer with a 422M-token multi-domain corpus, 12 differentiation bets, GhostBench eval suite, GhostAgent runtime, and a multi-vendor HTTP server speaking OpenAI / Anthropic / Gemini / Ollama wire formats), linkdrop (a cross-platform Tauri + Rust iPhone-to-Linux companion app), and an upstream contribution to pytorch/ignite fixing numerical stability in PearsonCorrelation. Computer Science student at Moi University.",
   focusAreas: [
     "Full-Stack Engineering",
     "Offensive Security",
@@ -493,7 +534,7 @@ export const resumeData = {
       points: [
         "Shipped 34+ open-source projects spanning cybersecurity, AI/ML, and full-stack — 140,000+ lines of code and 280+ commits across active repositories.",
         "Contributed to pytorch/ignite (#3741) — replaced the naive sum-of-squares variance formula in PearsonCorrelation with Welford's online algorithm and a parallel distributed merge, fixing catastrophic cancellation in float32 (e.g. the metric returning 0.89 instead of 0.99 at mean=1e6).",
-        "Built GhostLM from scratch — a 14.5M-parameter decoder-only transformer in PyTorch. Hand-wrote multi-head causal self-attention, cosine LR schedule with linear warmup, weight-tied embeddings, and a GPT-2 BPE tokenizer extended with security-specific tokens. Phase 1 (10,000 steps, CPU) drove train loss from ~4.5 to ~2.25 and held validation loss around ~2.75.",
+        "Built GhostLM from scratch — an 81M-parameter decoder-only transformer in PyTorch (RoPE positional encoding, SwiGLU activations, RMSNorm, weight-tied embeddings, GPT-2 50K BPE extended with chat + tool-call + cite tokens). Curated a 422M-token / 768K-record multi-domain corpus across 27 sources (cybersec writeups, NVD CVEs, MITRE / CWE / OWASP, NIST SP 800, the FineWeb-Edu educational subset, open-web-math reasoning, and a 105-repo / 15-language open-source code pull). Shipped 12 differentiation bets, the GhostBench eval suite (Wilson 95% CIs + McNemar paired comparisons + Cohen's h effect sizes), GhostAgent (tool-using runtime), a multi-vendor HTTP server speaking OpenAI / Anthropic / Gemini / Ollama wire formats, and an MCP server for Claude Desktop / Cursor. 312 tests green, every collector reproducible from one CLI line.",
         "Shipped linkdrop v0.7.1 — a cross-platform Tauri + Rust + React desktop app that connects an iPhone to Linux / macOS / Windows for photos, files, notifications, and screen mirror. Daemon-backed pymobiledevice3 bridge, CI-built .deb and .AppImage artifacts, published as a GitHub Release.",
         "Built an AI-agent security stack: secure-mcp (MCP server with fail-closed policy gates and subprocess sandboxing), ghostguard (4-tier policy pipeline proxy with real-time dashboard and audit trail), and CyberBench (reproducible benchmark for LLMs on cybersecurity reasoning).",
         "Shipped a defence toolkit: ghostaudit (23 CIS-based Kubernetes security checks with HTML/JSON reports), ghostforensics (memory-forensics automation with YARA scanning and STIX 2.1 IOC export), ghostsiem (SIGMA-rule-driven lightweight SIEM), securecommit (pre-commit secret-and-anti-pattern detector as hook / GitHub Action / CLI).",
@@ -515,7 +556,7 @@ export const resumeData = {
   highlights: [
     "Founder & lead developer at Complex Developers — shipped the company's own Next.js + Prisma + Postgres CRM from empty repo to production",
     "Upstream contributor to pytorch/ignite — Welford's algorithm fix for PearsonCorrelation numerical stability (#3741)",
-    "Built and trained a 14.5M-parameter transformer from scratch — no `transformers` library, every layer hand-written",
+    "Built and trained an 81M-parameter transformer from scratch — RoPE / SwiGLU / RMSNorm, 422M-token multi-domain corpus, 12 differentiation bets, GhostBench eval suite with Wilson CIs and McNemar paired comparisons. No `transformers` library, every layer hand-written",
     "Shipped linkdrop v0.7.1 — cross-platform Tauri + Rust desktop app bridging iPhone ↔ Linux with CI-built .deb/.AppImage artefacts",
     "Ship code weekly — portfolio site itself runs a live GitHub API integration and full animation system",
   ],

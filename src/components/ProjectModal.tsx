@@ -75,9 +75,19 @@ export default function ProjectModal() {
             </div>
 
             <div className="p-6 sm:p-8">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
-                {project.name}
-              </h2>
+              <div className="flex items-center gap-4 mb-3">
+                {project.image && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={project.image}
+                    alt={`${project.name} logo`}
+                    className="w-14 h-14 rounded-xl object-contain bg-white/5 p-1.5 border border-border-color"
+                  />
+                )}
+                <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                  {project.name}
+                </h2>
+              </div>
               <p className="text-text-muted leading-relaxed mb-6">
                 {project.description}
               </p>
