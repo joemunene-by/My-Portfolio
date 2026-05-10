@@ -14,6 +14,7 @@ const categories = [
   { key: "cybersecurity", label: "Cybersecurity" },
   { key: "ai-ml", label: "AI & ML" },
   { key: "web-apps", label: "Web Apps" },
+  { key: "mobile", label: "Mobile" },
   { key: "tools", label: "Tools" },
 ]
 

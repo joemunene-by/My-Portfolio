@@ -8,7 +8,7 @@ import RevealText from "./RevealText"
 import TiltCard from "./TiltCard"
 import GiantLabel from "./GiantLabel"
 import SkillsRadar from "./SkillsRadar"
-import { Github, Code, CheckCircle, FileCode, BookOpen, Shield, Star } from "lucide-react"
+import { Github, Code, CheckCircle, FileCode, BookOpen, Shield, Star, Smartphone, Activity } from "lucide-react"
 
 export default function About() {
   const { stats } = useGitHubStats()
@@ -27,9 +27,19 @@ export default function About() {
       items: skills.languages,
     },
     {
-      title: "Frameworks",
+      title: "Web & Backend",
       icon: <BookOpen className="w-5 h-5 text-primary" />,
       items: skills.frameworks,
+    },
+    {
+      title: "Mobile",
+      icon: <Smartphone className="w-5 h-5 text-primary" />,
+      items: skills.mobile,
+    },
+    {
+      title: "AI & ML",
+      icon: <FileCode className="w-5 h-5 text-primary" />,
+      items: skills.ai,
     },
     {
       title: "Cybersecurity",
@@ -37,14 +47,14 @@ export default function About() {
       items: skills.cybersecurity,
     },
     {
-      title: "Tools",
+      title: "DevOps & Infra",
       icon: <Star className="w-5 h-5 text-primary" />,
       items: skills.tools,
     },
     {
-      title: "AI & ML",
-      icon: <FileCode className="w-5 h-5 text-primary" />,
-      items: skills.ai,
+      title: "Observability & Quality",
+      icon: <Activity className="w-5 h-5 text-primary" />,
+      items: skills.observability,
     },
   ]
 
@@ -121,9 +131,10 @@ export default function About() {
                 axes={[
                   { label: "Frontend", value: 0.9 },
                   { label: "Backend", value: 0.82 },
+                  { label: "Mobile", value: 0.78 },
                   { label: "Cybersec", value: 0.88 },
-                  { label: "AI / ML", value: 0.78 },
-                  { label: "DevOps", value: 0.7 },
+                  { label: "AI / ML", value: 0.8 },
+                  { label: "DevOps", value: 0.72 },
                   { label: "Systems", value: 0.75 },
                 ]}
               />

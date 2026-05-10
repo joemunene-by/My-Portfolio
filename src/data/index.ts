@@ -10,6 +10,16 @@ export const projects = [
     featured: true,
   },
   {
+    name: "EZCare Native",
+    description: "AI-powered wellness companion shipped to the Google Play Store. React Native + Expo SDK 54 with Better Auth, Supabase backend (PostgreSQL + Auth + Storage), tRPC + TanStack Query data layer, RN Skia + Reanimated animations, React Three Fiber 3D scenes, expo-camera / haptics / voice integrations, and Anthropic SDK for the AI wellness coach (EZBuddy). Bun + Turborepo monorepo with shared api / auth / config / db / env packages across native, web, and server apps. Built and submitted via EAS Build & Submit.",
+    language: "TypeScript",
+    stars: 0,
+    topics: ["react-native", "expo", "eas", "android", "supabase", "trpc", "anthropic", "bun", "turborepo"],
+    url: "https://github.com/joemunene-by/ezcare-web-app",
+    category: "mobile",
+    featured: true,
+  },
+  {
     name: "GhostLM",
     description: "An open-source cybersecurity language model built from scratch in PyTorch. 81M-parameter decoder-only transformer (RoPE + SwiGLU + RMSNorm) trained on a 422M-token / 768K-record multi-domain corpus: cybersec writeups, NVD CVEs, MITRE/CWE/OWASP, NIST SP 800, the FineWeb-Edu educational subset, open-web-math reasoning, and a 105-repo / 15-language open-source code pull (cpython stdlib, the Go and Rust ecosystems, the JS / TS / C / C++ / Java / Ruby families, ~42M code tokens). Ships GhostAgent (a tool-using runtime with bet-1 tool-call + bet-9 cite-tag parsing), a multi-vendor HTTP server speaking OpenAI Chat Completions / Anthropic Messages / Google Gemini / Ollama wire formats, an MCP server, and GhostBench (a packaged eval suite with Wilson 95% CIs and McNemar paired comparisons across 14 differentiation bets). 312 tests green, every collector reproducible from one CLI line.",
     language: "Python",
@@ -330,11 +340,13 @@ export const projects = [
 ]
 
 export const skills = {
-  languages: ["TypeScript", "JavaScript", "Python", "Rust", "C", "HTML/CSS", "Shell/Bash", "SQL", "HCL"],
-  frameworks: ["React", "Next.js", "Node.js", "Tauri", "PyTorch", "Prisma", "PostgreSQL", "Jupyter", "Vite", "Express"],
-  cybersecurity: ["Penetration Testing", "Ethical Hacking", "CTF", "Network Analysis", "Vulnerability Assessment", "Cryptography", "Steganography", "OSINT", "Memory Forensics", "SIEM / SIGMA", "K8s Security Auditing"],
-  tools: ["Git", "Linux", "Docker", "Terraform", "YARA", "Nmap", "Wireshark", "Burp Suite", "Metasploit", "Volatility"],
-  ai: ["LLM Integration", "Claude API", "Groq", "Transformer Models", "NLP", "Deep Learning", "MCP Servers", "AI Agent Policy / Sandboxing"],
+  languages: ["TypeScript 5", "JavaScript", "Python", "Rust", "C", "Swift", "HTML/CSS", "Shell/Bash", "SQL", "HCL"],
+  frameworks: ["Next.js 16", "React 19", "Node.js", "Bun", "Tauri", "Electron", "Vite", "Turbopack", "Tailwind CSS 4", "Framer Motion", "GSAP", "Three.js", "React Three Fiber", "Zustand", "TanStack Query", "tRPC", "Prisma", "PostgreSQL", "Supabase", "FastAPI", "Express", "Flask", "NextAuth", "Better Auth", "JWT", "Zod", "Stripe", "Resend"],
+  mobile: ["React Native", "Expo SDK 54", "EAS Build & Submit", "Android (Google Play)", "iOS / Apple Sign-In", "RN Reanimated", "RN Skia", "React Navigation"],
+  cybersecurity: ["Penetration Testing", "Ethical Hacking", "CTF", "Network Analysis", "Packet Crafting (Scapy)", "DNS / OSINT", "Vulnerability Assessment", "Cryptography", "Steganography", "Memory Forensics (YARA / Volatility)", "Sigma / SIEM", "STIX 2.1 / MISP", "Kubernetes CIS Auditing", "AI Agent Sandboxing", "Supply Chain Security", "DOMPurify / XSS Defence"],
+  tools: ["Git", "Linux", "Docker", "Kubernetes", "Terraform", "GitHub Actions", "Turborepo", "Vercel", "Railway", "Cloudflare", "Nmap", "Wireshark", "Burp Suite", "Metasploit", "Hashcat", "YARA", "Volatility"],
+  observability: ["Sentry", "PostHog", "Vitest", "pytest", "ESLint", "Biome", "Prettier"],
+  ai: ["From-Scratch Transformers (RoPE / SwiGLU / RMSNorm)", "PyTorch", "HuggingFace Hub", "tiktoken / BPE", "MLX (Apple Silicon)", "LanceDB / Vector RAG", "BGE Embeddings", "MCP Servers", "Anthropic SDK", "Claude API", "Groq", "AI Agent Policy / Sandboxing", "LLM Evaluation (Wilson CIs / McNemar)"],
 }
 
 export const stats = {
@@ -374,6 +386,13 @@ export const timeline = [
     title: "linkdrop v0.7.1",
     subtitle: "iPhone ↔ Linux Companion App",
     description: "Cross-platform desktop app (Tauri + Rust + React) that connects an iPhone to Ubuntu for photos, files, notifications, and screen mirroring. Daemon-backed pymobiledevice3 bridge, CI-built .deb/.AppImage artifacts, shipped as a proper GitHub release.",
+    type: "project" as const,
+  },
+  {
+    year: "2026",
+    title: "EZCare Native — shipped to Google Play",
+    subtitle: "React Native + Expo SDK 54 wellness companion",
+    description: "Built and shipped a production Android app via EAS Build & Submit. Bun + Turborepo monorepo with native, web, and server apps + shared api / auth / config / db / env packages. Stack: React Native, Expo SDK 54, Better Auth, Supabase (PostgreSQL + Auth + Storage), tRPC + TanStack Query, Zod, RN Skia + Reanimated, React Three Fiber for 3D scenes, expo-camera / haptics / voice, Anthropic SDK for the AI wellness coach.",
     type: "project" as const,
   },
   {
@@ -500,10 +519,11 @@ export const resumeData = {
   summary:
     "Software engineer running Complex Developers — a studio that ships web platforms, custom tooling, and AI-adjacent products. 34+ open-source projects across cybersecurity, AI/ML, and full-stack, including GhostLM (an 81M-parameter from-scratch decoder transformer with a 422M-token multi-domain corpus, 12 differentiation bets, GhostBench eval suite, GhostAgent runtime, and a multi-vendor HTTP server speaking OpenAI / Anthropic / Gemini / Ollama wire formats), linkdrop (a cross-platform Tauri + Rust iPhone-to-Linux companion app), and an upstream contribution to pytorch/ignite fixing numerical stability in PearsonCorrelation. Computer Science student at Moi University.",
   focusAreas: [
-    "Full-Stack Engineering",
-    "Offensive Security",
-    "Applied AI / ML",
-    "Cross-Platform Desktop (Tauri / Rust)",
+    "Full-Stack Engineering (Next.js 16 / React 19 / Tailwind 4)",
+    "Mobile (React Native + Expo + EAS, Android shipped to Google Play)",
+    "Offensive & Defensive Security",
+    "Applied AI / ML (from-scratch transformers, RAG, MCP, agent sandboxing)",
+    "Cross-Platform Desktop (Tauri / Rust + Electron)",
     "Systems & Networking",
   ],
   spokenLanguages: ["English — fluent", "Swahili — native"],
@@ -536,6 +556,7 @@ export const resumeData = {
         "Contributed to pytorch/ignite (#3741) — replaced the naive sum-of-squares variance formula in PearsonCorrelation with Welford's online algorithm and a parallel distributed merge, fixing catastrophic cancellation in float32 (e.g. the metric returning 0.89 instead of 0.99 at mean=1e6).",
         "Built GhostLM from scratch — an 81M-parameter decoder-only transformer in PyTorch (RoPE positional encoding, SwiGLU activations, RMSNorm, weight-tied embeddings, GPT-2 50K BPE extended with chat + tool-call + cite tokens). Curated a 422M-token / 768K-record multi-domain corpus across 27 sources (cybersec writeups, NVD CVEs, MITRE / CWE / OWASP, NIST SP 800, the FineWeb-Edu educational subset, open-web-math reasoning, and a 105-repo / 15-language open-source code pull). Shipped 12 differentiation bets, the GhostBench eval suite (Wilson 95% CIs + McNemar paired comparisons + Cohen's h effect sizes), GhostAgent (tool-using runtime), a multi-vendor HTTP server speaking OpenAI / Anthropic / Gemini / Ollama wire formats, and an MCP server for Claude Desktop / Cursor. 312 tests green, every collector reproducible from one CLI line.",
         "Shipped linkdrop v0.7.1 — a cross-platform Tauri + Rust + React desktop app that connects an iPhone to Linux / macOS / Windows for photos, files, notifications, and screen mirror. Daemon-backed pymobiledevice3 bridge, CI-built .deb and .AppImage artifacts, published as a GitHub Release.",
+        "Shipped EZCare Native to the Google Play Store — a React Native + Expo SDK 54 wellness companion app with Better Auth, Supabase backend, tRPC + TanStack Query data layer, RN Skia + Reanimated animations, React Three Fiber 3D scenes, voice / camera / haptics integrations, and Anthropic SDK for the AI wellness coach. Built and submitted via EAS Build & Submit; Bun + Turborepo monorepo with shared API / config / auth / db / env packages across native + web + server apps.",
         "Built an AI-agent security stack: secure-mcp (MCP server with fail-closed policy gates and subprocess sandboxing), ghostguard (4-tier policy pipeline proxy with real-time dashboard and audit trail), and CyberBench (reproducible benchmark for LLMs on cybersecurity reasoning).",
         "Shipped a defence toolkit: ghostaudit (23 CIS-based Kubernetes security checks with HTML/JSON reports), ghostforensics (memory-forensics automation with YARA scanning and STIX 2.1 IOC export), ghostsiem (SIGMA-rule-driven lightweight SIEM), securecommit (pre-commit secret-and-anti-pattern detector as hook / GitHub Action / CLI).",
         "Developed an offensive toolkit: concurrent TCP port scanner with banner-grab, packet-level network traffic analyzer for SOC workflows, static vulnerability scanner, hash-cracking framework, MAC-address rotator, and a metadata scrubber — all Python, all production-ready CLIs.",
@@ -545,19 +566,23 @@ export const resumeData = {
     },
   ],
   technicalSkills: {
-    Languages: "TypeScript, JavaScript, Python, Rust, C, SQL, Shell/Bash, HCL, HTML/CSS",
-    Frameworks: "Next.js 15, React 19, Node.js, Tauri, PyTorch, Prisma, PostgreSQL, FastAPI, Express, Jupyter, Vite",
-    Security:
-      "Penetration testing, vulnerability assessment, CTF, network analysis, OSINT, memory forensics (YARA/Volatility), SIGMA/SIEM, Kubernetes CIS auditing, AI-agent sandboxing, steganography",
-    Tools: "Git, Linux, Docker, Terraform, Vercel, Supabase, Nmap, Wireshark, Burp Suite, Metasploit, YARA, Volatility",
-    "AI / ML":
-      "Transformer architectures, attention mechanisms, from-scratch LLM training, tokenization (BPE), MCP servers, AI-agent policy / sandboxing, LLM integration, Claude API, Groq",
+    Languages: "TypeScript 5, JavaScript, Python, Rust, C, Swift, SQL, Shell/Bash, HCL, HTML/CSS",
+    Frontend: "Next.js 16 (App Router + Turbopack + Server Components), React 19, Tailwind CSS 4, Vite, React Router, Framer Motion, GSAP, Three.js + React Three Fiber + Drei, Zustand, TanStack Query, TipTap, Recharts / lightweight-charts, Monaco Editor",
+    "Mobile (React Native)": "React Native, Expo SDK 54, EAS Build & Submit, Android (Google Play shipped), iOS (Apple Sign-In), Reanimated, RN Skia, React Navigation, Better Auth (Expo)",
+    Backend: "Node.js, Bun, FastAPI, Express, Flask, tRPC, Prisma, PostgreSQL, Supabase (Auth + Storage + DB), NextAuth, Better Auth, JWT, bcrypt, Zod, Stripe, Resend",
+    "AI / ML": "From-scratch transformer architectures (RoPE + SwiGLU + RMSNorm), attention mechanics, BPE tokenization with tiktoken, MLX (Apple Silicon ML), HuggingFace Hub, LanceDB (vector RAG), BGE embeddings, MCP servers, Anthropic SDK + Claude API, Groq, AI-agent policy / sandboxing, GhostBench eval suite (Wilson CIs + McNemar)",
+    "Cross-Platform Desktop": "Tauri (Rust + WebView), Electron, pymobiledevice3 (iOS bridge for Linux / macOS / Windows)",
+    "Offensive Security": "Penetration testing, vulnerability assessment, CTF competitor, network analysis, packet crafting (Scapy), DNS / OSINT (dnspython, python-whois), steganography, hash cracking (Hashcat), Nmap / Wireshark / Burp Suite / Metasploit",
+    "Defensive Security & Forensics": "Memory forensics (YARA + Volatility), Sigma rules, STIX 2.1 + MISP IOC export, Kubernetes CIS auditing, AI agent sandboxing, AI model supply chain security (OWASP cheat sheet author), DOMPurify / XSS defence, secret scanning (securecommit)",
+    "DevOps & Infra": "Git, Linux, Docker, Kubernetes, Terraform, GitHub Actions, Turborepo, Vercel, Railway, Cloudflare, Supabase",
+    "Observability & Quality": "Sentry, PostHog, Vitest, pytest, ESLint, Biome, Prettier",
   },
   highlights: [
     "Founder & lead developer at Complex Developers — shipped the company's own Next.js + Prisma + Postgres CRM from empty repo to production",
     "Upstream contributor to pytorch/ignite — Welford's algorithm fix for PearsonCorrelation numerical stability (#3741)",
     "Built and trained an 81M-parameter transformer from scratch — RoPE / SwiGLU / RMSNorm, 422M-token multi-domain corpus, 12 differentiation bets, GhostBench eval suite with Wilson CIs and McNemar paired comparisons. No `transformers` library, every layer hand-written",
     "Shipped linkdrop v0.7.1 — cross-platform Tauri + Rust desktop app bridging iPhone ↔ Linux with CI-built .deb/.AppImage artefacts",
+    "Shipped EZCare Native to the Google Play Store — React Native + Expo SDK 54 monorepo, Better Auth + Supabase + tRPC, RN Skia + Reanimated + R3F, AI coach via Anthropic SDK, EAS Build & Submit",
     "Ship code weekly — portfolio site itself runs a live GitHub API integration and full animation system",
   ],
   certifications: [
