@@ -8,7 +8,7 @@ import RevealText from "./RevealText"
 import TiltCard from "./TiltCard"
 import GiantLabel from "./GiantLabel"
 import SkillsRadar from "./SkillsRadar"
-import { Github, Code, CheckCircle, FileCode, BookOpen, Shield, Star, Smartphone, Activity } from "lucide-react"
+import { Github, Code, CheckCircle, FileCode, BookOpen, Shield, Star, Smartphone, Activity, Bot, Eye, Sigma, Brain } from "lucide-react"
 
 export default function About() {
   const { stats } = useGitHubStats()
@@ -40,6 +40,26 @@ export default function About() {
       title: "AI & ML",
       icon: <FileCode className="w-5 h-5 text-primary" />,
       items: skills.ai,
+    },
+    {
+      title: "Reinforcement Learning",
+      icon: <Brain className="w-5 h-5 text-primary" />,
+      items: skills.rl,
+    },
+    {
+      title: "Robotics & Embodied AI",
+      icon: <Bot className="w-5 h-5 text-primary" />,
+      items: skills.robotics,
+    },
+    {
+      title: "Computer Vision",
+      icon: <Eye className="w-5 h-5 text-primary" />,
+      items: skills.vision,
+    },
+    {
+      title: "Formal Methods & Verification",
+      icon: <Sigma className="w-5 h-5 text-primary" />,
+      items: skills.formal,
     },
     {
       title: "Cybersecurity",
@@ -130,12 +150,14 @@ export default function About() {
               <SkillsRadar
                 axes={[
                   { label: "Frontend", value: 0.9 },
-                  { label: "Backend", value: 0.82 },
+                  { label: "Backend", value: 0.85 },
                   { label: "Mobile", value: 0.78 },
                   { label: "Cybersec", value: 0.88 },
-                  { label: "AI / ML", value: 0.8 },
-                  { label: "DevOps", value: 0.72 },
-                  { label: "Systems", value: 0.75 },
+                  { label: "AI / ML", value: 0.86 },
+                  { label: "Robotics", value: 0.82 },
+                  { label: "RL", value: 0.78 },
+                  { label: "DevOps", value: 0.74 },
+                  { label: "Systems", value: 0.78 },
                 ]}
               />
             </div>

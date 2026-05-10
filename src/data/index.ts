@@ -352,19 +352,23 @@ export const projects = [
 
 export const skills = {
   languages: ["TypeScript 5", "JavaScript", "Python", "Rust", "C", "Swift", "HTML/CSS", "Shell/Bash", "SQL", "HCL"],
-  frameworks: ["Next.js 16", "React 19", "Node.js", "Bun", "Tauri", "Electron", "Vite", "Turbopack", "Tailwind CSS 4", "Framer Motion", "GSAP", "Three.js", "React Three Fiber", "Zustand", "TanStack Query", "tRPC", "Prisma", "PostgreSQL", "Supabase", "FastAPI", "Express", "Flask", "NextAuth", "Better Auth", "JWT", "Zod", "Stripe", "Resend"],
+  frameworks: ["Next.js 16", "React 19", "Node.js", "Bun", "Tauri", "Electron", "Vite", "Turbopack", "Tailwind CSS 4", "Framer Motion", "GSAP", "Three.js", "React Three Fiber", "Zustand", "TanStack Query", "tRPC", "Prisma", "PostgreSQL", "SQLite", "Supabase", "FastAPI", "WebSockets", "Express", "Flask", "NextAuth", "Better Auth", "JWT", "Bearer Auth Strategies", "Sliding-Window Rate Limiting", "Zod", "Stripe", "Resend"],
   mobile: ["React Native", "Expo SDK 54", "EAS Build & Submit", "Android (Google Play)", "iOS / Apple Sign-In", "RN Reanimated", "RN Skia", "React Navigation"],
   cybersecurity: ["Penetration Testing", "Ethical Hacking", "CTF", "Network Analysis", "Packet Crafting (Scapy)", "DNS / OSINT", "Vulnerability Assessment", "Cryptography", "Steganography", "Memory Forensics (YARA / Volatility)", "Sigma / SIEM", "STIX 2.1 / MISP", "Kubernetes CIS Auditing", "AI Agent Sandboxing", "Supply Chain Security", "DOMPurify / XSS Defence"],
   tools: ["Git", "Linux", "Docker", "Kubernetes", "Terraform", "GitHub Actions", "Turborepo", "Vercel", "Railway", "Cloudflare", "Nmap", "Wireshark", "Burp Suite", "Metasploit", "Hashcat", "YARA", "Volatility"],
-  observability: ["Sentry", "PostHog", "Vitest", "pytest", "ESLint", "Biome", "Prettier"],
-  ai: ["From-Scratch Transformers (RoPE / SwiGLU / RMSNorm)", "PyTorch", "HuggingFace Hub", "tiktoken / BPE", "MLX (Apple Silicon)", "LanceDB / Vector RAG", "BGE Embeddings", "MCP Servers", "Anthropic SDK", "Claude API", "Groq", "AI Agent Policy / Sandboxing", "LLM Evaluation (Wilson CIs / McNemar)"],
+  observability: ["Sentry", "PostHog", "OpenTelemetry", "Prometheus /metrics", "kube probes (livez/readyz)", "Vitest", "pytest", "ESLint", "Biome", "Prettier"],
+  ai: ["From-Scratch Transformers (RoPE / SwiGLU / RMSNorm)", "PyTorch", "HuggingFace Hub", "tiktoken / BPE", "MLX (Apple Silicon)", "LanceDB / Vector RAG", "BGE Embeddings", "MCP / FastMCP", "Anthropic SDK", "Claude API", "Groq", "AI Agent Policy / Sandboxing", "LLM-as-Judge (rubric scoring)", "Counterfactual Trace Replay", "Causal Failure Attribution", "Property Mining (auto-invariants)", "Adversarial Search (CMA-ES)", "LLM Evaluation (Wilson CI / McNemar / Cohen's h)"],
+  rl: ["Gymnasium (Farama)", "Constrained MDP", "Safe RL with policy gates", "Lagrangian Multipliers", "Hindsight Experience Replay (HER)", "PPO / SAC trainer compatibility", "Declarative Reward Shaping DSL"],
+  robotics: ["MuJoCo (DeepMind)", "PyBullet", "ROS 2 (rclpy)", "URDF parsing", "MuJoCo Menagerie (Franka / UR5e / Stretch / Spot / Aloha / Allegro)", "VLA Models (OpenVLA / π0 / RT-2)", "Sim-to-Real with Domain Randomization", "Action Smoothing (velocity / acceleration limits)", "SDF + Convex Polytopes", "Skill Graph (DAG with prereqs)", "Mission DAG (Kahn topology)", "Cross-Embodiment Morphology Registry"],
+  vision: ["RGB-D Fusion (deproject_depth)", "Point Clouds (Inigo Quilez SDF)", "Object Detection (bbox + 3D centroid)", "Camera Intrinsics (pinhole model)"],
+  formal: ["Signal Temporal Logic (Always / Eventually / Until)", "Declarative Property Engine", "Wilson 95% CI", "McNemar Exact Paired-Comparison", "Cohen's h Effect Size"],
 }
 
 export const stats = {
-  totalRepos: 34,
-  totalCommits: 320,
-  linesOfCode: "165,000+",
-  healthyRepos: 34,
+  totalRepos: 35,
+  totalCommits: 360,
+  linesOfCode: "180,000+",
+  healthyRepos: 35,
   languages: ["Python", "TypeScript", "JavaScript", "Rust", "C", "Shell", "HTML"],
 }
 
@@ -401,9 +405,9 @@ export const timeline = [
   },
   {
     year: "2026",
-    title: "ghostloop v0.3.0 — agent loop, embodied",
-    subtitle: "Robot agent runtime + safety pipeline + bench harness, 93 tests",
-    description: "New from-scratch repo: the GhostAgent pattern from GhostLM (tool registry, policy gates, structured trace, paired-comparison eval), reshaped for robotics. Three backends (Mock / MuJoCo / PyBullet), MuJoCo Menagerie loader resolving 10+ named robots (Franka, UR5e, Stretch, Allegro, Spot, Aloha) with auto shallow-clone on first use, LLMPolicy adapter for any OpenAI-compatible endpoint, bench harness with Wilson 95% CIs + McNemar exact p + Cohen's h, trace replay tooling, five policy gates (DenyList / RateLimit / Geofence / ForceCap / HumanInTheLoop), Episode catalogue with reusable builders, plus a `python -m ghostloop` CLI. v0.1.0 → v0.3.0 in one push session, all six v0.3 + v0.4 roadmap items pulled forward and shipped together.",
+    title: "ghostloop v1.0.0 — production",
+    subtitle: "Eleven releases, 70+ modules, 314 tests, ten novel post-hoc analysis pillars",
+    description: "Took ghostloop from v0.1 to v1.0.0 production-stable across eleven tagged releases. Six backends (Mock / MuJoCo / PyBullet / Gymnasium / ROS 2 / RandomizedBackend), 12 policy gates, MuJoCo Menagerie loader, LLMPolicy + VLAPolicy adapters, bench harness with Wilson CI + McNemar + Cohen's h + Sim2Real transfer-gap + adversarial fuzzing (random / grid / CMA-ES). Novel surface no other robotics framework ships: STL temporal properties (Always / Eventually / Until) + auto-mining from successful traces, counterfactual trace replay (replay through a different policy), causal failure attribution (leave-one-out ablation), LLM-as-judge with rubric scoring, skill graph (DAG with prereqs), hindsight experience relabeling (HER), energy ledger (joules per primitive), cross-embodiment morphology registry. v1.0.0 closes the roadmap: RGB-D fusion + lightweight object detection (deproject_depth + BlobDetector + 3D centroids), VLA-on-MuJoCo benchmark suite vs OpenVLA / RT-2-X / Octo / π0 / Diffusion Policy / ACT with Cohen's h vs every published baseline + arXiv citations, production fleet dashboard (StaticTokenAuth + RateLimiter + AlarmRegistry + Prometheus /metrics + livez/readyz kube probes). 314 tests green.",
     type: "project" as const,
   },
   {
