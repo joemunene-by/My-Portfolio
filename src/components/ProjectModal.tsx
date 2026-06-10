@@ -41,7 +41,7 @@ export default function ProjectModal() {
     <AnimatePresence>
       {project && (
         <motion.div
-          className="fixed inset-0 z-[9993] flex items-start justify-center overflow-y-auto px-4 py-10 sm:py-16"
+          className="fixed inset-0 z-9993 flex items-start justify-center overflow-y-auto px-4 py-10 sm:py-16"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -101,7 +101,7 @@ export default function ProjectModal() {
                     loading="lazy"
                     sandbox="allow-scripts allow-same-origin"
                   />
-                  <div className="absolute top-2 right-2 px-2 py-1 bg-bg-dark/80 backdrop-blur-sm rounded font-mono text-[10px] text-white/70 uppercase tracking-widest">
+                  <div className="absolute top-2 right-2 px-2 py-1 bg-bg-dark/80 backdrop-blur-xs rounded-sm font-mono text-[10px] text-white/70 uppercase tracking-widest">
                     Live Preview
                   </div>
                 </div>

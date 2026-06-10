@@ -166,7 +166,7 @@ export default function Services() {
                     <motion.div
                       whileHover={{ rotate: 6, scale: 1.05 }}
                       transition={{ type: "spring", stiffness: 300, damping: 18 }}
-                      className={`w-12 h-12 rounded-xl ${service.iconBg} border ${service.iconBorder} flex items-center justify-center flex-shrink-0`}
+                      className={`w-12 h-12 rounded-xl ${service.iconBg} border ${service.iconBorder} flex items-center justify-center shrink-0`}
                     >
                       <Icon className={`w-5 h-5 ${service.iconColor}`} />
                     </motion.div>
@@ -187,7 +187,7 @@ export default function Services() {
                         className="flex items-start gap-2.5 text-sm text-text-muted/90"
                       >
                         <CheckCircle2
-                          className={`w-4 h-4 ${service.iconColor} flex-shrink-0 mt-0.5`}
+                          className={`w-4 h-4 ${service.iconColor} shrink-0 mt-0.5`}
                         />
                         <span className="leading-snug">{d}</span>
                       </li>
@@ -220,13 +220,13 @@ export default function Services() {
         </div>
 
         <AnimatedSection delay={0.5}>
-          <div className="mt-12 bg-gradient-to-r from-primary/10 via-accent/8 to-accent-warm/10 border border-primary/20 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+          <div className="mt-12 bg-linear-to-r from-primary/10 via-accent/8 to-accent-warm/10 border border-primary/20 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
             <div>
               <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
                 Have a CRM, SaaS, or security project on the table?
               </h3>
               <p className="text-text-muted text-sm sm:text-base">
-                I take a small number of client engagements per quarter. Tell me what you're building.
+                I take a small number of client engagements per quarter. Tell me what you&apos;re building.
               </p>
             </div>
             <MagneticLink>

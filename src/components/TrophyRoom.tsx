@@ -129,7 +129,7 @@ export default function TrophyRoom() {
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-[9990] flex items-center justify-center p-4"
+          className="fixed inset-0 z-9990 flex items-center justify-center p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -167,7 +167,7 @@ export default function TrophyRoom() {
             <div className="px-5 pt-4">
               <div className="h-1.5 rounded-full bg-bg-dark/80 overflow-hidden">
                 <motion.div
-                  className="h-full bg-gradient-to-r from-primary via-accent to-accent-warm"
+                  className="h-full bg-linear-to-r from-primary via-accent to-accent-warm"
                   initial={{ width: 0 }}
                   animate={{ width: `${totalPct}%` }}
                   transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
@@ -221,9 +221,9 @@ export default function TrophyRoom() {
 
             <div className="flex items-center justify-between border-t border-border-color px-5 py-3 font-mono text-[11px] text-text-muted">
               <span className="flex items-center gap-2">
-                <kbd className="px-1.5 py-0.5 rounded border border-border-color">⌘</kbd>
-                <kbd className="px-1.5 py-0.5 rounded border border-border-color">Shift</kbd>
-                <kbd className="px-1.5 py-0.5 rounded border border-border-color">T</kbd>
+                <kbd className="px-1.5 py-0.5 rounded-sm border border-border-color">⌘</kbd>
+                <kbd className="px-1.5 py-0.5 rounded-sm border border-border-color">Shift</kbd>
+                <kbd className="px-1.5 py-0.5 rounded-sm border border-border-color">T</kbd>
                 toggle
               </span>
               <button

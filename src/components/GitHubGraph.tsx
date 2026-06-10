@@ -143,12 +143,12 @@ export default function GitHubGraph() {
               </div>
             ) : loading ? (
               <div className="flex flex-col gap-3 py-2">
-                <div className="h-3 w-32 rounded bg-border-color/60 animate-pulse" />
-                <div className="grid grid-cols-[repeat(53,minmax(0,1fr))] gap-[3px]">
+                <div className="h-3 w-32 rounded-sm bg-border-color/60 animate-pulse" />
+                <div className="grid grid-cols-53 gap-[3px]">
                   {Array.from({ length: 53 * 7 }).map((_, i) => (
                     <div
                       key={i}
-                      className="aspect-square rounded-sm bg-border-color/30 animate-pulse"
+                      className="aspect-square rounded-xs bg-border-color/30 animate-pulse"
                     />
                   ))}
                 </div>
@@ -187,7 +187,7 @@ export default function GitHubGraph() {
                       {week.map((day, di) => (
                         <motion.div
                           key={`${wi}-${di}`}
-                          className={`w-[11px] h-[11px] rounded-sm ${LEVEL_COLORS[day.level]} transition-colors`}
+                          className={`w-[11px] h-[11px] rounded-xs ${LEVEL_COLORS[day.level]} transition-colors`}
                           initial={{ opacity: 0, scale: 0 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
@@ -210,7 +210,7 @@ export default function GitHubGraph() {
                 <div className="flex items-center justify-end gap-2 mt-4 text-[10px] text-text-muted font-mono">
                   <span>Less</span>
                   {LEVEL_COLORS.map((c, i) => (
-                    <div key={i} className={`w-[11px] h-[11px] rounded-sm ${c}`} />
+                    <div key={i} className={`w-[11px] h-[11px] rounded-xs ${c}`} />
                   ))}
                   <span>More</span>
                 </div>

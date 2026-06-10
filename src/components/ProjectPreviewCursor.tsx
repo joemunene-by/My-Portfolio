@@ -50,7 +50,7 @@ export default function ProjectPreviewCursor() {
     <AnimatePresence>
       {visible && preview && (
         <motion.div
-          className="pointer-events-none fixed left-0 top-0 z-[9994] hidden md:block"
+          className="pointer-events-none fixed left-0 top-0 z-9994 hidden md:block"
           style={{ x, y }}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -58,7 +58,7 @@ export default function ProjectPreviewCursor() {
           transition={{ duration: 0.18, ease: [0.25, 0.4, 0.25, 1] }}
         >
           <div
-            className={`relative w-[260px] h-[170px] rounded-xl overflow-hidden border border-white/10 bg-gradient-to-br ${preview.tint} shadow-[0_20px_60px_rgba(0,0,0,0.5)]`}
+            className={`relative w-[260px] h-[170px] rounded-xl overflow-hidden border border-white/10 bg-linear-to-br ${preview.tint} shadow-[0_20px_60px_rgba(0,0,0,0.5)]`}
           >
             <div className="absolute inset-0 bg-bg-dark/60" />
             <div className="absolute inset-0 grid-bg opacity-30" />
@@ -66,7 +66,7 @@ export default function ProjectPreviewCursor() {
               <div className="flex items-center justify-between font-mono text-[10px] text-white/80">
                 <span className="uppercase tracking-widest">Preview</span>
                 {preview.language && (
-                  <span className="px-1.5 py-0.5 rounded bg-white/10 border border-white/15">
+                  <span className="px-1.5 py-0.5 rounded-sm bg-white/10 border border-white/15">
                     {preview.language}
                   </span>
                 )}

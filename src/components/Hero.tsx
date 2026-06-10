@@ -54,7 +54,7 @@ export default function Hero() {
       {/* Grid overlay */}
       <div className="absolute inset-0 grid-bg" />
       <HeroSpotlight />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg-dark/50 to-bg-dark pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-bg-dark/50 to-bg-dark pointer-events-none" />
 
       {/* Ambient glow orbs */}
       <motion.div
@@ -78,7 +78,7 @@ export default function Hero() {
           >
             {/* Status badge */}
             <motion.div variants={itemVariants} className="mb-8">
-              <span className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
+              <span className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-xs px-4 py-2 rounded-full border border-white/10">
                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                 <span className="font-mono text-xs text-white/70">Available for work</span>
               </span>
@@ -112,7 +112,7 @@ export default function Hero() {
               className="h-8 mb-8"
             >
               <div className="flex items-center gap-3 font-mono text-base sm:text-lg text-primary">
-                <Terminal className="w-5 h-5 flex-shrink-0" />
+                <Terminal className="w-5 h-5 shrink-0" />
                 <motion.span
                   key={textIndex}
                   initial={{ opacity: 0, y: 10 }}
@@ -141,7 +141,7 @@ export default function Hero() {
               <MagneticLink>
                 <a
                   href="#projects"
-                  className="group relative px-8 py-4 font-mono text-base font-semibold rounded-xl flex items-center gap-2.5 transition-all duration-300 bg-gradient-to-b from-primary/90 to-primary border border-primary/50 text-white shadow-[0_4px_15px_rgba(108,156,255,0.3),inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_25px_rgba(108,156,255,0.45),inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-2px_4px_rgba(0,0,0,0.2)] active:translate-y-[1px]"
+                  className="group relative px-8 py-4 font-mono text-base font-semibold rounded-xl flex items-center gap-2.5 transition-all duration-300 bg-linear-to-b from-primary/90 to-primary border border-primary/50 text-white shadow-[0_4px_15px_rgba(108,156,255,0.3),inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_25px_rgba(108,156,255,0.45),inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-2px_4px_rgba(0,0,0,0.2)] active:translate-y-px"
                 >
                   <Code2 className="w-5 h-5" />
                   View My Work

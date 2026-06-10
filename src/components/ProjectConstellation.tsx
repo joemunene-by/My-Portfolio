@@ -180,7 +180,7 @@ export default function ProjectConstellation() {
           </p>
         </div>
 
-        <div className="relative rounded-2xl border border-border-color bg-bg-card/30 backdrop-blur-sm overflow-hidden">
+        <div className="relative rounded-2xl border border-border-color bg-bg-card/30 backdrop-blur-xs overflow-hidden">
           <svg
             ref={svgRef}
             viewBox={`0 0 ${W} ${H}`}
@@ -299,7 +299,7 @@ export default function ProjectConstellation() {
                 {hoveredNode.topics.slice(0, 4).map((t) => (
                   <span
                     key={t}
-                    className="px-1.5 py-0.5 font-mono text-[10px] rounded bg-primary/10 text-primary border border-primary/15"
+                    className="px-1.5 py-0.5 font-mono text-[10px] rounded-sm bg-primary/10 text-primary border border-primary/15"
                   >
                     {t}
                   </span>

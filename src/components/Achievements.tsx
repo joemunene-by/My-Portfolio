@@ -96,10 +96,10 @@ export default function Achievements() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 30, scale: 0.96 }}
           transition={{ duration: 0.28, ease: [0.25, 0.4, 0.25, 1] }}
-          className="fixed bottom-5 left-1/2 -translate-x-1/2 z-[60] min-w-[320px] max-w-[90vw]"
+          className="fixed bottom-5 left-1/2 -translate-x-1/2 z-60 min-w-[320px] max-w-[90vw]"
         >
           <div className="relative bg-bg-card/90 backdrop-blur-2xl border border-primary/40 rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
-            <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent" />
+            <div className="absolute inset-x-0 top-0 h-[2px] bg-linear-to-r from-transparent via-primary to-transparent" />
             <div className="flex items-center gap-3 p-4">
               <div className="relative w-10 h-10 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center text-primary">
                 {current.icon}

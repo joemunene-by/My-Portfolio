@@ -71,7 +71,7 @@ export default function ShortcutCheatsheet() {
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-[9991] flex items-center justify-center p-4"
+          className="fixed inset-0 z-9991 flex items-center justify-center p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -119,7 +119,7 @@ export default function ShortcutCheatsheet() {
                           {r.keys.map((k, j) => (
                             <kbd
                               key={j}
-                              className="font-mono text-[10px] px-1.5 py-0.5 rounded border border-border-color text-white bg-bg-dark/60 whitespace-nowrap"
+                              className="font-mono text-[10px] px-1.5 py-0.5 rounded-sm border border-border-color text-white bg-bg-dark/60 whitespace-nowrap"
                             >
                               {k}
                             </kbd>
@@ -134,7 +134,7 @@ export default function ShortcutCheatsheet() {
 
             <div className="border-t border-border-color px-5 py-3 font-mono text-[11px] text-text-muted flex items-center justify-between">
               <span>press{" "}
-                <kbd className="px-1.5 py-0.5 rounded border border-border-color">?</kbd>{" "}
+                <kbd className="px-1.5 py-0.5 rounded-sm border border-border-color">?</kbd>{" "}
                 anytime to toggle
               </span>
               <span>ghost/portfolio</span>

@@ -45,7 +45,7 @@ export default function Blog() {
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-0.5 bg-primary/5 text-primary/70 font-mono text-[10px] rounded"
+                      className="px-2 py-0.5 bg-primary/5 text-primary/70 font-mono text-[10px] rounded-sm"
                     >
                       {tag}
                     </span>

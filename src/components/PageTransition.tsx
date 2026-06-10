@@ -34,7 +34,7 @@ export default function PageTransition({ children }: { children: ReactNode }) {
       <AnimatePresence>
         <motion.div
           key={`curtain-${key}`}
-          className="fixed inset-0 z-[9995] pointer-events-none"
+          className="fixed inset-0 z-9995 pointer-events-none"
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
           exit={{ opacity: 0 }}

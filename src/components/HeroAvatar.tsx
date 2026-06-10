@@ -57,7 +57,7 @@ export default function HeroAvatar() {
         {/* Ambient glow behind */}
         <motion.div
           style={{ x: glowX, y: glowY, translateZ: -60 }}
-          className="absolute -inset-8 bg-gradient-to-br from-primary/30 via-accent/20 to-accent-warm/15 rounded-[2.5rem] blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"
+          className="absolute -inset-8 bg-linear-to-br from-primary/30 via-accent/20 to-accent-warm/15 rounded-[2.5rem] blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"
         />
 
         {/* Photo layer */}
@@ -70,10 +70,10 @@ export default function HeroAvatar() {
             alt="Joe Munene"
             width={420}
             height={520}
-            className="object-cover w-[300px] h-[380px] sm:w-[360px] sm:h-[450px] lg:w-[420px] lg:h-[520px] grayscale-[10%] group-hover:grayscale-0 transition-all duration-700"
+            className="object-cover w-[300px] h-[380px] sm:w-[360px] sm:h-[450px] lg:w-[420px] lg:h-[520px] grayscale-10 group-hover:grayscale-0 transition-all duration-700"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/45 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-bg-dark/45 via-transparent to-transparent" />
           <div className="absolute inset-0 bg-primary/5 mix-blend-overlay" />
           {/* Holographic iridescent overlay — rotates with cursor */}
           <motion.div

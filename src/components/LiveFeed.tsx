@@ -206,9 +206,9 @@ export default function LiveFeed() {
           </div>
         </div>
 
-        <div className="relative rounded-2xl border border-border-color bg-bg-card/40 backdrop-blur-sm overflow-hidden">
-          <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-bg-card/80 to-transparent pointer-events-none z-10" />
-          <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-bg-card/80 to-transparent pointer-events-none z-10" />
+        <div className="relative rounded-2xl border border-border-color bg-bg-card/40 backdrop-blur-xs overflow-hidden">
+          <div className="absolute inset-x-0 top-0 h-8 bg-linear-to-b from-bg-card/80 to-transparent pointer-events-none z-10" />
+          <div className="absolute inset-x-0 bottom-0 h-8 bg-linear-to-t from-bg-card/80 to-transparent pointer-events-none z-10" />
 
           <div className="max-h-80 overflow-y-auto p-2 divide-y divide-border-color/50">
             <AnimatePresence initial={false}>

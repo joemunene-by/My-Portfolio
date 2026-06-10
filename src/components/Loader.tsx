@@ -34,7 +34,7 @@ export default function Loader() {
     <AnimatePresence>
       {loading && (
         <motion.div
-          className="fixed inset-0 z-[100] pointer-events-none"
+          className="fixed inset-0 z-100 pointer-events-none"
           initial={false}
           exit={{ opacity: 1 }}
           transition={{ duration: 0 }}

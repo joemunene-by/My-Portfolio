@@ -31,7 +31,7 @@ export default function ThemeRipple() {
   }, [])
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-[9997] overflow-hidden">
+    <div className="pointer-events-none fixed inset-0 z-9997 overflow-hidden">
       <AnimatePresence>
         {ripples.map((r) => {
           const maxR = Math.hypot(window.innerWidth, window.innerHeight) * 1.1

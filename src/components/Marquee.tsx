@@ -13,7 +13,7 @@ export default function Marquee({ items, speed = 40, className = "" }: Props) {
 
   return (
     <div
-      className={`relative overflow-hidden border-y border-border-color bg-bg-card/30 backdrop-blur-sm py-5 ${className}`}
+      className={`relative overflow-hidden border-y border-border-color bg-bg-card/30 backdrop-blur-xs py-5 ${className}`}
       aria-hidden
     >
       <motion.div

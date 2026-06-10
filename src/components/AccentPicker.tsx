@@ -104,7 +104,7 @@ export default function AccentPicker() {
   }
 
   return (
-    <div className="fixed bottom-5 right-5 z-[60] flex flex-col items-end gap-2">
+    <div className="fixed bottom-5 right-5 z-60 flex flex-col items-end gap-2">
       <AnimatePresence>
         {open && (
           <motion.div

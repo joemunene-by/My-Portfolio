@@ -170,7 +170,7 @@ export default function OnboardingTour() {
       {active && (
         <motion.div
           ref={overlayRef}
-          className="fixed inset-0 z-[9991] pointer-events-auto"
+          className="fixed inset-0 z-9991 pointer-events-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

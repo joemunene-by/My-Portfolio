@@ -96,7 +96,7 @@ export default function CursorTrail() {
     <canvas
       ref={canvasRef}
       aria-hidden
-      className="pointer-events-none fixed inset-0 z-[9993]"
+      className="pointer-events-none fixed inset-0 z-9993"
       style={{ mixBlendMode: "screen" }}
     />
   )

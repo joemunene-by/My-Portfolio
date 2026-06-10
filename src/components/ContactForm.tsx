@@ -85,7 +85,7 @@ export default function ContactForm() {
   )
 
   const inputCls =
-    "w-full bg-bg-card/60 backdrop-blur-md border border-border-color rounded-lg px-4 py-3 text-white font-mono text-sm outline-none transition-colors focus:border-primary/60 focus:bg-bg-card/80 placeholder:text-text-muted/40"
+    "w-full bg-bg-card/60 backdrop-blur-md border border-border-color rounded-lg px-4 py-3 text-white font-mono text-sm outline-hidden transition-colors focus:border-primary/60 focus:bg-bg-card/80 placeholder:text-text-muted/40"
 
   return (
     <form

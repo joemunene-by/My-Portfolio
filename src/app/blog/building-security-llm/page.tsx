@@ -81,7 +81,7 @@ export default function BuildingSecurityLLM() {
           <ul className="space-y-3 list-none pl-0">
             <li className="flex gap-3">
               <span className="text-primary font-bold mt-0.5">1.</span>
-              <span><strong className="text-white">Understanding.</strong> I wanted to understand every layer of the transformer — not just how to call <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm text-primary">model.generate()</code>, but how attention actually works, how loss propagates, how learning rate schedules affect convergence. Building from scratch forces that understanding.</span>
+              <span><strong className="text-white">Understanding.</strong> I wanted to understand every layer of the transformer — not just how to call <code className="bg-white/10 px-1.5 py-0.5 rounded-sm text-sm text-primary">model.generate()</code>, but how attention actually works, how loss propagates, how learning rate schedules affect convergence. Building from scratch forces that understanding.</span>
             </li>
             <li className="flex gap-3">
               <span className="text-primary font-bold mt-0.5">2.</span>
@@ -96,11 +96,11 @@ export default function BuildingSecurityLLM() {
           <h2 className="text-2xl font-bold text-white mt-12 mb-4">The Architecture</h2>
 
           <p>
-            GhostLM is a decoder-only transformer — the same family as GPT. The current version, <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm text-primary">ghost-tiny</code>, has about 14.5 million parameters. That&apos;s tiny by modern standards (GPT-4 is rumored to be over a trillion), but it&apos;s enough to learn meaningful patterns in security text.
+            GhostLM is a decoder-only transformer — the same family as GPT. The current version, <code className="bg-white/10 px-1.5 py-0.5 rounded-sm text-sm text-primary">ghost-tiny</code>, has about 14.5 million parameters. That&apos;s tiny by modern standards (GPT-4 is rumored to be over a trillion), but it&apos;s enough to learn meaningful patterns in security text.
           </p>
 
           <div className="bg-bg-card border border-border-color rounded-xl p-6 my-8 font-mono text-sm">
-            <div className="text-text-muted mb-2">// ghost-tiny config</div>
+            <div className="text-text-muted mb-2">{"// ghost-tiny config"}</div>
             <div className="space-y-1">
               <div><span className="text-primary">layers:</span> 6</div>
               <div><span className="text-primary">attention_heads:</span> 8</div>
@@ -112,7 +112,7 @@ export default function BuildingSecurityLLM() {
           </div>
 
           <p>
-            Every component is hand-written in PyTorch: the multi-head causal self-attention, the pre-norm transformer blocks, the cosine learning rate scheduler with linear warmup, weight-tied output projections. No <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm text-primary">transformers</code> library, no <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm text-primary">nn.TransformerDecoder</code> — just raw tensor operations and matrix math.
+            Every component is hand-written in PyTorch: the multi-head causal self-attention, the pre-norm transformer blocks, the cosine learning rate scheduler with linear warmup, weight-tied output projections. No <code className="bg-white/10 px-1.5 py-0.5 rounded-sm text-sm text-primary">transformers</code> library, no <code className="bg-white/10 px-1.5 py-0.5 rounded-sm text-sm text-primary">nn.TransformerDecoder</code> — just raw tensor operations and matrix math.
           </p>
 
           <h2 className="text-2xl font-bold text-white mt-12 mb-4">The Training Data</h2>

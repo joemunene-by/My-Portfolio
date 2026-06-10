@@ -73,7 +73,7 @@ export default function PerfMonitor() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: -12, scale: 0.96 }}
           transition={{ duration: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
-          className="fixed top-4 right-4 z-[9996] w-[260px] bg-bg-card/90 backdrop-blur-2xl border border-border-color rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)] pointer-events-auto"
+          className="fixed top-4 right-4 z-9996 w-[260px] bg-bg-card/90 backdrop-blur-2xl border border-border-color rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)] pointer-events-auto"
         >
           <div className="flex items-center justify-between px-3 py-2 border-b border-border-color bg-bg-dark/60">
             <div className="flex items-center gap-2">

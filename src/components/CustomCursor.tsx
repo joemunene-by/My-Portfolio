@@ -57,14 +57,14 @@ export default function CustomCursor() {
     <>
       <motion.div
         aria-hidden
-        className="pointer-events-none fixed left-0 top-0 z-[9999] h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary mix-blend-difference"
+        className="pointer-events-none fixed left-0 top-0 z-9999 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary mix-blend-difference"
         style={{ x: cursorX, y: cursorY }}
         animate={{ scale: clicked ? 0.6 : 1 }}
         transition={{ type: "spring", stiffness: 500, damping: 25 }}
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none fixed left-0 top-0 z-[9998] h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/50 mix-blend-difference"
+        className="pointer-events-none fixed left-0 top-0 z-9998 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/50 mix-blend-difference"
         style={{ x: ringX, y: ringY }}
         animate={{
           scale: hovering ? 1.8 : clicked ? 0.8 : 1,

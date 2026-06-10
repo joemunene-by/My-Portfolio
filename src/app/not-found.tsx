@@ -82,10 +82,10 @@ export default function NotFound() {
 
             <div className="pt-4 text-text-muted/60 text-xs">
               Tip: press{" "}
-              <kbd className="px-1.5 py-0.5 rounded border border-border-color">
+              <kbd className="px-1.5 py-0.5 rounded-sm border border-border-color">
                 ⌘
               </kbd>{" "}
-              <kbd className="px-1.5 py-0.5 rounded border border-border-color">
+              <kbd className="px-1.5 py-0.5 rounded-sm border border-border-color">
                 K
               </kbd>{" "}
               to search anything

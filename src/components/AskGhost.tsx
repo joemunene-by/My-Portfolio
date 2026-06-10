@@ -32,7 +32,7 @@ export default function AskGhost() {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed bottom-24 left-5 z-[45] w-[360px] max-w-[calc(100vw-2.5rem)] bg-bg-card/90 backdrop-blur-2xl border border-border-color rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+            className="fixed bottom-24 left-5 z-45 w-[360px] max-w-[calc(100vw-2.5rem)] bg-bg-card/90 backdrop-blur-2xl border border-border-color rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
             initial={{ opacity: 0, y: 20, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
