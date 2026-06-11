@@ -16,5 +16,6 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run lint
+      # lint step returns when the real ESLint setup lands (upgrade-deps branch);
+      # `next lint` has no config on main and dies at an interactive prompt in CI
       - run: npm run build
