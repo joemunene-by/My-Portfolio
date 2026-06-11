@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
-import { Search, Command, CornerDownLeft, Github, Mail, FileText, ArrowRight, Trophy, Activity, Sparkles } from "lucide-react"
+import { Search, Command, CornerDownLeft, Github, Mail, FileText, ArrowRight } from "lucide-react"
 
 type Item = {
   id: string
@@ -25,38 +25,7 @@ const items: Item[] = [
   { id: "resume", label: "View Resume", href: "/resume", group: "Actions", icon: <FileText className="w-4 h-4" /> },
   { id: "email", label: "Send Email", hint: "joemunene984@gmail.com", href: "mailto:joemunene984@gmail.com", external: true, group: "Actions", icon: <Mail className="w-4 h-4" /> },
   { id: "github", label: "GitHub Profile", hint: "joemunene-by", href: "https://github.com/joemunene-by", external: true, group: "External", icon: <Github className="w-4 h-4" /> },
-  {
-    id: "trophies",
-    label: "Trophy Room",
-    hint: "achievements",
-    group: "Dev",
-    icon: <Trophy className="w-4 h-4" />,
-    run: () => window.dispatchEvent(new CustomEvent("trophy:toggle")),
-  },
-  {
-    id: "perf",
-    label: "Performance Monitor",
-    hint: "⌘⇧P",
-    group: "Dev",
-    icon: <Activity className="w-4 h-4" />,
-    run: () => {
-      const ev = new KeyboardEvent("keydown", {
-        key: "p",
-        ctrlKey: true,
-        shiftKey: true,
-        bubbles: true,
-      })
-      window.dispatchEvent(ev)
-    },
-  },
-  {
-    id: "tour",
-    label: "Replay Onboarding Tour",
-    hint: "guided",
-    group: "Dev",
-    icon: <Sparkles className="w-4 h-4" />,
-    run: () => window.dispatchEvent(new CustomEvent("tour:start")),
-  },
+  { id: "writing", label: "Writing", hint: "technical essays", href: "https://github.com/joemunene-by/writing", external: true, group: "External", icon: <FileText className="w-4 h-4" /> },
 ]
 
 export default function CommandPalette() {

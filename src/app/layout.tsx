@@ -1,25 +1,11 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import CustomCursor from "@/components/CustomCursor"
 import ScrollProgress from "@/components/ScrollProgress"
 import CommandPalette from "@/components/CommandPalette"
-import CommandHint from "@/components/CommandHint"
 import SectionIndicator from "@/components/SectionIndicator"
-import ProjectPreviewCursor from "@/components/ProjectPreviewCursor"
-import AccentPicker from "@/components/AccentPicker"
 import ProjectModal from "@/components/ProjectModal"
 import PageTransition from "@/components/PageTransition"
-import ShaderBackground from "@/components/ShaderBackground"
-import ShortcutCheatsheet from "@/components/ShortcutCheatsheet"
-import HackerMode from "@/components/HackerMode"
-import CursorTrail from "@/components/CursorTrail"
-import AskGhost from "@/components/AskGhost"
-import Achievements from "@/components/Achievements"
-import TrophyRoom from "@/components/TrophyRoom"
-import PerfMonitor from "@/components/PerfMonitor"
-import OnboardingTour from "@/components/OnboardingTour"
-import ThemeRipple from "@/components/ThemeRipple"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -181,24 +167,10 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans">
-        <ShaderBackground />
-        <CursorTrail />
         <ScrollProgress />
-        <CustomCursor />
         <CommandPalette />
-        <CommandHint />
-        <ShortcutCheatsheet />
-        <HackerMode />
         <SectionIndicator />
-        <ProjectPreviewCursor />
         <ProjectModal />
-        <AccentPicker />
-        <AskGhost />
-        <Achievements />
-        <TrophyRoom />
-        <PerfMonitor />
-        <ThemeRipple />
-        <OnboardingTour />
         <div aria-hidden className="noise-overlay" />
         <PageTransition>{children}</PageTransition>
       </body>

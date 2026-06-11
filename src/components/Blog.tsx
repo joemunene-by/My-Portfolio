@@ -66,7 +66,11 @@ export default function Blog() {
 
             return (
               <AnimatedSection key={post.slug} delay={i * 0.1} direction="up">
-                {post.published ? (
+                {"external" in post && post.external ? (
+                  <a href={post.external} target="_blank" rel="noopener noreferrer" className="block h-full">
+                    {card}
+                  </a>
+                ) : post.published ? (
                   <Link href={`/blog/${post.slug}`} className="block h-full">
                     {card}
                   </Link>

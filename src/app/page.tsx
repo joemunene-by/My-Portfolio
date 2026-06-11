@@ -9,15 +9,10 @@ import GitHubGraph from "@/components/GitHubGraph"
 import Blog from "@/components/Blog"
 import Contact from "@/components/Contact"
 import ParticleBackground from "@/components/ParticleBackground"
-import Loader from "@/components/Loader"
 import TerminalEasterEgg from "@/components/TerminalEasterEgg"
-import Marquee from "@/components/Marquee"
 import HorizontalShowcase from "@/components/HorizontalShowcase"
 import StatsStrip from "@/components/StatsStrip"
-import ProjectConstellation from "@/components/ProjectConstellation"
 import CodeShowcase from "@/components/CodeShowcase"
-import LiveFeed from "@/components/LiveFeed"
-// import ScrollSignature from "@/components/ScrollSignature" // disabled until custom signature is provided
 import { projects } from "@/data"
 
 const accents = [
@@ -44,22 +39,10 @@ const highlightItems = projects
 export default function Home() {
   return (
     <main className="min-h-screen relative">
-      <Loader />
       <ParticleBackground />
       <div className="relative z-10">
         <Navbar />
         <Hero />
-        <Marquee
-          items={[
-            "Available for client work",
-            "Nairobi · Kenya",
-            "Custom CRMs & SaaS",
-            "Full-Stack Engineering",
-            "Cybersecurity Research",
-            "AI Integrations",
-            "Open to collab",
-          ]}
-        />
         <About />
         <StatsStrip />
         <Services />
@@ -68,20 +51,7 @@ export default function Home() {
         <HorizontalShowcase items={highlightItems} />
         <CodeShowcase />
         <Projects />
-        <ProjectConstellation />
-        <LiveFeed />
-        {/* <ScrollSignature /> — disabled until custom signature is provided */}
         <GitHubGraph />
-        <Marquee
-          items={[
-            "Let's build something",
-            "Secure by default",
-            "Shipping weekly",
-            "Based in Nairobi",
-            "Remote friendly",
-          ]}
-          speed={55}
-        />
         <Blog />
         <Contact />
       </div>
