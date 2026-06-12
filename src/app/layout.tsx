@@ -127,10 +127,11 @@ const personJsonLd = {
   },
   sameAs: [
     "https://github.com/joemunene-by",
-    // Add LinkedIn, X / Twitter, Hugging Face, dev.to as you publish them.
-    // "https://www.linkedin.com/in/joe-munene/",
-    // "https://x.com/joemunene",
-    // "https://huggingface.co/Ghostgim",
+    "https://huggingface.co/Ghostgim",
+    "https://dev.to/ghost_gi_m",
+    // Add your LinkedIn URL here once it's public to strengthen the
+    // knowledge-graph link for "Joe Munene" name searches.
+    // "https://www.linkedin.com/in/<your-handle>/",
   ],
 }
 
