@@ -112,7 +112,7 @@ export default function CommandPalette() {
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-[9990] flex items-start justify-center pt-[18vh] px-4"
+          className="fixed inset-0 z-9990 flex items-start justify-center pt-[18vh] px-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -140,9 +140,9 @@ export default function CommandPalette() {
                 }}
                 onKeyDown={onKeyDown}
                 placeholder="Search sections, actions, links..."
-                className="flex-1 bg-transparent font-mono text-sm text-white placeholder:text-text-muted outline-none"
+                className="flex-1 bg-transparent font-mono text-sm text-white placeholder:text-text-muted outline-hidden"
               />
-              <kbd className="font-mono text-[10px] text-text-muted px-1.5 py-0.5 rounded border border-border-color">
+              <kbd className="font-mono text-[10px] text-text-muted px-1.5 py-0.5 rounded-sm border border-border-color">
                 ESC
               </kbd>
             </div>
@@ -192,12 +192,12 @@ export default function CommandPalette() {
             <div className="flex items-center justify-between border-t border-border-color px-4 py-2 font-mono text-[10px] text-text-muted">
               <div className="flex items-center gap-3">
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1 rounded border border-border-color">↑</kbd>
-                  <kbd className="px-1 rounded border border-border-color">↓</kbd>
+                  <kbd className="px-1 rounded-sm border border-border-color">↑</kbd>
+                  <kbd className="px-1 rounded-sm border border-border-color">↓</kbd>
                   navigate
                 </span>
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1 rounded border border-border-color">↵</kbd>
+                  <kbd className="px-1 rounded-sm border border-border-color">↵</kbd>
                   select
                 </span>
               </div>

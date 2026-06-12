@@ -267,7 +267,7 @@ export default function ResumeTerminal({ onExit }: { onExit: () => void }) {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={onKey}
-          className="flex-1 bg-transparent font-mono text-sm text-white outline-none placeholder:text-text-muted/40"
+          className="flex-1 bg-transparent font-mono text-sm text-white outline-hidden placeholder:text-text-muted/40"
           placeholder="type `help` or `all`..."
           autoComplete="off"
           spellCheck={false}

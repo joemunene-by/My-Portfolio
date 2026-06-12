@@ -16,10 +16,10 @@ import CodeShowcase from "@/components/CodeShowcase"
 import { projects } from "@/data"
 
 const accents = [
-  "bg-gradient-to-br from-primary/40 via-accent/30 to-accent-warm/20",
-  "bg-gradient-to-br from-accent/40 via-primary/30 to-accent-warm/20",
-  "bg-gradient-to-br from-accent-warm/40 via-accent/30 to-primary/20",
-  "bg-gradient-to-br from-primary/40 via-accent-warm/25 to-accent/30",
+  "bg-linear-to-br from-primary/40 via-accent/30 to-accent-warm/20",
+  "bg-linear-to-br from-accent/40 via-primary/30 to-accent-warm/20",
+  "bg-linear-to-br from-accent-warm/40 via-accent/30 to-primary/20",
+  "bg-linear-to-br from-primary/40 via-accent-warm/25 to-accent/30",
 ]
 
 const highlightItems = projects

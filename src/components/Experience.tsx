@@ -42,7 +42,7 @@ export default function Experience() {
           {/* Scroll-linked progress line */}
           <motion.div
             style={{ height: lineHeight }}
-            className="absolute left-6 sm:left-8 top-0 w-px bg-gradient-to-b from-primary via-accent to-accent-warm origin-top"
+            className="absolute left-6 sm:left-8 top-0 w-px bg-linear-to-b from-primary via-accent to-accent-warm origin-top"
           />
 
           <div className="space-y-6">
@@ -55,7 +55,7 @@ export default function Experience() {
                 <AnimatedSection key={i} delay={i * 0.12} direction="left">
                   <div className="flex gap-6 sm:gap-8 items-start">
                     {/* Dot */}
-                    <div className="relative flex-shrink-0">
+                    <div className="relative shrink-0">
                       <motion.div
                         whileHover={{ scale: 1.08 }}
                         className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl ${config.bg} border ${config.border} flex items-center justify-center z-10 relative cursor-pointer`}

@@ -82,9 +82,9 @@ export default function ResumePage() {
       <article className="resume-doc max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 print:py-0 print:px-0">
         {/* Hero header */}
         <AnimatedSection>
-          <header className="relative rounded-3xl border border-border-color bg-bg-card/40 backdrop-blur-sm overflow-hidden mb-10 print:rounded-none print:border-0 print:bg-white print:text-black">
+          <header className="relative rounded-3xl border border-border-color bg-bg-card/40 backdrop-blur-xs overflow-hidden mb-10 print:rounded-none print:border-0 print:bg-white print:text-black">
             <div className="absolute inset-0 grid-bg opacity-40 print:hidden" />
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary via-accent to-accent-warm" />
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-linear-to-r from-primary via-accent to-accent-warm" />
             <div className="relative p-8 sm:p-10">
               <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-primary mb-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse print:animate-none" />
@@ -199,7 +199,7 @@ export default function ResumePage() {
                       key={j}
                       className="text-text-muted text-[14px] leading-relaxed flex gap-2.5 print:text-gray-700"
                     >
-                      <span className="text-primary mt-1.5 flex-shrink-0">▸</span>
+                      <span className="text-primary mt-1.5 shrink-0">▸</span>
                       {point}
                     </li>
                   ))}
@@ -303,7 +303,7 @@ export default function ResumePage() {
                   key={i}
                   className="flex gap-2.5 text-text-muted text-[14px] leading-relaxed print:text-gray-700"
                 >
-                  <span className="text-primary mt-1.5 flex-shrink-0">▸</span>
+                  <span className="text-primary mt-1.5 shrink-0">▸</span>
                   {c}
                 </li>
               ))}
@@ -336,12 +336,12 @@ export default function ResumePage() {
           <div className="flex items-center gap-2">
             <Cpu className="w-3 h-3" />
             designed & built by joe · matches{" "}
-            <a
+            <Link
               href="/"
               className="text-primary hover:underline"
             >
               my-portfolio-peach-eta-42.vercel.app
-            </a>
+            </Link>
           </div>
           <div>generated {new Date().toLocaleDateString()}</div>
         </div>
@@ -395,7 +395,7 @@ function Section({
           {icon}
           {title}
         </div>
-        <div className="flex-1 h-px bg-gradient-to-r from-border-color via-border-color to-transparent" />
+        <div className="flex-1 h-px bg-linear-to-r from-border-color via-border-color to-transparent" />
       </div>
       {children}
     </section>

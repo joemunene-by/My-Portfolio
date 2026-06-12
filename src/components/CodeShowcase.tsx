@@ -117,7 +117,7 @@ const HL_RULES: Record<string, { pattern: RegExp; cls: string }[]> = {
 function highlight(code: string, lang: string): string {
   const rules = HL_RULES[lang]
   if (!rules) return escape(code)
-  let tokens: { start: number; end: number; cls: string }[] = []
+  const tokens: { start: number; end: number; cls: string }[] = []
   for (const rule of rules) {
     for (const m of code.matchAll(rule.pattern)) {
       const start = m.index ?? 0
@@ -266,7 +266,7 @@ export default function CodeShowcase() {
 
             <motion.div
               key={activeId}
-              className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent"
+              className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-primary to-transparent"
               initial={{ scaleX: 0, opacity: 0 }}
               animate={{ scaleX: 1, opacity: 1 }}
               transition={{ duration: 0.6 }}

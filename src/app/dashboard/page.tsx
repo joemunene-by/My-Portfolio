@@ -131,7 +131,7 @@ export default function DashboardPage() {
         />
         <p className="text-text-muted max-w-2xl mb-10">
           A live, at-a-glance readout of the portfolio — GitHub stats, recent
-          shipping activity, language split, and what's under construction right
+          shipping activity, language split, and what&apos;s under construction right
           now.
         </p>
 
@@ -260,7 +260,7 @@ export default function DashboardPage() {
               </div>
               <div className="h-1.5 rounded-full bg-bg-dark/80 overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-primary via-accent to-accent-warm"
+                  className="h-full bg-linear-to-r from-primary via-accent to-accent-warm"
                   style={{ width: `${currentlyWorkingOn.progress}%` }}
                 />
               </div>
@@ -305,7 +305,7 @@ export default function DashboardPage() {
                       </div>
                       <div className="h-1.5 rounded-full bg-bg-dark/80 overflow-hidden">
                         <div
-                          className="h-full bg-gradient-to-r from-primary to-accent"
+                          className="h-full bg-linear-to-r from-primary to-accent"
                           style={{ width: `${pct}%` }}
                         />
                       </div>
@@ -396,7 +396,7 @@ function Kpi({
   value: React.ReactNode
 }) {
   return (
-    <div className="bg-bg-card/40 backdrop-blur-sm border border-border-color rounded-xl p-4">
+    <div className="bg-bg-card/40 backdrop-blur-xs border border-border-color rounded-xl p-4">
       <div className="flex items-center gap-2 text-text-muted font-mono text-[10px] uppercase tracking-widest">
         <span className="text-primary">{icon}</span>
         {label}
@@ -420,7 +420,7 @@ function Card({
   children: React.ReactNode
 }) {
   return (
-    <section className="bg-bg-card/40 backdrop-blur-sm border border-border-color rounded-2xl overflow-hidden">
+    <section className="bg-bg-card/40 backdrop-blur-xs border border-border-color rounded-2xl overflow-hidden">
       <div className="flex items-center justify-between px-4 py-2.5 border-b border-border-color bg-bg-dark/40">
         <div className="flex items-center gap-2 font-mono text-[11px] text-white uppercase tracking-widest">
           <span className="text-primary">{icon}</span>

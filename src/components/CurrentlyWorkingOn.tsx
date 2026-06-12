@@ -40,7 +40,7 @@ export default function CurrentlyWorkingOn() {
               </div>
               <div className="h-2 bg-bg-dark rounded-full overflow-hidden">
                 <motion.div
-                  className="h-full bg-gradient-to-r from-primary to-accent rounded-full"
+                  className="h-full bg-linear-to-r from-primary to-accent rounded-full"
                   initial={{ width: 0 }}
                   whileInView={{ width: `${currentlyWorkingOn.progress}%` }}
                   viewport={{ once: true }}
@@ -54,9 +54,9 @@ export default function CurrentlyWorkingOn() {
               {currentlyWorkingOn.milestones.map((m, i) => (
                 <div key={i} className="flex items-center gap-3 text-sm">
                   {m.done ? (
-                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-primary shrink-0" />
                   ) : (
-                    <Circle className="w-4 h-4 text-text-muted/30 flex-shrink-0" />
+                    <Circle className="w-4 h-4 text-text-muted/30 shrink-0" />
                   )}
                   <span className={m.done ? "text-white" : "text-text-muted/50"}>
                     {m.label}

@@ -133,7 +133,7 @@ export default function HorizontalShowcase({ items }: Props) {
                 <div
                   className={`absolute inset-0 opacity-40 transition-opacity duration-500 group-hover:opacity-60 ${item.accent}`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-bg-dark/40 via-bg-dark/60 to-bg-dark/90" />
+                <div className="absolute inset-0 bg-linear-to-br from-bg-dark/40 via-bg-dark/60 to-bg-dark/90" />
                 <div className="absolute inset-0 grid-bg opacity-30" />
 
                 <div className="relative h-full flex flex-col justify-between p-8 sm:p-12">

@@ -269,13 +269,13 @@ export default function TerminalEasterEgg() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 z-[55] flex items-end sm:items-center justify-center p-4"
+            className="fixed inset-0 z-55 flex items-end sm:items-center justify-center p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <div
-              className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+              className="absolute inset-0 bg-black/70 backdrop-blur-xs"
               onClick={() => setIsOpen(false)}
             />
 
@@ -338,7 +338,7 @@ export default function TerminalEasterEgg() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKey}
-                  className="flex-1 bg-transparent font-mono text-sm text-white outline-none placeholder:text-text-muted/40"
+                  className="flex-1 bg-transparent font-mono text-sm text-white outline-hidden placeholder:text-text-muted/40"
                   placeholder="type a command... (↑/↓ history, Tab complete)"
                   autoComplete="off"
                   spellCheck={false}

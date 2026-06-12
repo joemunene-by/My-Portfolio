@@ -95,14 +95,14 @@ export default function Projects() {
             </div>
 
             <div className="relative flex items-center gap-3">
-              <div className="relative flex items-center bg-bg-card/60 backdrop-blur-sm border border-border-color rounded-full pl-4 pr-2 py-1.5 focus-within:border-primary/50 transition-colors">
+              <div className="relative flex items-center bg-bg-card/60 backdrop-blur-xs border border-border-color rounded-full pl-4 pr-2 py-1.5 focus-within:border-primary/50 transition-colors">
                 <Search className="w-3.5 h-3.5 text-text-muted/70 mr-2" />
                 <input
                   type="text"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Search projects..."
-                  className="bg-transparent font-mono text-sm text-white placeholder:text-text-muted/40 outline-none w-44 lg:w-56"
+                  className="bg-transparent font-mono text-sm text-white placeholder:text-text-muted/40 outline-hidden w-44 lg:w-56"
                 />
                 {query && (
                   <button
@@ -187,7 +187,7 @@ export default function Projects() {
                             {project.topics.slice(0, 5).map((topic) => (
                               <span
                                 key={topic}
-                                className="px-2 py-1 bg-primary/5 text-primary font-mono text-xs rounded border border-primary/10"
+                                className="px-2 py-1 bg-primary/5 text-primary font-mono text-xs rounded-sm border border-primary/10"
                               >
                                 {topic}
                               </span>
