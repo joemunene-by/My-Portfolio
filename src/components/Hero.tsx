@@ -130,8 +130,8 @@ export default function Hero() {
               variants={itemVariants}
               className="text-text-muted text-base sm:text-lg max-w-xl mb-10 leading-relaxed"
             >
-              Software engineer focused on secure systems, full-stack development, and applied cybersecurity.
-              Building tools that bridge the gap between offensive security and modern web development.
+              Software engineer focused on secure systems, full-stack development, and applied AI.
+              I build security tooling, agent runtimes, and production web and mobile products end to end.
             </motion.p>
 
             <motion.div
