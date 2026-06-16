@@ -93,7 +93,7 @@ export default function HorizontalShowcase({ items }: Props) {
             <div>
               <p className="font-mono text-primary text-sm mb-2 flex items-center gap-2">
                 <Sparkles className="w-3.5 h-3.5" />
-                Highlights — Horizontal Scroll
+                Highlights · Horizontal Scroll
               </p>
               <RevealText
                 as="h2"

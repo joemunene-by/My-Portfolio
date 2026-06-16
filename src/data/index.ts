@@ -1,7 +1,7 @@
 export const projects = [
   {
     name: "linkdrop",
-    description: "iPhone ↔ Linux companion app — browse photos and files, see notifications, and mirror the screen. Ubuntu's answer to Phone Link. Cross-platform desktop build (Linux/macOS/Windows) with a daemon-backed pymobiledevice3 bridge. v0.7.1 shipped with CI-built .deb/.AppImage artifacts.",
+    description: "iPhone ↔ Linux companion app. Browse photos and files, see notifications, and mirror the screen. Ubuntu's answer to Phone Link. Cross-platform desktop build (Linux/macOS/Windows) with a daemon-backed pymobiledevice3 bridge. v0.7.1 shipped with CI-built .deb/.AppImage artifacts.",
     language: "Rust",
     stars: 0,
     topics: ["tauri", "rust", "ios", "linux", "desktop", "cross-platform"],
@@ -76,7 +76,7 @@ export const projects = [
   },
   {
     name: "ChartSentinel",
-    description: "Trading intelligence SaaS — chart-event alerting and signal aggregation for retail and prop traders. Next.js + TypeScript stack with Stripe paywall, PostHog analytics, Sentry crash reporting, and Resend transactional email. Pre-launch site live at chartsentinel.com; production shipped end-to-end behind a feature flag.",
+    description: "Trading intelligence SaaS. Chart-event alerting and signal aggregation for retail and prop traders. Next.js + TypeScript stack with Stripe paywall, PostHog analytics, Sentry crash reporting, and Resend transactional email. Pre-launch site live at chartsentinel.com; production shipped end-to-end behind a feature flag.",
     language: "TypeScript",
     stars: 0,
     topics: ["nextjs", "saas", "stripe", "trading", "fintech", "posthog"],
@@ -87,7 +87,7 @@ export const projects = [
   },
   {
     name: "Complex Developers CRM",
-    description: "The platform behind Complex Developers — public marketing site + admin CRM. Next.js 15 App Router with route-group isolation, Prisma on Postgres, JWT auth, and a portfolio page wired directly to the admin database so featured projects go live the moment they're flagged.",
+    description: "The platform behind Complex Developers. Public marketing site + admin CRM. Next.js 15 App Router with route-group isolation, Prisma on Postgres, JWT auth, and a portfolio page wired directly to the admin database so featured projects go live the moment they're flagged.",
     language: "TypeScript",
     stars: 0,
     topics: ["nextjs", "prisma", "postgresql", "crm", "saas"],
@@ -107,7 +107,7 @@ export const projects = [
   },
   {
     name: "secure-mcp",
-    description: "MCP server exposing security tools to AI agents through a fail-closed policy pipeline — subprocess sandboxing, per-call audit trails, and YAML-defined authorisation gates. Drop-in for any LLM agent that wants to run offensive tooling safely.",
+    description: "MCP server exposing security tools to AI agents through a fail-closed policy pipeline. Subprocess sandboxing, per-call audit trails, and YAML-defined authorisation gates. Drop-in for any LLM agent that wants to run offensive tooling safely.",
     language: "Python",
     stars: 0,
     topics: ["mcp", "ai-agents", "sandbox", "policy", "cybersecurity"],
@@ -117,7 +117,7 @@ export const projects = [
   },
   {
     name: "ghostguard",
-    description: "AI-agent security proxy — intercepts LLM tool calls, runs each through a 4-tier policy pipeline (allow/deny/rate-limit/review), and surfaces everything on a real-time dashboard with a full audit trail. YAML policies, zero app-side code changes.",
+    description: "AI-agent security proxy. Intercepts LLM tool calls, runs each through a 4-tier policy pipeline (allow/deny/rate-limit/review), and surfaces everything on a real-time dashboard with a full audit trail. YAML policies, zero app-side code changes.",
     language: "Python",
     stars: 0,
     topics: ["ai-safety", "proxy", "policy", "audit", "observability"],
@@ -137,7 +137,7 @@ export const projects = [
   },
   {
     name: "ghostaudit",
-    description: "Kubernetes Security Auditor — 23 CIS-based checks covering RBAC, pod security, secrets management, network policies, resource limits, and image provenance. CLI with HTML/JSON reports suitable for CI gates.",
+    description: "Kubernetes Security Auditor. 23 CIS-based checks covering RBAC, pod security, secrets management, network policies, resource limits, and image provenance. CLI with HTML/JSON reports suitable for CI gates.",
     language: "Python",
     stars: 0,
     topics: ["kubernetes", "cis-benchmarks", "security-audit", "devsecops"],
@@ -147,7 +147,7 @@ export const projects = [
   },
   {
     name: "ghostforensics",
-    description: "Memory forensics automation — process analysis, injection detection, YARA scanning, and IOC extraction with STIX 2.1 export. Works standalone or as a Volatility3 wrapper.",
+    description: "Memory forensics automation. Process analysis, injection detection, YARA scanning, and IOC extraction with STIX 2.1 export. Works standalone or as a Volatility3 wrapper.",
     language: "Python",
     stars: 0,
     topics: ["dfir", "memory-forensics", "yara", "volatility", "stix"],
@@ -157,7 +157,7 @@ export const projects = [
   },
   {
     name: "ghostsiem",
-    description: "Lightweight SIEM — log collection with SIGMA-based detection rules, real-time alerting, and event storage. Blue-team SOC automation that runs on a single box.",
+    description: "Lightweight SIEM. Log collection with SIGMA-based detection rules, real-time alerting, and event storage. Blue-team SOC automation that runs on a single box.",
     language: "Python",
     stars: 0,
     topics: ["siem", "sigma", "soc", "blue-team", "detection"],
@@ -166,7 +166,7 @@ export const projects = [
   },
   {
     name: "securecommit",
-    description: "Pre-commit security hooks + code review — catches secrets, API keys, and insecure patterns before they reach your repo. Ships as pre-commit hook, GitHub Action, and standalone CLI.",
+    description: "Pre-commit security hooks + code review. Catches secrets, API keys, and insecure patterns before they reach your repo. Ships as pre-commit hook, GitHub Action, and standalone CLI.",
     language: "Python",
     stars: 0,
     topics: ["pre-commit", "secrets-detection", "supply-chain", "devsecops"],
@@ -245,7 +245,7 @@ export const projects = [
   },
   {
     name: "Systems Thinking Notes",
-    description: "Notes and mental models on computation, security, and emerging technologies — focused on how systems behave, fail, and evolve over time.",
+    description: "Notes and mental models on computation, security, and emerging technologies. Focused on how systems behave, fail, and evolve over time.",
     language: "Markdown",
     stars: 0,
     topics: ["systems-thinking", "notes", "mental-models"],
@@ -328,7 +328,7 @@ export const projects = [
   },
   {
     name: "Cyber Sec Agency",
-    description: "Aegis Cyber Defence — Full-spectrum security services website for governments, NGOs, and enterprises. From cyber to physical defense.",
+    description: "Aegis Cyber Defence. Full-spectrum security services website for governments, NGOs, and enterprises. From cyber to physical defense.",
     language: "TypeScript",
     stars: 0,
     topics: ["cybersecurity", "agency", "website"],
@@ -419,14 +419,14 @@ export const timeline = [
     year: "2026",
     title: "pytorch/ignite #3741",
     subtitle: "Welford Algorithm for PearsonCorrelation",
-    description: "Upstream contribution to PyTorch Ignite — replaced the naive E[X²]-E[X]² variance formula with Welford's online algorithm + parallel distributed merge. Fixes catastrophic cancellation in float32 that returned 0.89 instead of 0.99 for mean=1e6 data.",
+    description: "Upstream contribution to PyTorch Ignite. Replaced the naive E[X²]-E[X]² variance formula with Welford's online algorithm + parallel distributed merge. Fixes catastrophic cancellation in float32 that returned 0.89 instead of 0.99 for mean=1e6 data.",
     type: "milestone" as const,
   },
   {
     year: "2026",
     title: "Leading Complex Developers",
     subtitle: "Founder & Active Developer",
-    description: "Running Complex Developers — a studio building web platforms, bespoke tooling, and AI-adjacent products for clients. Shipped the company's own Next.js 15 + Prisma + Postgres CRM end-to-end (public marketing site, admin dashboard, portfolio wired to a live database).",
+    description: "Running Complex Developers. A studio building web platforms, bespoke tooling, and AI-adjacent products for clients. Shipped the company's own Next.js 15 + Prisma + Postgres CRM end-to-end (public marketing site, admin dashboard, portfolio wired to a live database).",
     type: "project" as const,
   },
   {
@@ -438,58 +438,58 @@ export const timeline = [
   },
   {
     year: "2026",
-    title: "ghostloop-desktop v0.2 — voice + rumble + cross-platform CI",
+    title: "ghostloop-desktop v0.2: voice + rumble + cross-platform CI",
     subtitle: "Tauri 2 native app, voice control, gamepad rumble, native notifications, drone-ready gamepad mapping",
     description: "Shipped v0.2 of the desktop control panel for ghostloop. Voice control via the embedded WebView's Web Speech API on Windows + Linux (wake phrase 'ghostloop'); macOS gets a 'use system dictation' fallback until v0.3 swaps in native whisper.cpp. Gamepad rumble triggered on safety events (geofence block, force-cap trip, HITL escalation, e-stop) so an operator feels denials before they see the screen. Native OS notifications for alarms (toast / banner / libnotify, severity-tagged). Profile-aware gamepad input via gilrs polling at 120 Hz: a `dispatchFor(robotClass, padState)` mapper auto-picks Mode-2 flight-stick semantics for drones (left throttle / yaw, right pitch / roll, A=takeoff, B=land, Y=e-stop, triggers fine altitude), tank drive for mobile bases, walk_to + sit/stand/lie for quadrupeds, end-effector + gripper for arms, conservative wave/nod/look_at for humanoids. Wired and Bluetooth-paired controllers (Xbox / PS5 / 8BitDo / Stadia) are equivalent because gilrs talks the OS HID stack directly. Per-PR CI matrix (rustfmt + clippy + cargo check + cargo test on macOS / Linux / Windows) is green; the cross-platform DMG / MSI / AppImage / deb / NSIS release-bundle pipeline is wired to tauri-action and parked behind workflow_dispatch until v0.2.1 finishes the Tauri-with-Next.js static-export switch.",
     type: "project" as const,
   },
   {
     year: "2026",
-    title: "ghostloop-ui — non-coder web control plane",
+    title: "ghostloop-ui: non-coder web control plane",
     subtitle: "Next.js 15 dashboard live at ghostloop-ui.vercel.app, FastAPI backend free on Render",
     description: "Public, no-Python control plane for the ghostloop runtime. Next.js 15 + React 19 + Tailwind 4 dashboard talking to a `ghostloop.dashboard.create_production_app` FastAPI backend wired up on Render's free tier. Three-path `/connect` onboarding designed for visitors who don't code: open the live HF demo (no install), `pip install ghostloop` and run locally, or embed in an existing robot stack. Profile-aware gamepad mapper library (the same one ghostloop-desktop consumes via the Tauri channel) translates raw stick / button events into the right primitive dispatch per robot class. Demo-mode fallback in the catch-all `/api/backend/[...path]/route.ts` so the Vercel deploy stays interactive even when no backend is configured (every fixture response carries an `X-Ghostloop-Demo` header so the UI shows a swap-path banner). Welcome hero on the empty Overview page, friendlier empty states across Fleet / Missions / Settings, and a debug `X-Ghostloop-Backend-Error` header on the proxy that exposes the exact reason behind any backend-not-reachable fallback.",
     type: "project" as const,
   },
   {
     year: "2026",
-    title: "ghostloop v1.0.3 — pip install ghostloop",
+    title: "ghostloop v1.0.3: pip install ghostloop",
     subtitle: "14 releases, PyPI + live HuggingFace demo, full GitHub Actions CI/CD, 359 tests",
     description: "Took ghostloop from v0.1 to v1.0.3 production-stable across fourteen tagged releases: now `pip install ghostloop` on PyPI, with a live demo at huggingface.co/spaces/Ghostgim/ghostloop-demo and a fully-automated release pipeline (PyPI OIDC trusted publishing + auto-create GitHub release pages + auto-redeploy HuggingFace Space, one tag push lands in three places). Six backends (Mock / MuJoCo / PyBullet / Gymnasium / ROS 2 / RandomizedBackend), 12 policy gates, MuJoCo Menagerie loader, LLMPolicy + VLAPolicy adapters, bench harness with Wilson CI + McNemar + Cohen's h + Sim2Real transfer-gap + adversarial fuzzing (random / grid / CMA-ES). The novel surface no other robotics framework ships: STL temporal properties + auto-mining, counterfactual trace replay, causal failure attribution (leave-one-out ablation), LLM-as-judge with rubric scoring, skill graph DAG, hindsight experience relabeling (HER), energy ledger, cross-embodiment morphology registry. v1.0 closed the roadmap: RGB-D fusion + lightweight object detection, VLA-on-MuJoCo benchmark suite vs OpenVLA / RT-2-X / Octo / π0 / Diffusion Policy / ACT with Cohen's h + arXiv citations, production fleet dashboard. v1.0.2 added four more pillars: distillation pipeline (teacher-student for embodied policies), real-time deadline scheduler with rolling jitter monitoring, live policy intervention (pause / resume / hot-swap / emergency-stop without process restart), and system-identification calibration that auto-tunes RobotProfile caps from real captures. 359 tests green.",
     type: "project" as const,
   },
   {
     year: "2026",
-    title: "EZCare Native — shipped to Google Play",
+    title: "EZCare Native: shipped to Google Play",
     subtitle: "React Native + Expo SDK 54 wellness companion",
     description: "Built and shipped a production Android app via EAS Build & Submit. Bun + Turborepo monorepo with native, web, and server apps + shared api / auth / config / db / env packages. Stack: React Native, Expo SDK 54, Better Auth, Supabase (PostgreSQL + Auth + Storage), tRPC + TanStack Query, Zod, RN Skia + Reanimated, React Three Fiber for 3D scenes, expo-camera / haptics / voice, Anthropic SDK for the AI wellness coach.",
     type: "project" as const,
   },
   {
     year: "2026",
-    title: "GhostLM v0.9.33 — full SFT chat-tune",
+    title: "GhostLM v0.9.33: full SFT chat-tune",
     subtitle: "22,819-record SFT, bets 23/24 wired in, parameter ceiling confirmed",
-    description: "Chat-tuned ghost-small (81M) on the v0.9.32 SFT corpus: 22,819 records spanning every differentiation bet plus the new code-explain + code-write banks (4,000 steps, val_loss 2.61). Then wired bets 23 + 24 into GhostBench's Suite.from_dir discovery and re-benched against v0.9 chat — both checkpoints hit 0/n on every measurable bench, confirming the 30% ceiling is parameter-bound not corpus-bound. The honest finding unlocks the GPU-spend decision.",
+    description: "Chat-tuned ghost-small (81M) on the v0.9.32 SFT corpus: 22,819 records spanning every differentiation bet plus the new code-explain + code-write banks (4,000 steps, val_loss 2.61). Then wired bets 23 + 24 into GhostBench's Suite.from_dir discovery and re-benched against v0.9 chat. Both checkpoints hit 0/n on every measurable bench, confirming the 30% ceiling is parameter-bound not corpus-bound. The honest finding unlocks the GPU-spend decision.",
     type: "project" as const,
   },
   {
     year: "2026",
-    title: "GhostLM v0.9.32 — pretrain code share 2.4% → 11.6%",
+    title: "GhostLM v0.9.32: pretrain code share 2.4% → 11.6%",
     subtitle: "768K train records, 422M tokens, 27 distinct sources",
     description: "Rebuilt the v1.0 pretrain corpus on Mac after the v0.9.31 open-source code pull landed: 516K → 768K records (+48.8%), 363M → 422M tokens, code share 2.4% → 11.6%. Lands in the SmolLM2 / Phi training-mix band without sacrificing the cybersec edge (still ~65% of corpus text). 45,027 cross-source duplicates removed during merge, leakage check returned 0.",
     type: "project" as const,
   },
   {
     year: "2026",
-    title: "GhostLM v0.9.30/31 — open-source code corpus collector",
+    title: "GhostLM v0.9.30/31: open-source code corpus collector",
     subtitle: "120 permissively-licensed repos across 15 languages",
     description: "Built and ran a comprehensive open-source code collector: 120 repos covering cpython stdlib + numpy/scipy/pandas + the ML stack (Python), gin/cobra/k8s/terraform/docker (Go), tokio/serde/clap/ripgrep/uv (Rust), express/node/react/vue/typescript (JS+TS), redis/sqlite/curl/postgres (C/C++), spring/guava (Java), rails (Ruby) plus zig/swift/elixir. Permissive-license allowlist enforced at run time, sha256 dedup, sidecar manifest. 4h11m wall on M4 produced 105 successful pulls / 26K files / 168M chars / ~42M tokens.",
     type: "project" as const,
   },
   {
     year: "2026",
-    title: "GhostLM v0.9.5 → v0.9.29 — 12 differentiation bets shipped",
+    title: "GhostLM v0.9.5 → v0.9.29: 12 differentiation bets shipped",
     subtitle: "1,940 cybersec + 1,981 code SFT records, GhostBench eval suite",
-    description: "Shipped 12 differentiation bets across cybersec verticals (tool use, format-aware STIX/YARA/Sigma/MISP, code-security, binary literacy, provenance with cite tags, log analysis, cloud IaC security, protocol fields, code-explain, code-write) plus the GhostBench package — Wilson 95% CIs, McNemar paired comparisons, Cohen's h effect sizes, multi-tier scoring. GhostAgent runtime wraps the model in a tool-using loop; multi-vendor HTTP server speaks OpenAI / Anthropic / Gemini / Ollama wire formats; MCP server exposes the agent to Claude Desktop and Cursor.",
+    description: "Shipped 12 differentiation bets across cybersec verticals (tool use, format-aware STIX/YARA/Sigma/MISP, code-security, binary literacy, provenance with cite tags, log analysis, cloud IaC security, protocol fields, code-explain, code-write) plus the GhostBench package. Wilson 95% CIs, McNemar paired comparisons, Cohen's h effect sizes, multi-tier scoring. GhostAgent runtime wraps the model in a tool-using loop; multi-vendor HTTP server speaks OpenAI / Anthropic / Gemini / Ollama wire formats; MCP server exposes the agent to Claude Desktop and Cursor.",
     type: "project" as const,
   },
   {
@@ -517,7 +517,7 @@ export const timeline = [
 
 export const currentlyWorkingOn = {
   project: "GhostLM v0.9.33 → ghost-base",
-  description: "Ghost-small (81M) is benched out at the 30% CTIBench / 0-2% fact-recall ceiling — confirmed empirically across 6 ghostbench bets after the v0.9.32 corpus rebuild and v0.9.33 SFT push. The honest finding: it's a parameter ceiling, not a corpus problem, so the next move is the rented-GPU ghost-base v1.0 run (~360M params, SmolLM2-360M shape) on the new 422M-token corpus. Pretrain code share moved 2.4% → 11.6% via a 105-repo / 15-language open-source code pull this release cycle. SFT corpus is now ghost-base ready: ~1,940 cybersec records across 12 differentiation bets + 1,981 code records (code SFT surpassed cybersec for the first time at v0.9.29).",
+  description: "Ghost-small (81M) is benched out at the 30% CTIBench / 0-2% fact-recall ceiling. Confirmed empirically across 6 ghostbench bets after the v0.9.32 corpus rebuild and v0.9.33 SFT push. The honest finding: it's a parameter ceiling, not a corpus problem, so the next move is the rented-GPU ghost-base v1.0 run (~360M params, SmolLM2-360M shape) on the new 422M-token corpus. Pretrain code share moved 2.4% → 11.6% via a 105-repo / 15-language open-source code pull this release cycle. SFT corpus is now ghost-base ready: ~1,940 cybersec records across 12 differentiation bets + 1,981 code records (code SFT surpassed cybersec for the first time at v0.9.29).",
   progress: 92,
   milestones: [
     { label: "From-scratch decoder transformer (RoPE + SwiGLU + RMSNorm)", done: true },
@@ -534,7 +534,7 @@ export const currentlyWorkingOn = {
 export const blogPosts = [
   {
     title: "Hitting the Parameter Ceiling: What 81M Parameters Can and Can't Do",
-    excerpt: "I just spent a release cycle expanding GhostLM's pretrain corpus from 363M to 422M tokens, pushed code share from 2.4% to 11.6%, and re-tuned chat on the resulting 22.8K-record SFT bank. Then I benched it against the prior v0.9 chat across six bets — both score 0/n. The honest finding: at 81M parameters, more corpus and more SFT data don't break the 30% ceiling. The model knows what Python looks like; it can't recognise that recursive Fibonacci is exponential. Why that's actually useful information for the GPU-spend decision.",
+    excerpt: "I just spent a release cycle expanding GhostLM's pretrain corpus from 363M to 422M tokens, pushed code share from 2.4% to 11.6%, and re-tuned chat on the resulting 22.8K-record SFT bank. Then I benched it against the prior v0.9 chat across six bets. Both score 0/n. The honest finding: at 81M parameters, more corpus and more SFT data don't break the 30% ceiling. The model knows what Python looks like; it can't recognise that recursive Fibonacci is exponential. Why that's actually useful information for the GPU-spend decision.",
     date: "May 2026",
     readTime: "6 min",
     tags: ["AI", "Cybersecurity", "PyTorch", "Scaling Laws"],
@@ -552,7 +552,7 @@ export const blogPosts = [
   },
   {
     title: "Why I'm Building a Cybersecurity LLM from Scratch",
-    excerpt: "Most language models aren't designed for security work. Here's why I decided to train GhostLM on CVEs, CTF writeups, and vulnerability research — and what I've learned so far.",
+    excerpt: "Most language models aren't designed for security work. Here's why I decided to train GhostLM on CVEs, CTF writeups, and vulnerability research. And what I've learned so far.",
     date: "Mar 2026",
     readTime: "5 min",
     tags: ["AI", "Cybersecurity", "PyTorch"],

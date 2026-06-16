@@ -30,7 +30,7 @@ const services: Service[] = [
   {
     title: "Custom CRMs & Admin Dashboards",
     tagline:
-      "Production-grade customer platforms — contacts, deals, tasks, and metrics — with auth, audit logs, and role-based access from day one.",
+      "Production-grade customer platforms: contacts, deals, tasks, and metrics, with auth, audit logs, and role-based access from day one.",
     icon: LayoutDashboard,
     iconColor: "text-primary",
     iconBg: "bg-primary/10",
@@ -70,11 +70,11 @@ const services: Service[] = [
     ],
     proofs: [
       {
-        label: "ChartSentinel — Trading intelligence SaaS",
+        label: "ChartSentinel: Trading intelligence SaaS",
         url: "https://chartsentinel.com",
       },
       {
-        label: "ezCare — Healthcare SaaS",
+        label: "ezCare: Healthcare SaaS",
         url: "https://ezcare-web-app.vercel.app",
       },
     ],
@@ -96,11 +96,11 @@ const services: Service[] = [
     ],
     proofs: [
       {
-        label: "secure-mcp — fail-closed MCP server",
+        label: "secure-mcp: fail-closed MCP server",
         url: "https://github.com/joemunene-by/secure-mcp",
       },
       {
-        label: "ghostguard — AI agent security proxy",
+        label: "ghostguard: AI agent security proxy",
         url: "https://github.com/joemunene-by/ghostguard",
       },
     ],
@@ -108,7 +108,7 @@ const services: Service[] = [
   {
     title: "Cybersecurity Audits & Tooling",
     tagline:
-      "K8s posture audits, memory forensics, SIEM rules, and pre-commit secret scanning — production CLIs, not slide decks.",
+      "K8s posture audits, memory forensics, SIEM rules, and pre-commit secret scanning. Production CLIs, not slide decks.",
     icon: ShieldCheck,
     iconColor: "text-primary",
     iconBg: "bg-primary/10",
@@ -122,11 +122,11 @@ const services: Service[] = [
     ],
     proofs: [
       {
-        label: "ghostaudit — K8s security auditor",
+        label: "ghostaudit: K8s security auditor",
         url: "https://github.com/joemunene-by/ghostaudit",
       },
       {
-        label: "ghostforensics — memory forensics automation",
+        label: "ghostforensics: memory forensics automation",
         url: "https://github.com/joemunene-by/ghostforensics",
       },
     ],
