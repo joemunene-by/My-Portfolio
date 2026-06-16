@@ -570,7 +570,7 @@ export const resumeData = {
   github: "github.com/joemunene-by",
   location: "Nairobi, Kenya",
   summary:
-    "Software engineer and founder of Complex Developers, a studio that builds web platforms, security tooling, and AI products. I have shipped 34 open source projects, including GhostLM, an 81M parameter language model trained from scratch in PyTorch, and ghostloop, an agent runtime published on PyPI. I also contribute upstream to projects like PyTorch Ignite and the OWASP Cheat Sheet Series. Currently a Computer Science student at Moi University.",
+    "Software engineer and founder of Complex Developers, a studio that builds web platforms, security tooling, and AI products. I have shipped 36 open source projects, including GhostLM, an 81M parameter language model trained from scratch in PyTorch, and ghostloop, an agent runtime published on PyPI. I also contribute upstream to projects like PyTorch Ignite and the OWASP Cheat Sheet Series. Currently a Computer Science student at Moi University.",
   focusAreas: [
     "Full-Stack Web (Next.js, React, Tailwind)",
     "Mobile (React Native, shipped to Google Play)",
@@ -605,7 +605,7 @@ export const resumeData = {
       company: "Self-Employed, Nairobi",
       period: "2023 - Present",
       points: [
-        "Shipped 34 open source projects across security, AI and machine learning, and full stack, totaling roughly 190,000 lines of code.",
+        "Shipped 36 open source projects across security, AI and machine learning, and full stack, totaling roughly 190,000 lines of code.",
         "Built GhostLM, an 81M parameter decoder-only transformer, entirely from scratch in PyTorch with RoPE, SwiGLU, and RMSNorm, without using the transformers library. Trained it on a 422M token corpus I collected across 27 cybersecurity, code, and reasoning sources.",
         "Shipped GhostBench alongside it, an evaluation suite using proper statistics like Wilson confidence intervals and McNemar paired tests, plus GhostAgent, a tool-using runtime, and an MCP server that works with Claude Desktop and Cursor.",
         "Fixed a numerical stability bug in PyTorch Ignite (#3741) by replacing an unstable variance formula in PearsonCorrelation with Welford's algorithm, which had been returning wrong results on large-mean float32 data.",
