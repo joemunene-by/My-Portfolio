@@ -99,7 +99,7 @@ export default function About() {
               <p>
                 I&apos;m <span className="text-white font-medium">Joe Munene</span>, a software engineer and cybersecurity researcher
                 based in Nairobi, Kenya. Currently pursuing Computer Science at <span className="text-primary">Moi University</span>,
-                I specialize in building secure systems and developing tools that push the boundaries of what&apos;s possible.
+                I focus on building secure systems and shipping production tools across security, AI, and full-stack web.
               </p>
               <p>
                 My work spans across <span className="text-white">full-stack development</span>,{" "}
@@ -142,7 +142,7 @@ export default function About() {
             <p className="font-mono text-primary text-sm mb-2">/ Skills & Expertise</p>
             <RevealText
               as="h3"
-              text="Technical Arsenal"
+              text="Technical Skills"
               className="text-2xl sm:text-3xl font-bold text-white mb-10"
             />
 

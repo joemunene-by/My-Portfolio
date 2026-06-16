@@ -103,8 +103,8 @@ export default function Hero() {
               variants={itemVariants}
               className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-muted mb-6"
             >
-              I build things that{" "}
-              <span className="text-gradient">hack, think, and automate</span>.
+              I build{" "}
+              <span className="text-gradient">secure systems, products, and applied AI</span>.
             </motion.h2>
 
             <motion.div
