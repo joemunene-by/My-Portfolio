@@ -144,7 +144,7 @@ export default function GitHubGraph() {
             ) : loading ? (
               <div className="flex flex-col gap-3 py-2">
                 <div className="h-3 w-32 rounded-sm bg-border-color/60 animate-pulse" />
-                <div className="grid grid-cols-53 gap-[3px]">
+                <div className="grid grid-cols-[repeat(53,minmax(0,1fr))] gap-[3px]">
                   {Array.from({ length: 53 * 7 }).map((_, i) => (
                     <div
                       key={i}
