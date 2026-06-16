@@ -7,6 +7,7 @@ import {
   ArrowLeft,
   Mail,
   Github,
+  Globe,
   MapPin,
   Terminal as TerminalIcon,
   Shield,
@@ -29,7 +30,11 @@ import AnimatedSection from "@/components/AnimatedSection"
 const keyProjects = projects
   .filter((p) => p.featured)
   .slice(0, 4)
-  .map((p) => ({ name: p.name, description: p.description }))
+  .map((p) => ({
+    name: p.name,
+    description: "blurb" in p ? (p.blurb as string) : p.description,
+    metric: "metric" in p ? (p.metric as string) : undefined,
+  }))
 
 export default function ResumePage() {
   const [terminal, setTerminal] = useState(false)
@@ -126,6 +131,15 @@ export default function ResumePage() {
                 >
                   <Github className="w-3.5 h-3.5" />
                   {resumeData.github}
+                </a>
+                <a
+                  href={`https://${resumeData.website}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 hover:text-primary transition-colors"
+                >
+                  <Globe className="w-3.5 h-3.5" />
+                  {resumeData.website}
                 </a>
                 <span className="flex items-center gap-1.5">
                   <MapPin className="w-3.5 h-3.5" />
@@ -281,6 +295,11 @@ export default function ResumePage() {
                   <div className="font-bold text-white mb-1 group-hover:text-primary transition-colors print:text-black">
                     {p.name}
                   </div>
+                  {p.metric && (
+                    <div className="font-mono text-[11px] text-primary mb-1.5 print:text-black">
+                      {p.metric}
+                    </div>
+                  )}
                   <div className="text-text-muted text-[13px] leading-relaxed print:text-gray-700">
                     {p.description}
                   </div>

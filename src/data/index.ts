@@ -9,6 +9,7 @@ export const projects = [
     category: "tools",
     featured: true,
     metric: "v0.7.1 · CI-built .deb + .AppImage",
+    blurb: "A Tauri and Rust desktop app that bridges an iPhone to Linux for photos, files, notifications, and screen mirroring, with CI-built .deb and .AppImage releases.",
   },
   {
     name: "EZCare Native",
@@ -20,6 +21,7 @@ export const projects = [
     category: "mobile",
     featured: true,
     metric: "Shipped to the Google Play Store",
+    blurb: "A React Native and Expo wellness app shipped to the Google Play Store, with a Supabase backend, a tRPC data layer, and an AI coach on the Anthropic SDK.",
   },
   {
     name: "GhostLM",
@@ -32,6 +34,7 @@ export const projects = [
     featured: true,
     image: "/projects/ghostlm_mark.png",
     metric: "81M params · 422M-token corpus · pure PyTorch",
+    blurb: "An 81M-parameter cybersecurity language model trained from scratch in PyTorch (RoPE, SwiGLU, RMSNorm), with a tool-using agent runtime, multi-vendor API and MCP servers, and a statistically rigorous eval suite.",
   },
   {
     name: "ghostloop",
@@ -45,6 +48,7 @@ export const projects = [
     featured: true,
     image: "/projects/ghostloop_mark.png",
     metric: "PyPI · 14 releases · 359 tests green",
+    blurb: "An agent runtime and fail-closed safety pipeline for embodied AI, published on PyPI and stable across 14 releases with 359 passing tests, a live demo, a web dashboard, and a Tauri desktop app.",
   },
   {
     name: "ghostloop-ui",
@@ -572,6 +576,7 @@ export const resumeData = {
   title: "Founder, Full-Stack Developer & Cybersecurity Researcher",
   email: "joemunene984@gmail.com",
   github: "github.com/joemunene-by",
+  website: "my-portfolio-peach-eta-42.vercel.app",
   location: "Nairobi, Kenya",
   summary:
     "Software engineer and founder of Complex Developers, a studio that builds web platforms, security tooling, and AI products. I have shipped 36 open source projects, including GhostLM, an 81M parameter language model trained from scratch in PyTorch, and ghostloop, an agent runtime published on PyPI. I also contribute upstream to projects like PyTorch Ignite and the OWASP Cheat Sheet Series. Currently a Computer Science student at Moi University.",
