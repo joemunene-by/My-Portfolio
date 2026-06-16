@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar"
 import Hero from "@/components/Hero"
+import ProofStrip from "@/components/ProofStrip"
 import About from "@/components/About"
 import Services from "@/components/Services"
 import Experience from "@/components/Experience"
@@ -41,6 +42,7 @@ export default function Home() {
       <div className="relative z-10">
         <Navbar />
         <Hero />
+        <ProofStrip />
         <About />
         <StatsStrip />
         <Services />
