@@ -21,6 +21,7 @@ function ProgressDot({
 type Item = {
   name: string
   description: string
+  metric?: string
   language?: string
   topics: string[]
   url: string
@@ -169,10 +170,16 @@ export default function HorizontalShowcase({ items }: Props) {
                   </div>
 
                   <div>
-                    <h3 className="text-3xl sm:text-5xl font-bold text-white mb-4 leading-tight">
+                    <h3 className="text-3xl sm:text-5xl font-bold text-white mb-3 leading-tight">
                       {item.name}
                     </h3>
-                    <p className="text-white/75 max-w-xl text-sm sm:text-base leading-relaxed mb-6">
+                    {item.metric && (
+                      <span className="inline-flex items-center gap-1.5 mb-4 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 font-mono text-[11px] sm:text-xs text-primary-light">
+                        <Sparkles className="w-3 h-3" />
+                        {item.metric}
+                      </span>
+                    )}
+                    <p className="text-white/75 max-w-xl text-sm sm:text-base leading-relaxed mb-6 line-clamp-3">
                       {item.description}
                     </p>
 

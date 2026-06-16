@@ -8,6 +8,7 @@ export const projects = [
     url: "https://github.com/joemunene-by/linkdrop",
     category: "tools",
     featured: true,
+    metric: "v0.7.1 · CI-built .deb + .AppImage",
   },
   {
     name: "EZCare Native",
@@ -18,6 +19,7 @@ export const projects = [
     url: "https://github.com/joemunene-by/ezcare-web-app",
     category: "mobile",
     featured: true,
+    metric: "Shipped to the Google Play Store",
   },
   {
     name: "GhostLM",
@@ -29,6 +31,7 @@ export const projects = [
     category: "ai-ml",
     featured: true,
     image: "/projects/ghostlm_mark.png",
+    metric: "81M params · 422M-token corpus · pure PyTorch",
   },
   {
     name: "ghostloop",
@@ -41,6 +44,7 @@ export const projects = [
     category: "ai-ml",
     featured: true,
     image: "/projects/ghostloop_mark.png",
+    metric: "PyPI · 14 releases · 359 tests green",
   },
   {
     name: "ghostloop-ui",

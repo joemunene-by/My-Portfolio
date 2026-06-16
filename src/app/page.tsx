@@ -28,6 +28,7 @@ const highlightItems = projects
   .map((p, i) => ({
     name: p.name,
     description: p.description,
+    metric: "metric" in p ? (p.metric as string) : undefined,
     language: p.language && p.language !== "N/A" ? p.language : undefined,
     topics: p.topics,
     url: p.url,
