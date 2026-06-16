@@ -56,7 +56,7 @@ export default function SectionIndicator() {
               animate={{
                 width: isActive ? 22 : 8,
                 height: 8,
-                backgroundColor: isActive ? "#6C9CFF" : "rgba(138, 143, 168, 0.4)",
+                backgroundColor: isActive ? "#608CE0" : "rgba(138, 143, 168, 0.4)",
               }}
               transition={{ duration: 0.35, ease: [0.25, 0.4, 0.25, 1] }}
             />

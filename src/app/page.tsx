@@ -8,7 +8,6 @@ import Projects from "@/components/Projects"
 import GitHubGraph from "@/components/GitHubGraph"
 import Blog from "@/components/Blog"
 import Contact from "@/components/Contact"
-import ParticleBackground from "@/components/ParticleBackground"
 import TerminalEasterEgg from "@/components/TerminalEasterEgg"
 import HorizontalShowcase from "@/components/HorizontalShowcase"
 import StatsStrip from "@/components/StatsStrip"
@@ -39,7 +38,6 @@ const highlightItems = projects
 export default function Home() {
   return (
     <main className="min-h-screen relative">
-      <ParticleBackground />
       <div className="relative z-10">
         <Navbar />
         <Hero />

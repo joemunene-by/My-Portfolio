@@ -22,7 +22,7 @@ export default function AnimatedLogo({ size = 28 }: { size?: number }) {
     const readColor = () => {
       const v = getComputedStyle(document.documentElement)
         .getPropertyValue("--primary")
-        .trim() || "108 156 255"
+        .trim() || "96 140 224"
       return v.replace(/ /g, ", ")
     }
     let color = readColor()

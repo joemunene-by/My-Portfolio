@@ -37,7 +37,7 @@ export default function GiantLabel({ text, align = "left", className = "" }: Pro
         <span
           className="text-transparent"
           style={{
-            WebkitTextStroke: "1px rgba(108,156,255,0.08)",
+            WebkitTextStroke: "1px rgba(96,140,224,0.07)",
           }}
         >
           {text}

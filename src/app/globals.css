@@ -51,10 +51,10 @@
   @keyframes pulseGlow {
     0%,
     100% {
-      box-shadow: 0 0 5px rgba(108, 156, 255, 0.2);
+      box-shadow: 0 0 0 1px rgb(96 140 224 / 0.1);
     }
     50% {
-      box-shadow: 0 0 20px rgba(108, 156, 255, 0.4);
+      box-shadow: 0 0 0 1px rgb(96 140 224 / 0.22);
     }
   }
 }
@@ -78,26 +78,25 @@
 }
 
 @utility text-gradient {
-  @apply bg-linear-to-r from-primary via-accent to-accent-warm bg-clip-text text-transparent;
-  background-size: 200% auto;
-  animation: shimmer 4s ease-in-out infinite;
+  /* Static, single-hue sheen from near-white into the accent. No moving
+     shimmer — the animated rainbow was the loudest vibe-coded signal. */
+  @apply bg-linear-to-br from-white via-primary-light to-accent bg-clip-text text-transparent;
 }
 
 @utility glow {
-  text-shadow:
-    0 0 10px rgb(var(--primary) / 0.4),
-    0 0 20px rgb(var(--primary) / 0.2);
+  /* Was a neon double text-shadow. Reduced to a faint depth shadow. */
+  text-shadow: 0 1px 18px rgb(var(--primary) / 0.18);
 }
 
 @utility glow-box {
-  box-shadow: 0 0 20px rgb(var(--primary) / 0.08);
+  box-shadow: 0 0 0 1px rgb(var(--primary) / 0.06);
 }
 
 @utility glow-box-hover {
   &:hover {
     box-shadow:
-      0 0 25px rgb(var(--primary) / 0.12),
-      0 0 50px rgb(var(--primary) / 0.04);
+      0 18px 40px -24px rgb(0 0 0 / 0.6),
+      0 0 0 1px rgb(var(--primary) / 0.12);
   }
 }
 
@@ -117,11 +116,14 @@
 
 @layer utilities {
   :root {
-    --primary: 108 156 255;
-    --primary-dark: 90 133 224;
-    --primary-light: 139 180 255;
-    --accent: 196 161 255;
-    --accent-warm: 255 176 136;
+    /* One restrained azure family. The old blue/purple/orange rainbow
+       read as neon and "vibe-coded"; accent + accent-warm are now
+       siblings of the primary so any gradient stays in a single hue. */
+    --primary: 96 140 224;
+    --primary-dark: 68 104 182;
+    --primary-light: 150 178 234;
+    --accent: 124 168 228;
+    --accent-warm: 168 192 232;
   }
 
   * {

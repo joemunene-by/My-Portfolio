@@ -11,7 +11,7 @@ export default function HeroSpotlight() {
   const sy = useSpring(my, { stiffness: 80, damping: 20, mass: 0.5 })
 
   const bg = useTransform([sx, sy] as never, ([x, y]: number[]) =>
-    `radial-gradient(600px circle at ${x * 100}% ${y * 100}%, rgba(108,156,255,0.12), transparent 55%)`,
+    `radial-gradient(600px circle at ${x * 100}% ${y * 100}%, rgba(96,140,224,0.1), transparent 55%)`,
   )
 
   useEffect(() => {

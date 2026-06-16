@@ -141,7 +141,7 @@ export default function Hero() {
               <MagneticLink>
                 <a
                   href="#projects"
-                  className="group relative px-8 py-4 font-mono text-base font-semibold rounded-xl flex items-center gap-2.5 transition-all duration-300 bg-linear-to-b from-primary/90 to-primary border border-primary/50 text-white shadow-[0_4px_15px_rgba(108,156,255,0.3),inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_25px_rgba(108,156,255,0.45),inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-2px_4px_rgba(0,0,0,0.2)] active:translate-y-px"
+                  className="group relative px-8 py-4 font-mono text-base font-semibold rounded-xl flex items-center gap-2.5 transition-all duration-300 bg-linear-to-b from-primary/90 to-primary border border-primary/50 text-white shadow-[0_8px_24px_-12px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.18)] hover:from-primary hover:to-primary-dark hover:shadow-[0_12px_30px_-14px_rgba(0,0,0,0.7),inset_0_1px_0_rgba(255,255,255,0.22)] active:translate-y-px"
                 >
                   <Code2 className="w-5 h-5" />
                   View My Work
@@ -159,7 +159,7 @@ export default function Hero() {
               <MagneticLink>
                 <Link
                   href="/resume"
-                  className="group relative px-8 py-4 font-mono text-base rounded-xl flex items-center gap-2.5 transition-all duration-300 bg-accent/5 backdrop-blur-md border border-accent/20 text-accent shadow-[0_4px_15px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(168,148,255,0.1),inset_0_-1px_0_rgba(168,148,255,0.05)] hover:bg-accent/10 hover:border-accent/35 hover:shadow-[0_6px_25px_rgba(168,148,255,0.15),inset_0_1px_0_rgba(168,148,255,0.15),inset_0_-1px_0_rgba(168,148,255,0.08)]"
+                  className="group relative px-8 py-4 font-mono text-base rounded-xl flex items-center gap-2.5 transition-all duration-300 bg-white/5 backdrop-blur-md border border-white/15 text-white/90 shadow-[0_4px_15px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.08)] hover:bg-white/10 hover:border-white/25 hover:shadow-[0_6px_25px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.12)]"
                 >
                   <FileText className="w-5 h-5" />
                   Resume
