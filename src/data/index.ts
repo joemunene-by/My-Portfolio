@@ -400,7 +400,7 @@ export const skills = {
 export const stats = {
   totalRepos: 36,
   totalCommits: 380,
-  linesOfCode: "190,000+",
+  linesOfCode: "100,000+",
   healthyRepos: 36,
   languages: ["Python", "TypeScript", "JavaScript", "Rust", "C", "Shell", "HTML"],
 }
@@ -495,7 +495,7 @@ export const timeline = [
   {
     year: "2025",
     title: "Full-Stack & Security Portfolio",
-    subtitle: "34 Repositories, 140K+ Lines of Code",
+    subtitle: "34 Repositories Across Security, AI, and Full-Stack",
     description: "Built a comprehensive portfolio spanning penetration testing tools, AI agent safety (secure-mcp, ghostguard), K8s auditing (ghostaudit), memory forensics (ghostforensics), SIEM (ghostsiem), and full-stack web apps.",
     type: "milestone" as const,
   },
@@ -614,7 +614,7 @@ export const resumeData = {
       company: "Self-Employed, Nairobi",
       period: "2023 - Present",
       points: [
-        "Shipped 36 open source projects across security, AI and machine learning, and full stack, totaling roughly 190,000 lines of code.",
+        "Shipped 36 open source projects across security, AI and machine learning, and full stack.",
         "Built GhostLM, an 81M parameter decoder-only transformer, entirely from scratch in PyTorch with RoPE, SwiGLU, and RMSNorm, without using the transformers library. Trained it on a 422M token corpus I collected across 27 cybersecurity, code, and reasoning sources.",
         "Shipped GhostBench alongside it, an evaluation suite using proper statistics like Wilson confidence intervals and McNemar paired tests, plus GhostAgent, a tool-using runtime, and an MCP server that works with Claude Desktop and Cursor.",
         "Fixed a numerical stability bug in PyTorch Ignite (#3741) by replacing an unstable variance formula in PearsonCorrelation with Welford's algorithm, which had been returning wrong results on large-mean float32 data.",
