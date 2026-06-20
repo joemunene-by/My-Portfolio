@@ -95,7 +95,7 @@ export async function GET() {
       }),
     )
     const estimatedLOC = Math.round(totalCodeBytes / BYTES_PER_LINE)
-    const linesOfCode = estimatedLOC > 0 ? formatLOC(estimatedLOC) : "100,000+"
+    const linesOfCode = estimatedLOC > 0 ? formatLOC(estimatedLOC) : "4,154,000+"
 
     return NextResponse.json({
       totalRepos,
@@ -109,10 +109,10 @@ export async function GET() {
     console.error("GitHub API error:", error)
     // Fallback so the site never breaks. Numbers kept conservative.
     return NextResponse.json({
-      totalRepos: 36,
-      totalCommits: 380,
-      linesOfCode: "100,000+",
-      healthyRepos: 36,
+      totalRepos: 51,
+      totalCommits: 1031,
+      linesOfCode: "4,154,000+",
+      healthyRepos: 51,
       totalStars: 2,
       languages: ["Python", "TypeScript", "JavaScript", "Rust", "Shell"],
     })
