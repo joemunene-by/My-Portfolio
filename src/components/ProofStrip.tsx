@@ -4,10 +4,9 @@ import { motion } from "framer-motion"
 import {
   SiPypi,
   SiGoogleplay,
-  SiPytorch,
   SiHuggingface,
 } from "react-icons/si"
-import { ShieldCheck, BrainCircuit } from "lucide-react"
+import { ShieldCheck, BrainCircuit, GitMerge } from "lucide-react"
 
 // Proof strip. World-class engineer portfolios lead with verifiable
 // trust signals, not adjectives — a recruiter scanning for ten seconds
@@ -26,7 +25,7 @@ const proofs: Proof[] = [
   {
     icon: <SiPypi className="w-4 h-4" />,
     label: "Published on PyPI",
-    detail: "ghostloop · 14 releases · 359 tests",
+    detail: "ghostloop · v1.0.3 · 359 tests",
     href: "https://pypi.org/project/ghostloop/",
   },
   {
@@ -36,10 +35,10 @@ const proofs: Proof[] = [
     href: "https://github.com/joemunene-by/ezcare-web-app",
   },
   {
-    icon: <SiPytorch className="w-4 h-4" />,
-    label: "Upstream contributor",
-    detail: "PyTorch Ignite #3741 merged",
-    href: "https://github.com/pytorch/ignite/pull/3741",
+    icon: <GitMerge className="w-4 h-4" />,
+    label: "Merged upstream",
+    detail: "AutoGPT #12805 merged",
+    href: "https://github.com/Significant-Gravitas/AutoGPT/pull/12805",
   },
   {
     icon: <BrainCircuit className="w-4 h-4" />,

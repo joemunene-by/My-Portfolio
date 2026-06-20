@@ -2,19 +2,12 @@ import { NextResponse } from "next/server"
 
 const GITHUB_USERNAME = "joemunene-by"
 
-// Average bytes per line of source. GitHub's languages API reports
-// source bytes per language with vendored/generated/docs files already
-// excluded by linguist, so dividing by a realistic per-line size gives a
-// far more honest line count than the old repo.size heuristic (which
-// counted the whole git object store — history, images, lockfiles).
-const BYTES_PER_LINE = 50
-
-// Return a full-digit, rounded figure (e.g. "120,000+") so the strip and
-// stat cards that parse the digits render it consistently.
-function formatLOC(loc: number): string {
-  if (loc >= 1000) return `${(Math.round(loc / 1000) * 1000).toLocaleString()}+`
-  return loc.toLocaleString()
-}
+// First-party lines of code. Measured with git ls-files across the source
+// (non-fork) repositories, counting tracked source files only (lockfiles,
+// minified assets, and binaries excluded), so the figure is defensible and
+// does not borrow volume from forked upstreams like pytorch. Refresh by
+// re-running the count when a large new repo lands.
+const FIRST_PARTY_LOC = "785,000+"
 
 export async function GET() {
   const headers = {
@@ -72,30 +65,11 @@ export async function GET() {
         !repo.archived && new Date(repo.pushed_at) > oneYearAgo,
     ).length
 
-    // Accurate lines of code: sum the per-language source bytes across
-    // every repo (linguist already drops vendored/generated files), then
-    // divide by an average line size. Per-repo language stats are cached
-    // for a day so this is one batch of calls per day, not per request.
-    let totalCodeBytes = 0
-    await Promise.all(
-      repos.map(async (repo: { languages_url: string }) => {
-        try {
-          const r = await fetch(repo.languages_url, {
-            headers,
-            next: { revalidate: 86400 },
-          })
-          if (!r.ok) return
-          const langs = (await r.json()) as Record<string, number>
-          for (const bytes of Object.values(langs)) {
-            totalCodeBytes += Number(bytes) || 0
-          }
-        } catch {
-          /* skip repos whose language stats fail to load */
-        }
-      }),
-    )
-    const estimatedLOC = Math.round(totalCodeBytes / BYTES_PER_LINE)
-    const linesOfCode = estimatedLOC > 0 ? formatLOC(estimatedLOC) : "4,154,000+"
+    // Lines of code: report the measured first-party source count rather
+    // than a per-language byte estimate. The byte estimate counted forked
+    // upstreams (pytorch and similar), which inflated the figure and would
+    // not survive a reader who checks the sources.
+    const linesOfCode = FIRST_PARTY_LOC
 
     return NextResponse.json({
       totalRepos,
@@ -111,7 +85,7 @@ export async function GET() {
     return NextResponse.json({
       totalRepos: 51,
       totalCommits: 1031,
-      linesOfCode: "4,154,000+",
+      linesOfCode: FIRST_PARTY_LOC,
       healthyRepos: 51,
       totalStars: 2,
       languages: ["Python", "TypeScript", "JavaScript", "Rust", "Shell"],

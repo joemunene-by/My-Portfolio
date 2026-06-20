@@ -15,10 +15,10 @@ export default function Hero() {
   const { stats } = useGitHubStats()
   const [textIndex, setTextIndex] = useState(0)
   const roles = [
-    "Full-Stack Developer",
-    "Cybersecurity Researcher",
-    "AI Engineer",
-    "CS Student @ Moi University",
+    "Language models, trained from scratch",
+    "Fail-closed agent runtimes, on PyPI",
+    "Production security tooling",
+    "Computer Science, Moi University",
   ]
 
   useEffect(() => {
@@ -88,7 +88,7 @@ export default function Hero() {
               variants={itemVariants}
               className="font-mono text-primary text-sm sm:text-base mb-4"
             >
-              Hi, my name is
+              Founder, Complex Developers
             </motion.p>
 
             <motion.div variants={itemVariants}>
@@ -104,7 +104,7 @@ export default function Hero() {
               className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-muted mb-6"
             >
               I build{" "}
-              <span className="text-gradient">secure systems, products, and applied AI</span>.
+              <span className="text-gradient">security-focused AI from the model up</span>.
             </motion.h2>
 
             <motion.div
@@ -130,8 +130,9 @@ export default function Hero() {
               variants={itemVariants}
               className="text-text-muted text-base sm:text-lg max-w-xl mb-10 leading-relaxed"
             >
-              Software engineer focused on secure systems, full-stack development, and applied AI.
-              I build security tooling, agent runtimes, and production web and mobile products end to end.
+              I train language models from scratch, build the agent runtimes that make them safe to deploy,
+              and ship production security tooling around them. A merged contribution to AutoGPT, a package on
+              PyPI, and a model family on HuggingFace are the receipts.
             </motion.p>
 
             <motion.div

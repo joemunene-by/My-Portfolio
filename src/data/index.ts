@@ -38,7 +38,7 @@ export const projects = [
   },
   {
     name: "ghostloop",
-    description: "The agent loop, embodied. A tool-using agent runtime, fail-closed safety pipeline, sim-first execution + statistically-rigorous bench harness + post-hoc analysis layer for embodied AI / robotics. Production-stable in v1.0.3 across 14 releases: `pip install ghostloop`, [live HuggingFace demo](https://huggingface.co/spaces/Ghostgim/ghostloop-demo), full GitHub Actions CI/CD with PyPI Trusted Publishing OIDC + auto-create release pages + auto-redeploy Space. Six backends (Mock / MuJoCo / PyBullet / Gymnasium / ROS 2 / RandomizedBackend), 12 policy gates, MuJoCo Menagerie loader (Franka / UR5e / Stretch / Allegro / Spot / Aloha), LLMPolicy + VLAPolicy adapters, MCP server for Claude Desktop / Cursor / Continue / Cline / Zed / Gemini CLI, bench harness with Wilson CIs + McNemar + Cohen's h + Sim2Real transfer-gap + adversarial fuzzing (random / grid / CMA-ES). Novel surface no other robotics framework ships: STL temporal properties + auto-mining, counterfactual trace replay, causal failure attribution, LLM-as-judge, skill graph DAG, hindsight relabeling, energy ledger, cross-embodiment morphology registry, RGB-D fusion + lightweight object detection, VLA-on-MuJoCo benchmark vs OpenVLA / π0 / RT-2 / Octo / Diffusion Policy / ACT, production fleet dashboard (auth + rate limit + alarms + Prometheus), distillation pipeline, real-time deadline scheduler, live policy intervention (pause / resume / hot-swap / e-stop), system-identification calibration. 359 tests green. Family includes [ghostloop-ui](https://github.com/joemunene-by/ghostloop-ui) (Next.js dashboard) and [ghostloop-desktop](https://github.com/joemunene-by/ghostloop-desktop) v0.2 (Tauri 2 native app with voice control + gamepad rumble + native notifications).",
+    description: "The agent loop, embodied. A tool-using agent runtime, fail-closed safety pipeline, sim-first execution + statistically-rigorous bench harness + post-hoc analysis layer for embodied AI / robotics. Published on PyPI as v1.0.3 (`pip install ghostloop`), with a [live HuggingFace demo](https://huggingface.co/spaces/Ghostgim/ghostloop-demo) and full GitHub Actions CI/CD via PyPI Trusted Publishing OIDC (auto-create release pages, auto-redeploy Space). Six backends (Mock / MuJoCo / PyBullet / Gymnasium / ROS 2 / RandomizedBackend), 12 policy gates, MuJoCo Menagerie loader (Franka / UR5e / Stretch / Allegro / Spot / Aloha), LLMPolicy + VLAPolicy adapters, MCP server for Claude Desktop / Cursor / Continue / Cline / Zed / Gemini CLI, bench harness with Wilson CIs + McNemar + Cohen's h + Sim2Real transfer-gap + adversarial fuzzing (random / grid / CMA-ES). Novel surface no other robotics framework ships: STL temporal properties + auto-mining, counterfactual trace replay, causal failure attribution, LLM-as-judge, skill graph DAG, hindsight relabeling, energy ledger, cross-embodiment morphology registry, RGB-D fusion + lightweight object detection, VLA-on-MuJoCo benchmark vs OpenVLA / π0 / RT-2 / Octo / Diffusion Policy / ACT, production fleet dashboard (auth + rate limit + alarms + Prometheus), distillation pipeline, real-time deadline scheduler, live policy intervention (pause / resume / hot-swap / e-stop), system-identification calibration. 359 tests green. Family includes [ghostloop-ui](https://github.com/joemunene-by/ghostloop-ui) (Next.js dashboard) and [ghostloop-desktop](https://github.com/joemunene-by/ghostloop-desktop) v0.2 (Tauri 2 native app with voice control + gamepad rumble + native notifications).",
     language: "Python",
     stars: 0,
     topics: ["robotics", "embodied-ai", "agent", "vla", "tool-use", "policy-gates", "safety", "mujoco", "pybullet", "ros2", "mcp", "sim-first", "counterfactual", "causal-inference", "stl", "safe-rl", "sim2real"],
@@ -47,8 +47,8 @@ export const projects = [
     category: "ai-ml",
     featured: true,
     image: "/projects/ghostloop_mark.png",
-    metric: "PyPI · 14 releases · 359 tests green",
-    blurb: "An agent runtime and fail-closed safety pipeline for embodied AI, published on PyPI and stable across 14 releases with 359 passing tests, a live demo, a web dashboard, and a Tauri desktop app.",
+    metric: "PyPI v1.0.3 · 359 tests · live demo",
+    blurb: "An agent runtime and fail-closed safety pipeline for embodied AI, published on PyPI (v1.0.3) with 359 passing tests, a live demo, a web dashboard, and a Tauri desktop app.",
   },
   {
     name: "ghostloop-ui",
@@ -532,7 +532,7 @@ export const skills = {
 export const stats = {
   totalRepos: 51,
   totalCommits: 1031,
-  linesOfCode: "4,154,000+",
+  linesOfCode: "785,000+",
   healthyRepos: 51,
   languages: ["Python", "TypeScript", "JavaScript", "Rust", "C", "Shell", "HTML"],
 }
@@ -585,7 +585,7 @@ export const timeline = [
   {
     year: "2026",
     title: "ghostloop v1.0.3: pip install ghostloop",
-    subtitle: "14 releases, PyPI + live HuggingFace demo, full GitHub Actions CI/CD, 359 tests",
+    subtitle: "PyPI v1.0.3, live HuggingFace demo, full GitHub Actions CI/CD, 359 tests",
     description: "Took ghostloop from v0.1 to v1.0.3 production-stable across fourteen tagged releases: now `pip install ghostloop` on PyPI, with a live demo at huggingface.co/spaces/Ghostgim/ghostloop-demo and a fully-automated release pipeline (PyPI OIDC trusted publishing + auto-create GitHub release pages + auto-redeploy HuggingFace Space, one tag push lands in three places). Six backends (Mock / MuJoCo / PyBullet / Gymnasium / ROS 2 / RandomizedBackend), 12 policy gates, MuJoCo Menagerie loader, LLMPolicy + VLAPolicy adapters, bench harness with Wilson CI + McNemar + Cohen's h + Sim2Real transfer-gap + adversarial fuzzing (random / grid / CMA-ES). The novel surface no other robotics framework ships: STL temporal properties + auto-mining, counterfactual trace replay, causal failure attribution (leave-one-out ablation), LLM-as-judge with rubric scoring, skill graph DAG, hindsight experience relabeling (HER), energy ledger, cross-embodiment morphology registry. v1.0 closed the roadmap: RGB-D fusion + lightweight object detection, VLA-on-MuJoCo benchmark suite vs OpenVLA / RT-2-X / Octo / π0 / Diffusion Policy / ACT with Cohen's h + arXiv citations, production fleet dashboard. v1.0.2 added four more pillars: distillation pipeline (teacher-student for embodied policies), real-time deadline scheduler with rolling jitter monitoring, live policy intervention (pause / resume / hot-swap / emergency-stop without process restart), and system-identification calibration that auto-tunes RobotProfile caps from real captures. 359 tests green.",
     type: "project" as const,
   },
@@ -705,13 +705,13 @@ export const blogPosts = [
 
 export const resumeData = {
   name: "Joe Munene",
-  title: "Founder, Full-Stack Developer & Cybersecurity Researcher",
+  title: "Founder, Complex Developers. AI and Security Engineer.",
   email: "joemunene984@gmail.com",
   github: "github.com/joemunene-by",
   website: "my-portfolio-peach-eta-42.vercel.app",
   location: "Nairobi, Kenya",
   summary:
-    "Software engineer and founder of Complex Developers, a studio that builds web platforms, security tooling, and AI products. I have shipped 47 open source projects, including GhostLM, an 81M parameter language model trained from scratch in PyTorch, and ghostloop, an agent runtime published on PyPI. I also contribute upstream to projects like PyTorch Ignite and the OWASP Cheat Sheet Series. Currently a Computer Science student at Moi University.",
+    "Founder of Complex Developers. I build security-focused AI systems from the model up: GhostLM, an 81M-parameter language model trained from scratch in PyTorch, and ghostloop, a fail-closed agent runtime published on PyPI. Across 50+ repositories I ship production security tooling, full-stack platforms, and a React Native app live on the Google Play Store. Merged a contribution upstream into AutoGPT, with open contributions to PyTorch Ignite and the OWASP Cheat Sheet Series. Computer Science at Moi University, Nairobi.",
   focusAreas: [
     "Full-Stack Web (Next.js, React, Tailwind)",
     "Mobile (React Native, shipped to Google Play)",
@@ -746,11 +746,12 @@ export const resumeData = {
       company: "Self-Employed, Nairobi",
       period: "2023 - Present",
       points: [
-        "Shipped 47 open source projects across security, AI and machine learning, and full stack.",
+        "Shipped 50+ open source projects across security, AI and machine learning, and full stack.",
         "Built GhostLM, an 81M parameter decoder-only transformer, entirely from scratch in PyTorch with RoPE, SwiGLU, and RMSNorm, without using the transformers library. Trained it on a 422M token corpus I collected across 27 cybersecurity, code, and reasoning sources.",
         "Shipped GhostBench alongside it, an evaluation suite using proper statistics like Wilson confidence intervals and McNemar paired tests, plus GhostAgent, a tool-using runtime, and an MCP server that works with Claude Desktop and Cursor.",
-        "Fixed a numerical stability bug in PyTorch Ignite (#3741) by replacing an unstable variance formula in PearsonCorrelation with Welford's algorithm, which had been returning wrong results on large-mean float32 data.",
-        "Built ghostloop, an agent runtime and fail-closed safety pipeline for robotics, published on PyPI with a live demo and full CI/CD. Stable across 14 releases with 359 passing tests, and extended into a web dashboard and a Tauri desktop app.",
+        "Merged a contribution upstream into AutoGPT (#12805), fixing agent-name preservation in the visual builder's AgentExecutor node titles after reload.",
+        "Proposed a numerical-stability fix to PyTorch Ignite (#3741, open PR): replacing an unstable variance formula in PearsonCorrelation with Welford's algorithm, which returned wrong results on large-mean float32 data.",
+        "Built ghostloop, an agent runtime and fail-closed safety pipeline for robotics, published on PyPI (v1.0.3) with a live demo and full CI/CD, 359 passing tests, and extended into a web dashboard and a Tauri desktop app.",
         "Shipped EZCare Native to the Google Play Store, a React Native and Expo wellness app with a Supabase backend, a tRPC data layer, and an AI coach built on the Anthropic SDK.",
         "Shipped linkdrop, a Tauri and Rust desktop app that bridges an iPhone to Linux for photos, files, and screen mirroring, with CI-built .deb and .AppImage releases.",
         "Built a cybersecurity tooling set including an MCP security server with sandboxing, a Kubernetes CIS auditor, a memory forensics tool, a SIGMA-rule SIEM, and a pre-commit secret scanner.",
@@ -773,7 +774,7 @@ export const resumeData = {
   },
   highlights: [
     "Built and trained an 81M parameter transformer from scratch, every layer hand-written with no machine learning framework abstractions.",
-    "Published ghostloop on PyPI, stable across 14 releases with 359 passing tests and automated CI/CD.",
+    "Published ghostloop on PyPI (v1.0.3) with 359 passing tests and automated CI/CD.",
     "Shipped a React Native app to the Google Play Store.",
     "Upstream contributor to PyTorch Ignite, AutoGPT, and the OWASP Cheat Sheet Series.",
     "Founder of Complex Developers, took the company platform from an empty repository to production.",

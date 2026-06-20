@@ -97,19 +97,24 @@ export default function About() {
           <AnimatedSection delay={0.1}>
             <div className="space-y-4 text-text-muted leading-relaxed">
               <p>
-                I&apos;m <span className="text-white font-medium">Joe Munene</span>, a software engineer and cybersecurity researcher
-                based in Nairobi, Kenya. Currently pursuing Computer Science at <span className="text-primary">Moi University</span>,
-                I focus on building secure systems and shipping production tools across security, AI, and full-stack web.
+                I&apos;m <span className="text-white font-medium">Joe Munene</span>, founder of{" "}
+                <span className="text-primary">Complex Developers</span>. I build{" "}
+                <span className="text-white">security-focused AI systems from the model up</span>: language models
+                trained from scratch, the agent runtimes that make them safe to deploy, and production security
+                tooling around them.
               </p>
               <p>
-                My work spans across <span className="text-white">full-stack development</span>,{" "}
-                <span className="text-white">applied cybersecurity</span>, and{" "}
-                <span className="text-white">AI integration</span>. I&apos;ve built everything from penetration testing tools
-                and vulnerability scanners to AI-powered coding assistants and SaaS dashboards.
+                <span className="text-white">GhostLM</span> is an 81M-parameter language model I trained from
+                scratch in PyTorch, no transformers library, on a 422M-token security corpus.{" "}
+                <span className="text-white">ghostloop</span> is a fail-closed safety runtime for embodied agents,
+                published on PyPI, with a verification surface most agent stacks lack: STL temporal properties,
+                counterfactual replay, and causal failure attribution. Around them sits a suite of production
+                security tooling spanning recon, intrusion detection, malware triage, and cloud posture.
               </p>
               <p>
-                When I&apos;m not writing code, I&apos;m researching emerging threats, contributing to open-source
-                security tools, or exploring the intersection of machine learning and cybersecurity.
+                I study Computer Science at <span className="text-primary">Moi University</span> in Nairobi. The
+                work is the argument: trained from scratch, shipped to PyPI and the Google Play Store, and merged
+                upstream into projects like AutoGPT.
               </p>
             </div>
           </AnimatedSection>
