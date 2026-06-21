@@ -6,12 +6,10 @@ import Services from "@/components/Services"
 import Experience from "@/components/Experience"
 import CurrentlyWorkingOn from "@/components/CurrentlyWorkingOn"
 import Projects from "@/components/Projects"
-import GitHubGraph from "@/components/GitHubGraph"
 import Blog from "@/components/Blog"
 import Contact from "@/components/Contact"
 import TerminalEasterEgg from "@/components/TerminalEasterEgg"
 import HorizontalShowcase from "@/components/HorizontalShowcase"
-import StatsStrip from "@/components/StatsStrip"
 import CodeShowcase from "@/components/CodeShowcase"
 import { projects } from "@/data"
 
@@ -45,14 +43,12 @@ export default function Home() {
         <Hero />
         <ProofStrip />
         <About />
-        <StatsStrip />
         <Services />
         <Experience />
         <CurrentlyWorkingOn />
         <HorizontalShowcase items={highlightItems} />
         <CodeShowcase />
         <Projects />
-        <GitHubGraph />
         <Blog />
         <Contact />
       </div>
