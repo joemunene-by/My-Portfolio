@@ -3,16 +3,12 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { ChevronDown, Terminal, Shield, Code2, Cpu, FileText } from "lucide-react"
-import { useGitHubStats } from "@/hooks/useGitHubStats"
+import { ChevronDown, Terminal, Shield, Code2, FileText } from "lucide-react"
 import MagneticLink from "./MagneticLink"
-import RevealText from "./RevealText"
-import HeroSpotlight from "./HeroSpotlight"
 import ScrambleText from "./ScrambleText"
 import HeroAvatar from "./HeroAvatar"
 
 export default function Hero() {
-  const { stats } = useGitHubStats()
   const [textIndex, setTextIndex] = useState(0)
   const roles = [
     "Language models, trained from scratch",
@@ -53,7 +49,6 @@ export default function Hero() {
       <div data-tour="cursor" className="absolute inset-0 pointer-events-none" />
       {/* Grid overlay */}
       <div className="absolute inset-0 grid-bg" />
-      <HeroSpotlight />
       <div className="absolute inset-0 bg-linear-to-b from-transparent via-bg-dark/50 to-bg-dark pointer-events-none" />
 
       {/* Ambient glow orbs */}
@@ -166,22 +161,6 @@ export default function Hero() {
                   Resume
                 </Link>
               </MagneticLink>
-            </motion.div>
-
-            <motion.div
-              variants={itemVariants}
-              className="mt-12 flex items-center gap-6 text-text-muted"
-            >
-              {[
-                { icon: <Cpu className="w-4 h-4 text-primary" />, text: `${stats.totalRepos} Repos` },
-                { icon: <Terminal className="w-4 h-4 text-primary" />, text: `${stats.totalCommits} Commits` },
-                { icon: <Shield className="w-4 h-4 text-primary" />, text: `${stats.linesOfCode} LOC` },
-              ].map((stat, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  {stat.icon}
-                  <span className="font-mono text-xs">{stat.text}</span>
-                </div>
-              ))}
             </motion.div>
           </motion.div>
 

@@ -8,7 +8,6 @@ import CurrentlyWorkingOn from "@/components/CurrentlyWorkingOn"
 import Projects from "@/components/Projects"
 import Blog from "@/components/Blog"
 import Contact from "@/components/Contact"
-import TerminalEasterEgg from "@/components/TerminalEasterEgg"
 import HorizontalShowcase from "@/components/HorizontalShowcase"
 import CodeShowcase from "@/components/CodeShowcase"
 import { projects } from "@/data"
@@ -52,7 +51,6 @@ export default function Home() {
         <Blog />
         <Contact />
       </div>
-      <TerminalEasterEgg />
     </main>
   )
 }

@@ -2,9 +2,9 @@
 
 <div align="center">
 
-**Full-Stack Developer · Cybersecurity Researcher · AI Engineer**
+**Security-focused AI, full-stack, and cybersecurity engineering**
 
-Founder of [Complex Developers](https://github.com/complexdevelopers). Building secure systems, full-stack products, and applied AI from Nairobi, Kenya.
+Founder of [Complex Developers](https://github.com/complexdevelopers). I build language models from scratch, the agent runtimes that make them safe to deploy, and production security tooling around them. Nairobi, Kenya.
 
 [![Live Site](https://img.shields.io/badge/Live-Visit_Site-4C6EF5?style=flat-square&logo=vercel&logoColor=white)](https://my-portfolio-peach-eta-42.vercel.app)
 [![GitHub](https://img.shields.io/badge/GitHub-joemunene--by-24292F?style=flat-square&logo=github&logoColor=white)](https://github.com/joemunene-by)

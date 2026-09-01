@@ -1,25 +1,13 @@
 "use client"
 
 import { skills } from "@/data"
-import { useGitHubStats } from "@/hooks/useGitHubStats"
 import AnimatedSection from "./AnimatedSection"
-import CountUp from "./CountUp"
 import RevealText from "./RevealText"
 import TiltCard from "./TiltCard"
 import GiantLabel from "./GiantLabel"
-import SkillsRadar from "./SkillsRadar"
-import { Github, Code, CheckCircle, FileCode, BookOpen, Shield, Star, Smartphone, Activity, Bot, Eye, Sigma, Brain } from "lucide-react"
+import { Code, FileCode, BookOpen, Shield, Star, Smartphone, Activity, Bot, Eye, Sigma, Brain } from "lucide-react"
 
 export default function About() {
-  const { stats } = useGitHubStats()
-
-  const statCards = [
-    { icon: <Github className="w-6 h-6" />, value: stats.totalRepos, label: "Public Repos", suffix: "" },
-    { icon: <Code className="w-6 h-6" />, value: stats.totalCommits, label: "Total Commits", suffix: "+" },
-    { icon: <FileCode className="w-6 h-6" />, value: stats.linesOfCode, label: "Lines of Code", suffix: "" },
-    { icon: <CheckCircle className="w-6 h-6" />, value: stats.healthyRepos, label: "Active Repos", suffix: "" },
-  ]
-
   const skillCategories = [
     {
       title: "Languages",
@@ -120,27 +108,6 @@ export default function About() {
           </AnimatedSection>
         </div>
 
-        {/* Animated stat cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
-          {statCards.map((stat, i) => (
-            <AnimatedSection key={i} delay={i * 0.1} direction="up">
-              <TiltCard max={8} className="bg-bg-card border border-border-color rounded-xl p-6 hover:border-primary/50 transition-all duration-300 group glow-box-hover h-full">
-                <div className="text-primary mb-3 group-hover:scale-110 transition-transform duration-300">
-                  {stat.icon}
-                </div>
-                <div className="text-2xl sm:text-3xl font-bold text-white font-mono">
-                  {typeof stat.value === "number" ? (
-                    <CountUp end={stat.value} suffix={stat.suffix} />
-                  ) : (
-                    stat.value
-                  )}
-                </div>
-                <div className="text-text-muted text-sm mt-1">{stat.label}</div>
-              </TiltCard>
-            </AnimatedSection>
-          ))}
-        </div>
-
         {/* Skills */}
         <AnimatedSection>
           <div id="skills">
@@ -150,23 +117,6 @@ export default function About() {
               text="Technical Skills"
               className="text-2xl sm:text-3xl font-bold text-white mb-10"
             />
-
-            <div className="mb-12">
-              <SkillsRadar
-                axes={[
-                  { label: "Frontend", value: 0.9 },
-                  { label: "Backend", value: 0.85 },
-                  { label: "Mobile", value: 0.78 },
-                  { label: "Cybersec", value: 0.88 },
-                  { label: "AI / ML", value: 0.86 },
-                  { label: "Robotics", value: 0.82 },
-                  { label: "RL", value: 0.78 },
-                  { label: "DevOps", value: 0.74 },
-                  { label: "Systems", value: 0.78 },
-                ]}
-              />
-            </div>
-
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {skillCategories.map((cat, i) => (
