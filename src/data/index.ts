@@ -1,5 +1,17 @@
 export const projects = [
   {
+    name: "The Ninefold",
+    description: "A third-person action game built solo in Unreal Engine 5 (C++), with cinematic boss fights as the core pillar. The gameplay code is a reusable combat framework written from scratch: a combat director that hands out attack tokens so enemies engage one at a time and form an even encirclement ring (with local RVO avoidance) instead of dogpiling; a telegraphed enemy AI state machine (approach, wind-up, commit, recover); a multi-phase boss base class; an aim / lock-on camera with switchable third-person and first-person views; a throw-and-recall blade that converges on the reticle; a placeable wave / encounter system; and health, hit-stop, and camera-shake game feel. In active development on Apple Silicon.",
+    language: "C++",
+    stars: 0,
+    topics: ["unreal-engine-5", "cpp", "gameplay-programming", "game-ai", "combat-systems", "gamedev"],
+    url: "",
+    category: "games",
+    featured: true,
+    metric: "Unreal Engine 5 · C++ · in development",
+    blurb: "A solo third-person action game in Unreal Engine 5, built around cinematic boss fights, with a reusable C++ combat framework: token-based enemy AI, an encirclement system, a multi-phase boss base, and aim, camera, and encounter systems.",
+  },
+  {
     name: "linkdrop",
     description: "iPhone ↔ Linux companion app. Browse photos and files, see notifications, and mirror the screen. Ubuntu's answer to Phone Link. Cross-platform desktop build (Linux/macOS/Windows) with a daemon-backed pymobiledevice3 bridge. v0.7.1 shipped with CI-built .deb/.AppImage artifacts.",
     language: "Rust",

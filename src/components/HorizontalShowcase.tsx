@@ -157,15 +157,17 @@ export default function HorizontalShowcase({ items }: Props) {
                           <ExternalLink className="w-4 h-4" />
                         </a>
                       )}
-                      <a
-                        href={item.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 bg-white/5 backdrop-blur-md border border-white/15 rounded-lg text-white hover:bg-white/10 transition-all"
-                        title="Source"
-                      >
-                        <Github className="w-4 h-4" />
-                      </a>
+                      {item.url && (
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 bg-white/5 backdrop-blur-md border border-white/15 rounded-lg text-white hover:bg-white/10 transition-all"
+                          title="Source"
+                        >
+                          <Github className="w-4 h-4" />
+                        </a>
+                      )}
                     </div>
                   </div>
 

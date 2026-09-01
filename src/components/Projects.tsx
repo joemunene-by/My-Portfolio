@@ -15,6 +15,7 @@ const categories = [
   { key: "ai-ml", label: "AI & ML" },
   { key: "web-apps", label: "Web Apps" },
   { key: "mobile", label: "Mobile" },
+  { key: "games", label: "Games" },
   { key: "tools", label: "Tools" },
 ]
 
@@ -24,6 +25,8 @@ const langColors: Record<string, string> = {
   JavaScript: "bg-yellow-400",
   HTML: "bg-orange-500",
   Shell: "bg-green-600",
+  "C++": "bg-purple-400",
+  Rust: "bg-orange-600",
 }
 
 export default function Projects() {
@@ -228,15 +231,17 @@ export default function Projects() {
                               <ExternalLink className="w-5 h-5" />
                             </a>
                           )}
-                          <a
-                            href={project.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2.5 text-text-muted hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-200"
-                            title="View Source"
-                          >
-                            <Github className="w-5 h-5" />
-                          </a>
+                          {project.url && (
+                            <a
+                              href={project.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="p-2.5 text-text-muted hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-200"
+                              title="View Source"
+                            >
+                              <Github className="w-5 h-5" />
+                            </a>
+                          )}
                         </div>
                       </div>
                     </TiltCard>
@@ -285,14 +290,16 @@ export default function Projects() {
                                 <ExternalLink className="w-4 h-4" />
                               </a>
                             )}
-                            <a
-                              href={project.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-text-muted hover:text-primary transition-colors"
-                            >
-                              <Github className="w-4 h-4" />
-                            </a>
+                            {project.url && (
+                              <a
+                                href={project.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-text-muted hover:text-primary transition-colors"
+                              >
+                                <Github className="w-4 h-4" />
+                              </a>
+                            )}
                           </div>
                         </div>
 

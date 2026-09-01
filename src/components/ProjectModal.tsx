@@ -151,15 +151,17 @@ export default function ProjectModal() {
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 )}
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/5 text-white border border-white/15 font-mono text-sm rounded-lg hover:bg-white/10 transition-all"
-                >
-                  <Github className="w-4 h-4" />
-                  Source on GitHub
-                </a>
+                {project.url && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/5 text-white border border-white/15 font-mono text-sm rounded-lg hover:bg-white/10 transition-all"
+                  >
+                    <Github className="w-4 h-4" />
+                    Source on GitHub
+                  </a>
+                )}
               </div>
             </div>
           </motion.div>
